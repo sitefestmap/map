@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="25"
+   viewBox="0 0 13.229166 6.6145833"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="arrow.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="16"
+     inkscape:cx="33.96875"
+     inkscape:cy="8.875"
+     inkscape:window-width="3440"
+     inkscape:window-height="1377"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="9.4119692,5.7238193"
+       orientation="1,0"
+       id="guide1180"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect792"
+       style="display:inline;stroke-width:0.370417;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 9.334314,0.14211019 c -0.3429597,-0.003967 -0.3033407,0.3446818 -0.3033407,0.3446818 v 0.00155 l 0.00465,1.42110191 H 0.59686279 c -0.17960401,0 -0.32401123,0.1444072 -0.32401123,0.3240112 V 4.419885 c 0,0.179604 0.14440722,0.3240112 0.32401123,0.3240112 H 9.0449259 l 0.00465,1.4159342 c 0,0 0.00915,0.3054077 0.3426148,0.3054077 0.3334577,0 3.4457843,-2.7786417 3.4457843,-2.7786417 0,0 0.466292,-0.3131781 -0.0031,-0.6981486 -0.225167,-0.18467 -3.2074621,-2.84487426 -3.4271805,-2.8406532 -0.026394,-0.003604 -0.050517,-0.00542 -0.073381,-0.005684 z" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:2.82222px;font-family:Tate;-inkscape-font-specification:'Tate, Bold';text-align:center;text-anchor:middle;display:inline;fill:#000000;stroke-width:0.370417;stroke-linejoin:round;paint-order:fill markers stroke"
+       x="6.2177081"
+       y="4.3242836"
+       id="text952"><tspan
+         sodipodi:role="line"
+         id="tspan950"
+         style="font-size:2.82222px;stroke-width:0.370417"
+         x="6.2177081"
+         y="4.3242836">SITE MAP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:2.82222px;font-family:Tate;-inkscape-font-specification:'Tate, Bold';text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.370417;stroke-linejoin:round;paint-order:fill markers stroke"
+       x="6.316927"
+       y="4.3408203"
+       id="text1007"><tspan
+         sodipodi:role="line"
+         id="tspan1005"
+         style="font-size:2.82222px;stroke-width:0.370417"
+         x="6.316927"
+         y="4.3408203">Main Site</tspan></text>
+  </g>
+</svg>
