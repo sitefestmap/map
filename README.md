@@ -165,7 +165,7 @@ Add a `.gitignore` file to the root directory (`my-project/`)
 touch .gitignore
 ```
 
-Remove Node Modules from the git workflow
+Remove Node Modules from the git workflow so that it doesn't get uploaded to Github
 
 Open the project in Code Editor and add node_modules to your `.gitignore` file.
 (also .DS_Store if using mac, but not important)
