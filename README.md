@@ -188,7 +188,7 @@ Commit the new `.gitignore` file and push it to the github project.
 Add all the changes to git 'staging'
 
 ```sh
-git add -A # add existing files to the index  also git add --all
+git add -A # short for --all : add existing files to staging 
 ```
 
 Commit the changes, including a comment about what you've changed.
