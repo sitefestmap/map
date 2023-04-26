@@ -206,11 +206,10 @@ git commit -m "added gitignore file and added node modules to it"  # -m stands f
 Push the changes upstream to the main branch on Github
 
 ```sh
-# git remote add origin https://github.com/myorgname/project.git
 git push -u origin main
 ```
 
-the last line should say something like `Branch 'main' set up to track remote branch 'main' from 'origin'.`
+the last line in the resulting output should say something like `Branch 'main' set up to track remote branch 'main' from 'origin'.`
 
 ### Git Branches
 
