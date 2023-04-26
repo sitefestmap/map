@@ -1,5 +1,7 @@
 # SVA Site Festival Map 
 
+General project information (You can edit this file / delete sections as the project evolves)
+
 ## Dependancies
 
 - [Node Mapnik](https://github.com/mapnik/node-mapnik/)
