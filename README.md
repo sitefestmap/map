@@ -83,12 +83,6 @@ Git is a program that tracks changes in files, used by Github / Gitlab and other
 - Create a new project on Github, then clone it to an empty folder on your computer, automatically connecting them via Git.
 - Create a new project on a computer, create a seperate repo on github, then add the github url as a 'remote' url to the git config on the local version on your computer.
 
-<!--
-
-For the Site Map Project, you want to add the existing github repo as a remote url to the git config on your local project.
--->
-
-
 ### Configure Git for a project that lives on a local computer to connect to a repo created with the same name
 
 If the local version isn't setup with git, these are some steps to configure Git version control for a project that has a local repo and a github repo, but are not yet connected via git.
@@ -103,7 +97,7 @@ git -version # check if installed : outputs version number
 
 If not installed already, install Git
 
-The easiest way for Mac/Linux is with Homebrew, which will need installing if not already
+The easiest way for Mac/Linux is with [Homebrew](https://docs.brew.sh/Installation), which will need installing if not already
 
 If Windows check here [Win](https://git-scm.com/download/win)
 
