@@ -40,7 +40,7 @@ For now we could add Mapnik to `package.json` file so that Netlify will install 
 - [x] Matt: Create Github Organization
 - [x] Create Github organization project repo on Github
 - [ ] Suggestion: Change project name from 'Main' to sitefestmap or similar, to avoid confusion with 'main' branch
-- [ ] Set project repo to public, unless don't want it to be public (tell Matt)
+- [ ] Make repo public : **Is it ok with Lucas that we set project repo to public? if not tell Matt**
 - [ ] Matt: Other Options if repo needs to be private
 - [ ] Setup Git (See below) for future local development ( Maybe not needed yet? - but good for future )
 - [ ] Matt: Add Mapnik dep to `package.json` file for Netlify build
