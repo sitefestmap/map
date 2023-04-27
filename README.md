@@ -32,6 +32,11 @@ For now we could add Mapnik to `package.json` file so that Netlify will install 
 
 - [Node-Mapnik Sample Code](https://github.com/mapnik/node-mapnik-sample-code)
 
+### Online Sandboxes for trying Mapnik etc
+
+- [Code Sandbox (install node packages in online terminal, and can sync with Github as well](https://codesandbox.io)
+- [Codepen - can install packages](https://codepen.io/)
+
 ## Todo
 
 <!-- CHECK NETLIFY VANILLA JS BUILD -->
