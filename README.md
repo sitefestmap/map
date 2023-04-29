@@ -7,42 +7,20 @@ General project information (You can edit this file / delete sections as the pro
 - [x] Create local project on your computer
 - [x] Matt: Create Github Organization
 - [x] Create Github organization project repo on Github
-- [ ] Suggestion: Change project name from 'Main' to sitefestmap or similar, to avoid confusion with 'main' branch
 - [ ] Make repo public : **Is it ok with Lucas that we set project repo to public? if not tell Matt**
 - [ ] Matt: Other Options if repo needs to be private
 - [ ] Setup Git (See below) for future local development ( Maybe not needed yet? - but good for future )
-- [ ] Matt: Add Mapnik dep to `package.json` file for Netlify build
 - [ ] Matt: Add other hosting config files `netlify.toml` etc
-- [ ] Matt: Deploy to Netlify
+- [x] Matt: Deploy to Netlify
 - [ ] Matt: CI/CD (Continuous Integration / Continuous Deployment) to automate builds and keep website updated from Github changes.
-- [ ] Matt: Configure DNS to setup subdomain on [map.sitefestival.org.uk](https://map.sitefestival.org.uk)
+- [X] dev site on : [mapdev.sitefestival.org.uk](https://mapdev.sitefestival.org.uk)
+- [x] Matt: Configure DNS to setup subdomain on [map.sitefestival.org.uk](https://map.sitefestival.org.uk)
 - [ ] If needed : Invite any other members to github organization
 
 ## Dependancies
 
 - [Node Mapnik](https://github.com/mapnik/node-mapnik/)
 - [Open Layers](https://openlayers.org)
-
-For now we could add Mapnik to `package.json` file so that Netlify will install it on their servers.
-
-```json
-{
-  "name": "my-app",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^4.0.4"
-  },
-  "dependencies": {
-    "ol": "latest",
-    "mapnik": "^4.5.9",
-  }
-}
-```
 
 ### Examples of similar projects
 
