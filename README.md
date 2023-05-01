@@ -180,6 +180,22 @@ Push the changes upstream to the main branch on Github
 ```sh
 git push -u origin main
 ```
+If you get the error "error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/sitefestmap/Main.git'"
+try:
+
+~~~~~~~~~~ EDIT: ~~~~~~~~~~
+```sh
+git branch -M main
+```
+or
+```sh
+git push --set-upstream origin main
+```
+I think these help? if not please explain how I can properly fix the error
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 the last line in the resulting output should say something like `Branch 'main' set up to track remote branch 'main' from 'origin'.`
 
