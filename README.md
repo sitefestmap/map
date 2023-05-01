@@ -185,13 +185,12 @@ error: failed to push some refs to 'https://github.com/sitefestmap/Main.git'"
 try:
 
 ~~~~~~~~~~ EDIT: ~~~~~~~~~~
-```sh
+
 git branch -M main
-```
+
 or
-```sh
+
 git push --set-upstream origin main
-```
 I think these help? if not please explain how I can properly fix the error
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
