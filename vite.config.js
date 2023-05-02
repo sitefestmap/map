@@ -1,3 +1,4 @@
+// Config for Vite Vanilla JS Multi-page Apps
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
