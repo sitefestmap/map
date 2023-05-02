@@ -18,8 +18,8 @@ General project information (You can edit this file / delete sections as the pro
 
 ## Sites
 
-- [Site Festival(https://sitefestival.org.uk)
-- [mapdev.sitefestival.org.uk](https://mapdev.sitefestival.org.uk)
+- [Site Festival](https://sitefestival.org.uk)
+- [Development](https://mapdev.sitefestival.org.uk)
 - [Holding Page](https://map.sitefestival.org.uk)
 
 ## Dependancies
