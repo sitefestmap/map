@@ -36,8 +36,6 @@
 - [Code Sandbox (install node packages in online terminal, and can sync with Github as well)](https://codesandbox.io)
 - [Codepen - can install packages](https://codepen.io/)
 
-## Hosting
-
 ## Git 
 
 The default name for a repo production branch is 'main' . It used to be 'master', but has changed in recent years.
