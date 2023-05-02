@@ -20,7 +20,7 @@
 
 ## Todo
 
-- [x] Help setup Github Desktop
+- [ ] Help setup Github Desktop
 
 ## Dependancies
 
