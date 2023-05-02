@@ -45,4 +45,4 @@ graph TD;
     Netlify-->123-reg;
 ```
 
-**Todo: Edits**
+**Todo: Git / Config info **
