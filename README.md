@@ -1,26 +1,25 @@
 # SVA Site Festival Map 
 
-General project information (You can edit this file / delete sections as the project evolves)
+```geojson
+{ "type": "Feature",
+   "geometry": {
+     "type": "Polygon",
+     "coordinates": [
+
+       [ [-2.275,51.725], [-2.175,51.725], [-2.175,51.775],
+         [-2.275,51.775], [-2.275,51.725] ]
+       ]
+   },
+   "properties": {
+     "prop0": "value0",
+     "prop1": {"this": "that"}
+     }
+}
+```
 
 ## Todo
 
-- [x] Create local project on your computer
-- [x] Matt: Create Github Organization
-- [x] Create Github organization project repo on Github
-- [ ] Make repo public (matt will do this)
-- [ ] Setup Git
-- [ ] Matt: Add other hosting config files `netlify.toml` etc
-- [x] Matt: Deploy to Netlify
-- [ ] Matt: CI/CD (Continuous Integration / Continuous Deployment) to automate builds and keep website updated from Github changes.
-
-- [x] Matt: Configure DNS to setup subdomain on [map.sitefestival.org.uk](https://map.sitefestival.org.uk)
-- [ ] If needed : Invite any other members to github organization
-
-## Sites
-
-- [Site Festival](https://sitefestival.org.uk)
-- [Development](https://mapdev.sitefestival.org.uk)
-- [Holding Page](https://map.sitefestival.org.uk)
+- [x] Help setup Github Desktop
 
 ## Dependancies
 
@@ -38,13 +37,48 @@ General project information (You can edit this file / delete sections as the pro
 
 ## Hosting
 
+## Git 
+
+The default name for a repo production branch is 'main' . It used to be 'master', but has changed in recent years.
+     
 ```mermaid
 graph TD;
-    Local-->Github
-    Github-->Netlify;
-    Netlify-->123-reg;
+    A[sitefestmap Organization] --> B{Repos}
+    B --> C[map]
+    B --> D[holding-page]
+    C --> E[main branch]
+    D --> F[main branch]
 ```
 
+### Github Desktop
 
+#### Clone to an empty folder
 
-**Todo: Git / Config info / Merge matt private deploy repo / map master into map main**
+file > clone repository > scroll down > sitefestmap > map > clone
+file > clone repository > scroll down > sitefestmap > holding-page > clone
+
+#### Open Github repo
+
+Github repo > Code > Open in Github
+
+## Vite Config
+
+This needs setting up for Multi-page apps in Vite, where there are multiple HTML files in the root folder.
+
+```sh
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        next: resolve(__dirname, 'index2.html'),
+      },
+    },
+  },
+})
+```
+
+Netlify will run `npm run build` if no other build commands are set.
