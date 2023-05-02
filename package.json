@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "site-fest-app",
   "version": "1.0.0",
   "scripts": {
     "start": "vite",
@@ -11,5 +11,6 @@
   },
   "dependencies": {
     "ol": "latest"
-  }
+  },
+  "type": "module"
 }
