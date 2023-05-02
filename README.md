@@ -26,6 +26,8 @@
 
 - [Node Mapnik](https://github.com/mapnik/node-mapnik/)
 - [Open Layers](https://openlayers.org)
+- [Open Map Tiles](https://openmaptiles.org/styles/)
+- [Carto CSS](https://cartocss.readthedocs.io/en/latest/)
 
 ### Examples of similar projects
 
