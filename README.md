@@ -20,7 +20,8 @@
 
 ## Todo
 
-- [ ] Help setup Github Desktop
+- [ ] Carto CSS
+- [ ] Open Map Tiles
 
 ## Dependancies
 
@@ -65,7 +66,7 @@ Github repo > Code > Open in Github
 
 ## Vite Config
 
-This needs setting up for Multi-page apps in Vite, where there are multiple HTML files in the root folder.
+Config for Vanilla JS Multi-page apps in Vite, where there are multiple HTML files in the root folder.
 
 ```sh
 import { resolve } from 'path'
