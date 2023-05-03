@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	const toggleBtns = document.querySelectorAll('.dark-mode-toggle-btn');
 	const body = document.querySelectorAll('body');
+	const header = document.querySelectorAll('.header');
 	const logoGlow = document.querySelectorAll('.logo-glow');
 	const darkModeImg = document.querySelectorAll('.darkmodeimg');
 	const moon = document.querySelectorAll('.moon');
@@ -10,10 +11,18 @@ document.addEventListener("DOMContentLoaded", function() {
 	const moonCover = document.querySelectorAll('.mooncover');
 	const darkModeP = document.querySelectorAll('.darkmodep');
 	const background = document.querySelectorAll('.background');
+	const intro = document.querySelectorAll('.intro');
 	const introHead = document.querySelectorAll('.introhead');
+	const scrollSection1 = document.querySelectorAll('.scroll-section1');
+	const scrollSection2 = document.querySelectorAll('.scroll-section2');
+	const scrollSection3 = document.querySelectorAll('.scroll-section3');
+	const scrollSection4 = document.querySelectorAll('.scroll-section4');
 	const slides = document.querySelectorAll('.slide');
+	const slide1 = document.querySelectorAll('.slide1-1');
 	const intro1 = document.querySelector('.intro1');
 	const intro2 = document.querySelector('.intro2');
+	const prev = document.querySelectorAll('.prev');
+	const next = document.querySelectorAll('.next');
 	const linesRect = document.querySelectorAll('.lines-rect');
 	const text2 = document.querySelectorAll('.text-2');
 	const mySlides = document.querySelectorAll('.mySlides');
@@ -24,12 +33,15 @@ document.addEventListener("DOMContentLoaded", function() {
 	const siteFestBtn = document.querySelectorAll('.site-fest-btn');
 	const slidesTextDark = document.querySelectorAll('.slides-text-dark');
 	const slidesTextLight = document.querySelectorAll('.slides-text-light');
+	const holdingpageIntro = document.querySelectorAll('.holdingpage-intro');
+	const holdingpageIntroP = document.querySelectorAll('.holdingpage-introp');
 
 
 	let slideIndex = 1;
 	let touchstartX = 0;
 	let touchendX = 0;
 	let isDarkMode;
+	let mousestartX, mouseendX;
 
 
 	toggleBtns.forEach(function(btn) {
@@ -98,17 +110,27 @@ function saveAndChangePage() {
 	  
 	const darkModeElements = [
 	  ...body,
+	  ...header,
 	  ...background,
 	  ...logoGlow,
 	  ...moonGlow,
 	  ...toggleBtns,
-	  ...siteFestBtn,
+	  ...intro,
+	  ...scrollSection1,
+	  ...scrollSection2,
+	  ...scrollSection3,
+	  ...scrollSection4,
 	  ...introHead,
 	  ...mySlides,
+	  ...slide1,
+	  ...prev,
+	  ...next,
 	  ...linesRect,
 	  ...text2,
 	  ...slidesTextDark,
-	  ...slidesTextLight
+	  ...slidesTextLight,
+	  ...holdingpageIntro,
+	  ...holdingpageIntroP
 	];
 
   	  document.documentElement.classList.toggle('dark-mode');
@@ -183,32 +205,65 @@ if (window.location.pathname === '/index.html') {
 	    plusSlides(1);
 	  });
 
-	showSlides(slideIndex);
+let slideIndex = 1;
+let dotsContainer = document.querySelector('.slide-dots');
+let dots = dotsContainer.getElementsByClassName('dot');
+showSlides(slideIndex);
 
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-	function showSlides(n) {
-	  let i;
-	  let slides = document.getElementsByClassName("mySlides");
-	  let dots = document.getElementsByClassName("dot");
-	  if (n > slides.length) {slideIndex = 1}    
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-	    slides[i].style.display = "none";  
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName('mySlides');
+  if (n > slides.length) { slideIndex = 1; }    
+  if (n < 1) { slideIndex = slides.length; }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+    dots[i].style.transform = '';
+    dots[i].style.backgroundColor = '#bbb';
+  }
+  slides[slideIndex - 1].style.display = 'grid';  
+  dots[slideIndex - 1].className += ' active';
+  dots[slideIndex - 1].style.backgroundColor = '#333d3d';
+
+	const activeIndex = slideIndex - 1;
+	const range = 5; // Number of dots to include in the scale effect range
+
+	for (let j = 0; j < dots.length; j++) {
+	  if (Math.abs(j - activeIndex) <= range) {
+	    dots[j].style.transform = `scale(${2.25 - Math.abs(j - activeIndex) * 0.225})`;
+	    dots[j].style.boxShadow = `inset 0 0 0 20px rgba(51, 61, 61, ${1 - Math.abs(j - activeIndex) * 0.2})`;
+	  } else {
+	    dots[j].style.transform = '';
+	    dots[j].style.boxShadow = '';
 	  }
-	  for (i = 0; i < dots.length; i++) {
-	    dots[i].className = dots[i].className.replace(" active", "");
-	  }
-	  slides[slideIndex-1].style.display = "grid";  
-	  dots[slideIndex-1].className += " active";
 	}
+}
 
+dotsContainer.addEventListener('click', function(event) {
+  if (event.target.classList.contains('slide-dots')) {
+    var clickX = event.clientX;
+    var dotsArray = Array.from(dotsContainer.getElementsByClassName('dot'));
+    var closestDot = dotsArray.reduce(function(prevDot, currentDot) {
+      var prevRect = prevDot.getBoundingClientRect();
+      var currentRect = currentDot.getBoundingClientRect();
+      var prevDistance = Math.abs(prevRect.left - clickX);
+      var currentDistance = Math.abs(currentRect.left - clickX);
+      return prevDistance < currentDistance ? prevDot : currentDot;
+    });
+    var dotIndex = Array.prototype.indexOf.call(dots, closestDot);
+    showSlides(slideIndex = dotIndex + 1);
+  }
+});
 
 	slideshow.addEventListener('touchstart', function(event) {
 	    touchstartX = event.changedTouches[0].screenX;
@@ -233,23 +288,22 @@ if (window.location.pathname === '/index.html') {
 	        plusSlides(1); // swipe left
 	    } else if ((touchendX && touchstartX) && touchendX > touchstartX) {
 	        plusSlides(-1); // swipe right
-	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 100 && mouseendX < mousestartX) {
+	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 50 && mouseendX < mousestartX) {
 	        plusSlides(1); // mouse swipe left
-	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 100 && mouseendX > mousestartX) {
+	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 50 && mouseendX > mousestartX) {
 	        plusSlides(-1); // mouse swipe right
 	    }
 	}
-
-	document.addEventListener('wheel', function(e) {
+//	document.addEventListener('wheel', function(e) {
 	  // Check if the delta value is positive or negative to determine the scroll direction
-	  if (e.deltaY > 0) {
+//	  if (e.deltaY > 0) {
 	    // Scroll down, go to next slide
-	    plusSlides(1);
-	  } else {
+//	    plusSlides(1);
+//	  } else {
 	    // Scroll up, go to previous slide
-	    plusSlides(-1);
-	  }
-	});
+//	    plusSlides(-1);
+//	  }
+//	});
 }
 
 

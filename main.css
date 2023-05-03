@@ -710,9 +710,9 @@ body.dark-mode {
 }
 
 .line7 {
-	top: 91%;
+	top: 93.5%;
 	position: absolute;
-	height: 5%;
+	height: 0.5%;
 	width: 100%;
 	left: 0%;
 }
@@ -756,11 +756,8 @@ body.dark-mode {
 }
 
 .mySlides.dark-mode {
+  background-color: #333D3D;
   box-shadow: 0 0 2.5vh rgba(250, 92, 79, 1);
-}
-
-.mySlides.dark-mode {
-  background-color: #454545;
 }
 .img1 {
 	vertical-align: middle;
@@ -807,7 +804,7 @@ body.dark-mode {
   width: 80vw;
   height: 63vw;
   position: relative;
- 	margin: 2vh auto;
+ 	margin: 5vh auto;
 }
 
 .slide1-1 {
@@ -842,7 +839,7 @@ body.dark-mode {
 }
 
 .slides-text-dark.dark-mode {
-	color: #454545;
+	color: #333D3D;
 }
 
 .slides-text-light {
@@ -984,8 +981,9 @@ body.dark-mode {
 	left: 0%;
 }
 
+
 .slides-text13 {
-	font-size: 1.25vw;
+	font-size: 1vw;
 }
 
 .studio-number-dot {
@@ -1099,29 +1097,39 @@ body.dark-mode {
   position: absolute;
   top: 0;
   font-family: 'tateregular';
-  text-shadow: 0 0 0.5vh black;
+  text-shadow: 0 0 0.5vh rgba(255, 36, 74, 1);
+}
+
+.numbertext.dark-mode {
+	text-shadow: 0 0 0.5vh rgba(250, 92, 79, 1);
 }
 
 .slide-dots {
-	top: 5vw;
-	position: relative;
-	filter: drop-shadow(0 0 0.2vh black);
-
+  bottom: 0vh;
+  position: relative;
+  filter: drop-shadow(0 0 0.2vh black);
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+  user-select: none;
 }
 
 .dot {
   cursor: pointer;
-  height: 2vh;
-  width: 2vh;
-  margin: 0 2px;
+  height: 1.5vw;
+  width: 1.5vw;
+  margin: 0 0px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  scale: 0.5;
+  user-select: none;
+  pointer-events: none;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.active:hover {
+  background-color: #333D3D;
 }
 
 /* Fading animation */
@@ -1372,8 +1380,6 @@ html, body {
 }
 
 .slide-dots {
-	top: 2.5vw;
-	position: relative;
 	scale: 0.75;
 }
 
@@ -1532,14 +1538,13 @@ html, body {
 }
 
 .slide-dots {
-	top: 6.5vw;
-	position: relative;
 }
 
 .slideshow-container {
   width: 100%;
   height: 75%;
   top: 5vw;
+  margin: 5vh auto;
 }
 
 .scroll-section2 {
@@ -1697,7 +1702,17 @@ html, body {
 	width: 80%;
 }
 
-
+.dot {
+  cursor: pointer;
+  height: 1vw;
+  width: 1vw;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  scale: 1;
+}
 
 
 
@@ -1785,16 +1800,6 @@ html, body {
 .slide-dots {
 }
 
-.dot {
-  cursor: pointer;
-  height: 1.5vh;
-  width: 1.5vh;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
 
 .address {
 	height: 20%;
@@ -1904,10 +1909,21 @@ html, body {
 	margin: 3vh auto 3vh auto;
 }
 
+.slides-text12 {
+	font-size: 3vw;
+}
 
+.slides-text13 {
+	font-size: 1.5vw;
+}
 
+.dot {
+  margin: 0 0px;
+}
 
-
+.slideshow-container {
+  margin: 1vh auto;
+}
 
 
 
