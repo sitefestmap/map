@@ -879,12 +879,10 @@ body.dark-mode {
 	font-family: tateregular;
 	text-align: left;
 	font-size: 4.25vw;
-	color: rgba(255, 86, 36, 1);
+	color: rgba(255, 36, 74, 1);
 	transform: rotate(-90deg);
 	margin: 0;
 	white-space: nowrap;
-	top: 57.7%;
-	left: 16.5%;
 	position: absolute;
 	user-select: text;
 
@@ -897,8 +895,6 @@ body.dark-mode {
 	transform: rotate(-90deg);
 	margin: 0;
 	white-space: nowrap;
-	top: 67.7%;
-	left: 30.5%;
 	position: absolute;
 	color: white;
 	user-select: text;
@@ -986,11 +982,30 @@ body.dark-mode {
 	font-size: 1vw;
 }
 
+.slides-text14 {
+	font-size: 1.5vw;
+	font-family: tatebold;
+	color: #d04749;
+	position: absolute;
+	top: 91%;
+	height: 5%;
+	width: 5%;
+	left: 0.5%;
+}
 .studio-number-dot {
 	transform: translate(95%,20%);
 	width: 12%;
 	height: 6%;
 	filter: drop-shadow(0 0 0.5vh white);
+}
+
+.route-dot {
+	position: absolute;
+	width: 4%!important;
+	height: 4%!important;
+	top: 95%;
+	left: 0.5%;
+	transform: translate(0%,0%)!important;
 }
 
 .slides-text-info-block {
