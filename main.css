@@ -63,7 +63,14 @@
 
 }
 
+@font-face {
+    font-family: 'tatethin';
+    src: url('tate_thin_regular-webfont.woff2') format('woff2'),
+         url('tate_thin_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 
 
@@ -868,7 +875,7 @@ body.dark-mode {
 .slides-text1 {
 	font-family: tatebold;
 	text-align: left;
-	margin: 20% 15% 15% 15%;
+	margin: 15% 15% 15% 15%;
 	font-size: 2.5vw;
 	user-select: text;
 }
@@ -876,13 +883,13 @@ body.dark-mode {
 .slides-text2 {
 	font-family: tatebold;
 	text-align: left;
-	margin: 0% 15% 2% 15%;
+	margin: 0% 15% 2% 15%!important;
 	font-size: 2vw;
 	user-select: text;
 }
 
 .slides-text3 {
-	font-family: tateregular;
+	font-family: tatethin;
 	text-align: left;
 	margin: 15% 15% 2% 15%;
 	font-size: 2vw;
@@ -968,7 +975,7 @@ body.dark-mode {
 }
 
 .slides-text9 {
-	font-family: tateregular;
+	font-family: tatethin;
 	margin: 0;
 	margin: 5% 0;
 	user-select: text;
@@ -1024,7 +1031,6 @@ body.dark-mode {
 	top: 91.25%;
 	height: 5%;
 	width: 5%;
-	left: 3.7%;
 }
 .studio-number-dot {
 	transform: translate(95%,20%);
@@ -1038,7 +1044,6 @@ body.dark-mode {
 	width: 4%!important;
 	height: 5%!important;
 	top: 94.5%;
-	left: 3.5%;
 	transform: translate(0%,0%)!important;
 }
 
@@ -1143,7 +1148,7 @@ body.dark-mode {
 .numbertext {
   color: #f2f2f2;
   font-size: 2vh;
-  margin: 2.5% 2.5%;
+  margin: 2% 2.5%;
   position: absolute;
   top: 0;
   font-family: 'tateregular';
@@ -1436,7 +1441,7 @@ html, body {
 }
 
 .numbertext {
-  font-size: 1.5vh;
+  font-size: 1vw;
 }
 
 .slide-dots {
@@ -1452,14 +1457,12 @@ html, body {
 	}
 
 .slides-text1 {
-	font-family: tatebold;
 	text-align: left;
-	margin: 25% 15% 15% 15%;
+	margin: 15% 15% 15% 15%;
 	font-size: 1.3vw;
 }
 
 .slides-text2 {
-	font-family: tatebold;
 	text-align: left;
 
 	margin: 0% 15% 2% 15%;
@@ -1467,10 +1470,9 @@ html, body {
 }
 
 .slides-text3 {
-	font-family: tateregular;
 	text-align: left;
 	margin: 15% 15% 2% 15%;
-	font-size: 1vw;
+	font-size: 0.9vw;
 }
 
 .slides-text4 {
@@ -1720,7 +1722,7 @@ html, body {
 .slides-text1 {
 	font-family: tatebold;
 	text-align: left;
-	margin: 25% 15% 25% 15%;
+	margin: 15% 15% 15% 15%;
 	font-size: 3vw;
 }
 
@@ -1827,6 +1829,9 @@ html, body {
 	top: -0.2vw;
 }
 
+.numbertext {
+  font-size: 2.25vw;
+}
 
 
 
@@ -2033,7 +2038,6 @@ html, body {
 .slideshow-container {
   margin: 1vh auto;
 }
-
 
 
 
