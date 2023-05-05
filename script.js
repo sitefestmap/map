@@ -290,9 +290,9 @@ dotsContainer.addEventListener('click', function(event) {
 	        plusSlides(1); // swipe left
 	    } else if ((touchendX && touchstartX) && touchendX > touchstartX) {
 	        plusSlides(-1); // swipe right
-	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 50 && mouseendX < mousestartX) {
+	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 100 && mouseendX < mousestartX) {
 	        plusSlides(1); // mouse swipe left
-	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 50 && mouseendX > mousestartX) {
+	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 100 && mouseendX > mousestartX) {
 	        plusSlides(-1); // mouse swipe right
 	    }
 	}
