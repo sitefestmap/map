@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const linesRect = document.querySelectorAll('.lines-rect');
 	const text2 = document.querySelectorAll('.text-2');
 	const mySlides = document.querySelectorAll('.mySlides');
+	const slideColor = document.querySelectorAll('.slide-color');
 	const slideshow = document.querySelector('.slideshow-container');
 	const facebookIcon = document.querySelector('.facebook-icon');
 	const instagramIcon = document.querySelector('.instagram-icon');
@@ -126,6 +127,7 @@ function saveAndChangePage() {
 	  ...prev,
 	  ...next,
 	  ...linesRect,
+	  ...slideColor,
 	  ...text2,
 	  ...slidesTextDark,
 	  ...slidesTextLight,
@@ -240,8 +242,8 @@ function showSlides(n) {
 
 	for (let j = 0; j < dots.length; j++) {
 	  if (Math.abs(j - activeIndex) <= range) {
-	    dots[j].style.transform = `scale(${2.25 - Math.abs(j - activeIndex) * 0.225})`;
-	    dots[j].style.boxShadow = `inset 0 0 0 20px rgba(51, 61, 61, ${1 - Math.abs(j - activeIndex) * 0.2})`;
+	    dots[j].style.transform = `scale(${2 - Math.abs(j - activeIndex) * 0.17})`;
+	    dots[j].style.boxShadow = `inset 0 0 0 100px rgba(51, 61, 61, ${1 - Math.abs(j - activeIndex) * 0.2})`;
 	  } else {
 	    dots[j].style.transform = '';
 	    dots[j].style.boxShadow = '';
