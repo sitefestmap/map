@@ -1050,15 +1050,15 @@ body.dark-mode {
 	position: absolute;
 }
 
-.block-1 {
+.block-left {
 	left: 4%;
 }
 
-.block-2 {
+.block-middle {
 	left: 37.4%;
 }
 
-.block-3 {
+.block-right {
 	left: 70.75%;
 }
 
