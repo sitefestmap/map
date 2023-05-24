@@ -184,16 +184,32 @@ function saveAndChangePage() {
 
 
 if (window.location.pathname === '/index.html') {
-		function lazyLoad() {
-		  for (let i = 0; i < slides.length; i++) {
-		    const slide = slides[i];
-		    const imageSrc = slide.getAttribute('data-bg');
-		    if (imageSrc) {
-		      slide.style.backgroundImage = `url(${imageSrc})`;
-		      slide.removeAttribute('data-bg');
-		    }
-		  }
-		}
+	function lazyLoad() {
+	  const images = document.querySelectorAll('.mySlides img');
+	  const options = {
+	    root: null, // Use the viewport as the root
+	    rootMargin: '0px',
+	    threshold: 0.1 // Adjust the threshold as needed
+	  };
+
+	  const observer = new IntersectionObserver((entries, observer) => {
+	    entries.forEach(entry => {
+	      if (entry.isIntersecting) {
+	        const img = entry.target;
+	        const imageSrc = img.getAttribute('data-src');
+	        if (imageSrc) {
+	          img.src = imageSrc;
+	          img.removeAttribute('data-src');
+	          observer.unobserve(img); // Stop observing once the image is loaded
+	        }
+	      }
+	    });
+	  }, options);
+
+	  images.forEach(img => {
+	    observer.observe(img); // Start observing each image
+	  });
+	}
 
 	lazyLoad();
 
