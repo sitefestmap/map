@@ -960,7 +960,7 @@ body.dark-mode {
 
 .slides-text8 {
   font-family: tateregular;
-  margin: 0 0!important;
+  margin: 0 0;
   user-select: text;
 
 }
@@ -1221,12 +1221,13 @@ body.dark-mode {
   position: absolute;
   top: 0;
   font-family: 'tateregular';
-  text-shadow: 0 0 0.5vh rgba(255, 36, 74, 1);
+  background-color: rgba(255, 36, 74, 1);
   z-index: 3;
+  
 }
 
 .numbertext.dark-mode {
-	text-shadow: 0 0 0.5vh rgba(250, 92, 79, 1);
+  background-color: rgba(250, 92, 79, 1);
 }
 
 .slide-dots {
@@ -1533,7 +1534,7 @@ html, body {
 }
 
 .numbertext {
-  font-size: 1vw;
+  font-size: 0.75vw;
 }
 
 .slide-dots {
@@ -1834,7 +1835,7 @@ html, body {
 .slides-text1 {
 	font-family: tatebold;
 	text-align: left;
-	margin: 15% 15% 15% 15%;
+	margin: 15% 15% 5% 15%;
 	font-size: 3vw;
 }
 
@@ -1848,7 +1849,7 @@ html, body {
 .slides-text3 {
 	font-family: tateregular;
 	text-align: left;
-	margin: 15% 15% 2% 15%;
+	margin: 5% 15% 2% 15%;
 	font-size: 2.7vw;
 }
 

@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	const holdingpageIntro = document.querySelectorAll('.holdingpage-intro');
 	const holdingpageIntroP = document.querySelectorAll('.holdingpage-introp');
 	const wrappers = document.querySelectorAll('.slides-text8-overspill');
-
+	const numbertext = document.querySelectorAll('.numbertext');
+	
 	let dotsContainer = document.querySelector('.slide-dots');
 	let dots = dotsContainer.getElementsByClassName('dot');
 	let slideIndex = 1;
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	let touchendX = 0;
 	let isDarkMode;
 	let mousestartX, mouseendX;
-
+	let activeIndex = 0;
 
 	toggleBtns.forEach(function(btn) {
 	    btn.addEventListener('click', function() {
@@ -134,11 +135,9 @@ function saveAndChangePage() {
 	  ...slidesTextDark,
 	  ...slidesTextLight,
 	  ...holdingpageIntro,
-	  ...holdingpageIntroP
+	  ...holdingpageIntroP,
+	  ...numbertext,
 	];
-
-	const activeIndex = slideIndex - 1;
-	const range = 5;
 
   	  document.documentElement.classList.toggle('dark-mode');
 	  isDarkMode = document.documentElement.classList.contains('dark-mode');
@@ -151,6 +150,9 @@ function saveAndChangePage() {
 		  instagramIcon.classList.toggle('dark-mode');
 		  twitterIcon.classList.toggle('dark-mode');		  
 		}
+
+		activeIndex = slideIndex - 1;
+		updateDots(activeIndex);
 
 		darkModeElements.forEach(function(element) {
 		  element.classList.toggle('dark-mode');
@@ -169,13 +171,7 @@ function saveAndChangePage() {
 	  		moonSpots.forEach(function(spot) {
 			 spot.classList.remove('light-mode');
 		    });
-  			for (let i = 0; i < dots.length; i++) {
-	    	dots[i].style.backgroundColor = '#333d3d';
-	    	}
-	    	for (let j = 0; j < dots.length; j++) {
-	  		if (Math.abs(j - activeIndex) <= range) {
-	    	dots[j].style.boxShadow = `inset 0 0 0 100px rgba(250, 92, 79, ${1 - Math.abs(j - activeIndex) * 0.2})`;
-	    	}}
+
 		  } else {
 			  darkModeP.forEach(function(darkModeP) {
 			  	darkModeP.textContent = 'Light Mode:';
@@ -189,18 +185,55 @@ function saveAndChangePage() {
 	  		moonSpots.forEach(function(spot) {
 			 spot.classList.add('light-mode');
 		    });
-  			for (let i = 0; i < dots.length; i++) {
-	    	dots[i].style.backgroundColor = '#fff';
-	    	}
-	    	for (let j = 0; j < dots.length; j++) {
-	  		if (Math.abs(j - activeIndex) <= range) {
-	    	dots[j].style.boxShadow = `inset 0 0 0 100px rgba(255, 36, 74, ${1 - Math.abs(j - activeIndex) * 0.2})`;
-	    	}}
 		  }
 	}
 
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName('mySlides');
+  if (n > slides.length) { slideIndex = 1; }    
+  if (n < 1) { slideIndex = slides.length; }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';  
+  }
+  slides[slideIndex - 1].style.display = 'grid';  
+  dots[slideIndex - 1].className += ' active';
+  dots[slideIndex - 1].style.backgroundColor = '#333d3d';
 
-if (window.location.pathname === '/index.html') {
+	const activeIndex = slideIndex - 1;
+	const range = 5; // Number of dots to include in the scale effect range
+	console.log('slideIndex:', slideIndex);
+	console.log('activeIndex:', activeIndex);
+	updateDots(activeIndex);
+}
+
+function updateDots(activeIndex) {
+  const range = 5; // Number of dots to include in the scale effect range
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+    dots[i].style.transform = '';
+    dots[i].style.boxShadow = '';
+
+    if (Math.abs(i - activeIndex) <= range) {
+      const scale = 2 - Math.abs(i - activeIndex) * 0.17;
+      const boxShadowOpacity = 1 - Math.abs(i - activeIndex) * 0.2;
+      const boxShadowColor = isDarkMode ? 'rgba(250, 92, 79' : 'rgba(255, 36, 74';
+
+      dots[i].style.transform = `scale(${scale})`;
+      dots[i].style.boxShadow = `inset 0 0 0 100px ${boxShadowColor}, ${boxShadowOpacity})`;
+    }
+
+    if (isDarkMode) {
+      dots[i].style.backgroundColor = '#333d3d';
+    } else {
+      dots[i].style.backgroundColor = '#fff';
+    }
+  }
+
+  dots[activeIndex].classList.add('active');
+  dots[activeIndex].style.backgroundColor = isDarkMode ? '#333d3d' : '#fff';
+}
 
   wrappers.forEach(wrapper => {
     const link = wrapper.querySelector('a.slides-text8');
@@ -254,9 +287,6 @@ if (window.location.pathname === '/index.html') {
 	    plusSlides(1);
 	  });
 
-let slideIndex = 1;
-let dotsContainer = document.querySelector('.slide-dots');
-let dots = dotsContainer.getElementsByClassName('dot');
 showSlides(slideIndex);
 
 function plusSlides(n) {
@@ -265,46 +295,6 @@ function plusSlides(n) {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName('mySlides');
-  if (n > slides.length) { slideIndex = 1; }    
-  if (n < 1) { slideIndex = slides.length; }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '');
-    dots[i].style.transform = '';
-	    if (isDarkMode) {
-	    	dots[i].style.backgroundColor = '#333d3d';
-	    } else {
-	    	dots[i].style.backgroundColor = '#fff';
-	    }
-  }
-  slides[slideIndex - 1].style.display = 'grid';  
-  dots[slideIndex - 1].className += ' active';
-  dots[slideIndex - 1].style.backgroundColor = '#333d3d';
-
-	const activeIndex = slideIndex - 1;
-	const range = 5; // Number of dots to include in the scale effect range
-
-	for (let j = 0; j < dots.length; j++) {
-	  if (Math.abs(j - activeIndex) <= range) {
-	    dots[j].style.transform = `scale(${2 - Math.abs(j - activeIndex) * 0.17})`;
-	    if (isDarkMode) {
-	    	dots[j].style.boxShadow = `inset 0 0 0 100px rgba(250, 92, 79, ${1 - Math.abs(j - activeIndex) * 0.2})`;
-	    } else {
-	    	dots[j].style.boxShadow = `inset 0 0 0 100px rgba(255, 36, 74, ${1 - Math.abs(j - activeIndex) * 0.2})`;
-	    }
-	    
-	  } else {
-	    dots[j].style.transform = '';
-	    dots[j].style.boxShadow = '';
-	  }
-	}
 }
 
 dotsContainer.addEventListener('click', function(event) {
@@ -352,6 +342,8 @@ dotsContainer.addEventListener('click', function(event) {
 	        plusSlides(-1); // mouse swipe right
 	    }
 	}
+
+if (window.location.pathname === '/index.html') {
 //	document.addEventListener('wheel', function(e) {
 	  // Check if the delta value is positive or negative to determine the scroll direction
 //	  if (e.deltaY > 0) {
