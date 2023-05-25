@@ -900,7 +900,6 @@ body.dark-mode {
 	font-family: tateregular;
 	text-align: left;
 	font-size: 4.25vw;
-	color: rgba(255, 36, 74, 1);
 	transform-origin: top left;
 	transform: rotate(-90deg) translateY(-100%);
 	margin: 0;
@@ -946,7 +945,7 @@ body.dark-mode {
 	font-size: 1.45vw;
 	color: white;
 	position: absolute;
-	top: 44.75%;
+	top: 43.6%;
 	width: 3.5%;
 	height: 4%;
 	user-select: text;
@@ -960,9 +959,42 @@ body.dark-mode {
 }
 
 .slides-text8 {
-	font-family: tatebold;
-	margin: 1% 0;
-	user-select: text;
+  font-family: tateregular;
+  margin: 0 0!important;
+  user-select: text;
+
+}
+
+.slides-text8-overspill {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides-text8-overspill span.slides-text8 {
+  display: inline-block;
+  position: relative;
+  animation: slide-left-right linear infinite;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.slides-text8-overspill span.slides-text8:hover { 
+	animation-play-state: paused;
+}
+
+@keyframes slide-left-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-0% + var(--overflow-offset)));
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .slides-social-text {
@@ -982,24 +1014,21 @@ body.dark-mode {
 }
 
 .slides-text10 {
-	font-family: tateregular;
+	font-family: tatethin;
 	margin: 0;
 	font-style: italic;
 	user-select: text;
 }
 
-.slides-text10 {
-	font-family: tateregular;
-	margin: 0;
-	user-select: text;
-}
-
-.slides-text11 {
+.slides-text11 { /*NOTHING ON THIS*/
 	font-family: tateregular;
 	text-align: right;
 	font-weight: bold;
 	margin: 0 0;
 	font-size: 2vw;
+	position: absolute;
+	top: 94%;
+	width: 95%;
 	user-select: all;
 	/*text-shadow: 0 0 1vh white;
 	filter: drop-shadow(0 0 1vh rgba(255, 255, 255, 0.5));*/
@@ -1028,12 +1057,12 @@ body.dark-mode {
 	font-size: 1vw;
 	font-family: tatebold;
 	position: absolute;
-	top: 91.25%;
+	top: 91.35%;
 	height: 5%;
 	width: 5%;
 }
 .studio-number-dot {
-	transform: translate(95%,20%);
+	transform: translate(45%,0%);
 	width: 12%;
 	height: 6%;
 	/*filter: drop-shadow(0 0 0.5vh white);*/
@@ -1044,27 +1073,28 @@ body.dark-mode {
 	width: 4%!important;
 	height: 5%!important;
 	top: 94.5%;
-	transform: translate(0%,0%)!important;
+	transform: translate(-55%,0%)!important;
 }
 
 .slides-text-info-block {
 	font-size: 1.25vw;
-	width: 25%;
-	height: 43%;
-	top: 49%;
+	width: 30%;
+	height: 45.5%;
+	top: 47.5%;
 	position: absolute;
+  
 }
 
 .block-left {
-	left: 4%;
+	left: 1.65%;
 }
 
 .block-middle {
-	left: 37.4%;
+	left: 34.95%;
 }
 
 .block-right {
-	left: 70.75%;
+	left: 68.4%;
 }
 
 .checkbox-label {
@@ -1080,7 +1110,7 @@ body.dark-mode {
 
 .custom-checkbox {
   position: absolute;
-  top: 0;
+  top: -5%;
   left: 1vw;
   width: 1.5vw;
   height: 1.5vw;
@@ -1103,21 +1133,13 @@ body.dark-mode {
   line-height: 1;
 }
 
-
-
-
-
-
-
-
-
-
 .slides-map-label {
 	position: absolute;
-
+	text-align: right;
 	font-family: tatethin;
 	font-style: italic;
 	bottom: 0;
+	width: 85%;
 }
 
 
@@ -1139,7 +1161,7 @@ body.dark-mode {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 45%;
+  top: 38.25%;
   width: auto;
   padding: 1.5vw 1.5vw 2vw 1.5vw;
   margin-top: -2vh;
@@ -1208,7 +1230,7 @@ body.dark-mode {
 }
 
 .slide-dots {
-  bottom: 0vh;
+  bottom: -1vh;
   position: relative;
   filter: drop-shadow(0 0 0.2vh black);
   background-color: transparent;
@@ -1286,7 +1308,7 @@ button, a, input {
 	align-items: center;
 	width: 2vw;
 	position: absolute;
-	left: -1.95vw;
+	left: -2.25vw;
 	top: -0.3vw;
 }
 
@@ -1423,6 +1445,29 @@ html, body {
 	background-color: rgba(250, 92, 79, 1);
 }
 
+.studio-color-red {
+	color: rgb(208, 71, 73);
+	fill: rgb(208, 71, 73);
+
+}
+
+.studio-color-green {
+	color: rgb(131, 181, 55);
+	fill: rgb(131, 181, 55);
+}
+
+.studio-color-purple {
+	color: rgb(127, 86, 158);
+	fill: rgb(127, 86, 158);;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -1546,7 +1591,7 @@ html, body {
 
 .slides-text11 {
 	font-size: 1vw;
-	top: 67.5%;
+	top: 71.5%;
 	left: 32.75%;
 }
 
@@ -1567,6 +1612,7 @@ html, body {
 .next, .prev {
 	padding: 0.75vw 0.75vw 1.25vw 0.75vw;
 	font-size: 5vh;
+	top: 39%;
 }
 
 .next {
@@ -1597,7 +1643,7 @@ html, body {
 
 .slides-text14 {
 	font-size: 0.5vw;
-	top: 91.15%;
+	top: 91.25%;
 	left: 3.55%;
 }
 
@@ -1607,16 +1653,19 @@ html, body {
 	top: -0.1vw;
 }
 
-.checkbox {
-	width: 0.75vw;
-	height: 0.75vw;
-	margin: 0px;
-	bottom: -5%;
+.custom-checkbox {
+  top: -20%;
+  left: 0.5vw;
+  width: 0.7vw;
+  height: 0.7vw;
+  margin: 0;
 }
 
-
-
-
+.checkbox-label input[type="checkbox"]:checked + .custom-checkbox::before {
+  top: 60%;
+  left: 35%;
+  font-size: 0.75vw;
+}
 
 
 
@@ -1700,7 +1749,7 @@ html, body {
 
 .slideshow-container {
   width: 100%;
-  height: 75%;
+  height: 70%;
   top: 5vw;
   margin: 5vh auto;
 }
@@ -1758,6 +1807,10 @@ html, body {
   height: 90vh;
 }
 
+.prev, .next {
+	top: 40%;
+}
+
 .prev {
 	border-radius: 0 2vh 2vh 0;
 	right: unset;
@@ -1813,7 +1866,7 @@ html, body {
 
 .slides-text6 {
 	font-size: 1.95vw;
-	top: 44.25%;
+	top: 43.3%;
 }
 
 .studio-number-dot {
@@ -1831,7 +1884,7 @@ html, body {
 }
 
 .slides-text-info-block {
-	font-size: 1.75vw;
+	font-size: 2vw;
 }
 .slides-text12 {
 	font-size: 2.5vw;
@@ -1878,13 +1931,13 @@ html, body {
 
 .slides-text14 {
 	font-size: 1.35vw;
-	top: 91.35%;
+	top: 91.5%;
 	left: 3.55%;
 }
 
 .slide-social-icons {
 	width: 2.5vw;
-	left: -2.3vw;
+	left: -2.9vw;
 	top: -0.2vw;
 }
 
@@ -1893,12 +1946,17 @@ html, body {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .custom-checkbox::before {
-  top: 51%;
-  left: 40%;
-  font-size: 1.2vw;
+  top: 54%;
+  left: 37%;
+  font-size: 2vw;
 }
 
-
+.custom-checkbox {
+  top: -0%;
+  left: 1vw;
+  width: 2.25vw;
+  height: 2.25vw;
+}
 
 
 
@@ -2104,7 +2162,9 @@ html, body {
   margin: 1vh auto;
 }
 
-
+.prev, .next {
+	top: 40%;
+}
 
 
 

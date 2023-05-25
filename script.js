@@ -36,8 +36,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	const slidesTextLight = document.querySelectorAll('.slides-text-light');
 	const holdingpageIntro = document.querySelectorAll('.holdingpage-intro');
 	const holdingpageIntroP = document.querySelectorAll('.holdingpage-introp');
+	const wrappers = document.querySelectorAll('.slides-text8-overspill');
 
-
+	let dotsContainer = document.querySelector('.slide-dots');
+	let dots = dotsContainer.getElementsByClassName('dot');
 	let slideIndex = 1;
 	let touchstartX = 0;
 	let touchendX = 0;
@@ -135,6 +137,9 @@ function saveAndChangePage() {
 	  ...holdingpageIntroP
 	];
 
+	const activeIndex = slideIndex - 1;
+	const range = 5;
+
   	  document.documentElement.classList.toggle('dark-mode');
 	  isDarkMode = document.documentElement.classList.contains('dark-mode');
 	  document.cookie = `dark-mode=${isDarkMode}; path=/`;
@@ -151,7 +156,6 @@ function saveAndChangePage() {
 		  element.classList.toggle('dark-mode');
 		});
 
-
 		  if (isDarkMode) {
 			  darkModeP.forEach(function(darkModeP) {
 			  	darkModeP.textContent = 'Dark Mode:';
@@ -165,6 +169,13 @@ function saveAndChangePage() {
 	  		moonSpots.forEach(function(spot) {
 			 spot.classList.remove('light-mode');
 		    });
+  			for (let i = 0; i < dots.length; i++) {
+	    	dots[i].style.backgroundColor = '#333d3d';
+	    	}
+	    	for (let j = 0; j < dots.length; j++) {
+	  		if (Math.abs(j - activeIndex) <= range) {
+	    	dots[j].style.boxShadow = `inset 0 0 0 100px rgba(250, 92, 79, ${1 - Math.abs(j - activeIndex) * 0.2})`;
+	    	}}
 		  } else {
 			  darkModeP.forEach(function(darkModeP) {
 			  	darkModeP.textContent = 'Light Mode:';
@@ -178,12 +189,32 @@ function saveAndChangePage() {
 	  		moonSpots.forEach(function(spot) {
 			 spot.classList.add('light-mode');
 		    });
-
+  			for (let i = 0; i < dots.length; i++) {
+	    	dots[i].style.backgroundColor = '#fff';
+	    	}
+	    	for (let j = 0; j < dots.length; j++) {
+	  		if (Math.abs(j - activeIndex) <= range) {
+	    	dots[j].style.boxShadow = `inset 0 0 0 100px rgba(255, 36, 74, ${1 - Math.abs(j - activeIndex) * 0.2})`;
+	    	}}
 		  }
 	}
 
 
 if (window.location.pathname === '/index.html') {
+
+  wrappers.forEach(wrapper => {
+    const link = wrapper.querySelector('a.slides-text8');
+    const observer = new ResizeObserver(entries => {
+      const linkWidth = link.getBoundingClientRect().width;
+      const wrapperWidth = wrapper.getBoundingClientRect().width;
+      const overflowOffset = linkWidth - wrapperWidth;
+      wrapper.style.setProperty('--overflow-offset', `${overflowOffset}px`);
+      console.log('Link width:', linkWidth);
+      console.log('Wrapper width:', wrapperWidth);
+    });
+    observer.observe(link);
+  });
+
 	function lazyLoad() {
 	  const images = document.querySelectorAll('.mySlides img');
 	  const options = {
@@ -247,7 +278,11 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(' active', '');
     dots[i].style.transform = '';
-    dots[i].style.backgroundColor = '#bbb';
+	    if (isDarkMode) {
+	    	dots[i].style.backgroundColor = '#333d3d';
+	    } else {
+	    	dots[i].style.backgroundColor = '#fff';
+	    }
   }
   slides[slideIndex - 1].style.display = 'grid';  
   dots[slideIndex - 1].className += ' active';
@@ -259,7 +294,12 @@ function showSlides(n) {
 	for (let j = 0; j < dots.length; j++) {
 	  if (Math.abs(j - activeIndex) <= range) {
 	    dots[j].style.transform = `scale(${2 - Math.abs(j - activeIndex) * 0.17})`;
-	    dots[j].style.boxShadow = `inset 0 0 0 100px rgba(51, 61, 61, ${1 - Math.abs(j - activeIndex) * 0.2})`;
+	    if (isDarkMode) {
+	    	dots[j].style.boxShadow = `inset 0 0 0 100px rgba(250, 92, 79, ${1 - Math.abs(j - activeIndex) * 0.2})`;
+	    } else {
+	    	dots[j].style.boxShadow = `inset 0 0 0 100px rgba(255, 36, 74, ${1 - Math.abs(j - activeIndex) * 0.2})`;
+	    }
+	    
 	  } else {
 	    dots[j].style.transform = '';
 	    dots[j].style.boxShadow = '';
