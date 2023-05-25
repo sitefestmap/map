@@ -535,7 +535,7 @@ body.dark-mode {
 
 .intro1 {
 	font-size: 4vh;
-	font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
+	font-family: tateregular,sans-serif;
 	text-align: center;
 /*	transform: translateY(-90%); 
 	text-shadow: 0 0 0.5vh black;*/
