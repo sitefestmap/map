@@ -202,8 +202,8 @@ function showSlides(n) {
 
 	const activeIndex = slideIndex - 1;
 	const range = 5; // Number of dots to include in the scale effect range
-	console.log('slideIndex:', slideIndex);
-	console.log('activeIndex:', activeIndex);
+	//console.log('slideIndex:', slideIndex);
+	//console.log('activeIndex:', activeIndex);
 	updateDots(activeIndex);
 }
 
@@ -218,7 +218,7 @@ function updateDots(activeIndex) {
     if (Math.abs(i - activeIndex) <= range) {
       const scale = 2 - Math.abs(i - activeIndex) * 0.17;
       const boxShadowOpacity = 1 - Math.abs(i - activeIndex) * 0.2;
-      const boxShadowColor = isDarkMode ? 'rgba(250, 92, 79' : 'rgba(255, 36, 74';
+      const boxShadowColor = isDarkMode ? 'rgba(255, 36, 74' : 'rgba(250, 92, 79';
 
       dots[i].style.transform = `scale(${scale})`;
       dots[i].style.boxShadow = `inset 0 0 0 100px ${boxShadowColor}, ${boxShadowOpacity})`;
@@ -242,8 +242,8 @@ function updateDots(activeIndex) {
       const wrapperWidth = wrapper.getBoundingClientRect().width;
       const overflowOffset = linkWidth - wrapperWidth;
       wrapper.style.setProperty('--overflow-offset', `${overflowOffset}px`);
-      console.log('Link width:', linkWidth);
-      console.log('Wrapper width:', wrapperWidth);
+      //console.log('Link width:', linkWidth);
+      //console.log('Wrapper width:', wrapperWidth);
     });
     observer.observe(link);
   });
@@ -313,35 +313,37 @@ dotsContainer.addEventListener('click', function(event) {
   }
 });
 
-	slideshow.addEventListener('touchstart', function(event) {
-	    touchstartX = event.changedTouches[0].screenX;
-	}, false);
+var swipeThreshold = 250; // Adjust this value as needed
 
-	slideshow.addEventListener('touchend', function(event) {
-	    touchendX = event.changedTouches[0].screenX;
-	    handleGesture();
-	}, false);
+slideshow.addEventListener('touchstart', function(event) {
+    touchstartX = event.changedTouches[0].screenX;
+}, false);
 
-	slideshow.addEventListener('mousedown', function(event) {
+slideshow.addEventListener('touchend', function(event) {
+    touchendX = event.changedTouches[0].screenX;
+    handleGesture();
+}, false);
+
+slideshow.addEventListener('mousedown', function(event) {
     mousestartX = event.clientX;
-	}, false);
+}, false);
 
-	slideshow.addEventListener('mouseup', function(event) {
-	    mouseendX = event.clientX;
-	    handleGesture();
-	}, false);
+slideshow.addEventListener('mouseup', function(event) {
+    mouseendX = event.clientX;
+    handleGesture();
+}, false);
 
-	function handleGesture() {
-	    if ((touchendX && touchstartX) && touchendX < touchstartX) {
-	        plusSlides(1); // swipe left
-	    } else if ((touchendX && touchstartX) && touchendX > touchstartX) {
-	        plusSlides(-1); // swipe right
-	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 100 && mouseendX < mousestartX) {
-	        plusSlides(1); // mouse swipe left
-	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > 100 && mouseendX > mousestartX) {
-	        plusSlides(-1); // mouse swipe right
-	    }
-	}
+function handleGesture() {
+    if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
+        plusSlides(1); // swipe left
+    } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
+        plusSlides(-1); // swipe right
+    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX < mousestartX) {
+        plusSlides(1); // mouse swipe left
+    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX > mousestartX) {
+        plusSlides(-1); // mouse swipe right
+    }
+}
 
 if (window.location.pathname === '/index.html') {
 //	document.addEventListener('wheel', function(e) {
@@ -356,13 +358,40 @@ if (window.location.pathname === '/index.html') {
 //	});
 }
 
+    // Attach click event handlers to checkboxes
+    var checkboxes = document.getElementsByClassName("checkbox");
 
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].addEventListener("click", function() {
+        // Get the checkbox value (e.g., nutshell, article, high-st)
+        var checkboxValue = this.value;
 
+        // Set the checkbox state as a cookie with true/false value
+        document.cookie = checkboxValue + "=" + this.checked;
 
+        // Output the name of the created cookie to the console
+        console.log("Created cookie: " + checkboxValue);
+      });
+    }
 
+    // Function to retrieve the state of a specific checkbox
+    function getCheckboxState(checkboxValue) {
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var cookieArray = decodedCookie.split(";");
 
+      for (var i = 0; i < cookieArray.length; i++) {
+        var cookie = cookieArray[i];
+        while (cookie.charAt(0) === " ") {
+          cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(checkboxValue) === 0) {
+          var state = cookie.substring(checkboxValue.length + 1);
+          return state === "true";
+        }
+      }
 
-
+      return false;
+    }
 
 
 
