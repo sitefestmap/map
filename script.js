@@ -364,12 +364,12 @@ if (window.location.pathname === '/index.html') {
 // Add event listeners to each checkbox
 for (var i = 0; i < checkboxes.length; i++) {
   checkboxes[i].addEventListener('click', createCheckboxClickListener(i));
-  
+
   // Set the initial checkbox state based on the cookie value
   var checkboxValue = checkboxes[i].value;
   var checkboxState = getCheckboxState(checkboxValue);
   checkboxes[i].checked = checkboxState;
-  
+
   // Update the text of the corresponding map status label based on the initial state
   mapStatusLabels[i].textContent = checkboxState ? 'Added to Your Map' : 'Add to Your Map';
 }
@@ -380,11 +380,10 @@ function createCheckboxClickListener(index) {
     // Get the checkbox value (e.g., nutshell, article, high-st)
     var checkboxValue = this.value;
 
-    // Set the checkbox state as a cookie with true/false value
-    document.cookie = checkboxValue + "=" + this.checked;
-
-    // Get all checkboxes with the same value
-    var matchingCheckboxes = document.querySelectorAll('input[type="checkbox"][value="' + checkboxValue + '"]');
+    // Set the checkbox state as a cookie with true/false value and expiration date
+    var expirationDate = new Date();
+    expirationDate.setFullYear(expirationDate.getFullYear() + 1); // Set expiration to 1 year from now
+    document.cookie = checkboxValue + "=" + this.checked + "; expires=" + expirationDate.toUTCString();
 
     // Get the state of the created cookie
     var cookieState = getCheckboxState(checkboxValue);
@@ -393,9 +392,16 @@ function createCheckboxClickListener(index) {
     console.log("Created cookie: " + checkboxValue + " (State: " + cookieState + ")");
 
     // Update the text of the corresponding map status labels based on the cookie state
+    mapStatusLabels[index].textContent = cookieState ? 'Added to Your Map' : 'Add to Your Map';
+
+    // Update the state and text content for all other checkboxes with the same value
+    var matchingCheckboxes = document.querySelectorAll('input[type="checkbox"][value="' + checkboxValue + '"]');
     for (var i = 0; i < matchingCheckboxes.length; i++) {
-      matchingCheckboxes[i].checked = this.checked;
-      mapStatusLabels[index + i].textContent = cookieState ? 'Added to Your Map' : 'Add to Your Map';
+      var matchingCheckboxIndex = Array.from(checkboxes).indexOf(matchingCheckboxes[i]);
+      if (matchingCheckboxIndex !== -1 && matchingCheckboxIndex !== index) {
+        matchingCheckboxes[i].checked = this.checked;
+        mapStatusLabels[matchingCheckboxIndex].textContent = cookieState ? 'Added to Your Map' : 'Add to Your Map';
+      }
     }
   };
 }
@@ -418,6 +424,8 @@ function getCheckboxState(checkboxValue) {
 
   return false;
 }
+
+
 
 
 

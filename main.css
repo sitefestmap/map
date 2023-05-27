@@ -908,6 +908,7 @@ body.dark-mode {
 	user-select: text;
 	z-index: 2;
 	width: 63vw;
+	text-shadow: 0 0 2.5vh rgba(0, 0, 0, 0.5);
 }
 
 .slides-text5 {
@@ -925,7 +926,7 @@ body.dark-mode {
 }
 
 .slides-sideways-text-left {
-	left: -25%!important;
+	left: -42%!important;
 	top: -2%!important;
 }
 
@@ -1245,6 +1246,7 @@ body.dark-mode {
   cursor: pointer;
   z-index: 1;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .dot {
