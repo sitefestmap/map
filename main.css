@@ -925,8 +925,8 @@ body.dark-mode {
 }
 
 .slides-sideways-text-left {
-	left: 10%!important;
-	top: 90%!important;
+	left: -25%!important;
+	top: -2%!important;
 }
 
 .slides-sideways-text-middle {
@@ -935,8 +935,8 @@ body.dark-mode {
 }
 
 .slides-sideways-text-right {
-	left: 77%!important;
-	top: 90%!important;
+	left: 25%!important;
+	top: -2%!important;
 }
 
 .slides-text6 {
