@@ -18,31 +18,6 @@
 
 ```
 
-## Todo
-
-- [ ] Carto CSS
-- [ ] Open Map Tiles
-
-## Dependancies
-
-- [Node Mapnik](https://github.com/mapnik/node-mapnik/)
-- [Open Layers](https://openlayers.org)
-- [Open Map Tiles](https://openmaptiles.org/styles/)
-- [Carto CSS](https://cartocss.readthedocs.io/en/latest/)
-
-### Examples of similar projects
-
-- [Node-Mapnik Sample Code](https://github.com/mapnik/node-mapnik-sample-code)
-
-### Online Sandboxes for trying Mapnik etc
-
-- [Code Sandbox (install node packages in online terminal, and can sync with Github as well)](https://codesandbox.io)
-- [Codepen - can install packages](https://codepen.io/)
-
-## Git 
-
-The default name for a repo production branch is 'main' . It used to be 'master', but has changed in recent years.
-     
 ```mermaid
 graph TD;
     A[sitefestmap Organization] --> B{Repos}
@@ -52,17 +27,6 @@ graph TD;
     D --> F[main branch]
     
 ```
-
-### Github Desktop
-
-#### Clone to an empty folder
-
-file > clone repository > scroll down > sitefestmap > map > clone
-file > clone repository > scroll down > sitefestmap > holding-page > clone
-
-#### Open Github repo
-
-Github repo > Code > Open in Github
 
 ## Vite Config
 
