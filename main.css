@@ -1080,23 +1080,22 @@ body.dark-mode {
 
 .slides-text-info-block {
 	font-size: 1.25vw;
-	width: 30%;
+	width: 28%;
 	height: 45.5%;
-	top: 47.5%;
+	top: 47%;
 	position: absolute;
-  
 }
 
 .block-left {
-	left: 1.65%;
+	left: 2.65%;
 }
 
 .block-middle {
-	left: 34.95%;
+	left: 35.95%;
 }
 
 .block-right {
-	left: 68.4%;
+	left: 69.4%;
 }
 
 .checkbox-label {
@@ -1318,7 +1317,7 @@ button, a, input {
 	align-items: center;
 	width: 2vw;
 	position: absolute;
-	left: -2.25vw;
+	left: -2.05vw;
 	top: -0.3vw;
 }
 
@@ -1658,7 +1657,7 @@ html, body {
 
 .slide-social-icons {
 	width: 0.75vw;
-	left: -1vw;
+	left: -0.95vw;
 	top: -0.075vw;
 }
 
@@ -1897,7 +1896,10 @@ html, body {
 
 .slides-text-info-block {
 	font-size: 2vw;
+	top: 46.5%;
+	height: 47%;
 }
+
 .slides-text12 {
 	font-size: 2.5vw;
 	top: 95%;
@@ -1949,7 +1951,7 @@ html, body {
 
 .slide-social-icons {
 	width: 2.5vw;
-	left: -2.9vw;
+	left: -2.6vw;
 	top: -0.2vw;
 }
 
