@@ -72,8 +72,29 @@
 
 }
 
+/* Webkit-based browsers */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f1f1f1; /* Set the background color */
+  border-radius: 5px; /* Set the border radius */
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Set the color of the thumb */
+  border-radius: 5px; /* Set the border radius */
+}
 
+/* Firefox */
+::-moz-scrollbar {
+  width: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
 
 a:link, a:visited, a:hover, a:active {
   color: inherit;
@@ -642,7 +663,7 @@ body.dark-mode {
 	stroke-width: 0.25vh;
 }
 .lines-rect2 {
-	stroke-width: 0.25vh;
+	stroke-width: 0.15vh;
 	filter: none!important;
 }
 
@@ -945,13 +966,13 @@ body.dark-mode {
 }
 
 .slides-text6 {
-	font-family: tatebold;
+	font-family: tatethin;
 	text-align: center;
 	margin: 0;
 	font-size: 1.45vw;
 	color: white;
 	position: absolute;
-	top: 43.6%;
+	top: 44%;
 	width: 3.5%;
 	height: 4%;
 	user-select: text;
@@ -1065,10 +1086,10 @@ body.dark-mode {
 	position: absolute;
 	top: 91.35%;
 	height: 5%;
-	width: 5%;
+	width: 4%;
 }
 .studio-number-dot {
-	transform: translate(65%,0%);
+	transform: translate(65%,5%);
 	width: 12%;
 	height: 6%;
 	/*filter: drop-shadow(0 0 0.5vh white);*/
@@ -1086,7 +1107,7 @@ body.dark-mode {
 	font-size: 1.5vw;
 	width: 28%;
 	height: 45.5%;
-	top: 47%;
+	top: 47.5%;
 	position: absolute;
 	overflow: hidden;
 }
@@ -1165,10 +1186,10 @@ body.dark-mode {
   position: absolute;
   top: 50%;
   left: 45%;
-  transform: translate(-50%, -50%);
+  transform: translate(-55%, -47%);
   color: white;
   font-family: Calibri, sans-serif;
-  font-size: 1.2vw;
+  font-size: 1.4vw;
   line-height: 1;
 }
 
@@ -1179,7 +1200,7 @@ body.dark-mode {
 	font-style: italic;
 	bottom: 2%;
 	width: 30%;
-	font-size: 1vw;
+	font-size: 1.15vw;
 }
 
 .map-label-left {
@@ -1187,7 +1208,7 @@ body.dark-mode {
 }
 
 .map-label-middle {
-	left: 31.1%;
+	left: 31.5%;
 }
 
 .map-label-right {
@@ -1691,7 +1712,7 @@ html, body {
 }
 
 .slides-text14 {
-	font-size: 0.5vw;
+	font-size: 0.475vw;
 	top: 91.25%;
 	left: 3.55%;
 }
@@ -1703,7 +1724,7 @@ html, body {
 }
 
 .custom-checkbox {
-  top: -20%;
+  top: -10%;
   left: 0.5vw;
   width: 0.7vw;
   height: 0.7vw;
@@ -1717,10 +1738,13 @@ html, body {
 }
 
 .slides-map-label {
-	font-size: 0.48vw;
+	font-size: 0.55vw;
 }
 
-
+.custom-checkmark.checked {
+  transform: translate(-60%, -50%);
+  font-size: 0.7vw;
+}
 
 
 
@@ -1804,7 +1828,7 @@ html, body {
   width: 100vw;
   height: 79vw;
   top: 5vw;
-  margin: 5vh auto;
+  margin: 3vh auto;
 }
 
 .scroll-section2 {
@@ -1937,7 +1961,7 @@ html, body {
 
 .slides-text-info-block {
 	font-size: 1.75vw;
-	top: 46.5%;
+	top: 47%;
 	height: 47%;
 }
 
@@ -1985,7 +2009,7 @@ html, body {
 }
 
 .slides-text14 {
-	font-size: 1.35vw;
+	font-size: 1.25vw;
 	top: 91.3%;
 	left: 3.55%;
 }
@@ -2007,17 +2031,20 @@ html, body {
 }
 
 .custom-checkbox {
-  top: -40%;
+  top: -20%;
   left: 1vw;
   width: 2.25vw;
   height: 2.25vw;
 }
 
 .slides-map-label {
-	font-size: 1.3vw;
+	font-size: 1.45vw;
 }
 
-
+.custom-checkmark.checked {
+  transform: translate(-55%, -45%);
+  font-size: 2vw;
+}
 
 
 
