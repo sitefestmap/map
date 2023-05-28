@@ -239,18 +239,18 @@ function updateDots(activeIndex) {
   dots[activeIndex].style.backgroundColor = isDarkMode ? '#333d3d' : '#fff';
 }
 
-  wrappers.forEach(wrapper => {
-    const link = wrapper.querySelector('a.slides-text8');
-    const observer = new ResizeObserver(entries => {
-      const linkWidth = link.getBoundingClientRect().width;
-      const wrapperWidth = wrapper.getBoundingClientRect().width;
-      const overflowOffset = linkWidth - wrapperWidth;
-      wrapper.style.setProperty('--overflow-offset', `${overflowOffset}px`);
-      //console.log('Link width:', linkWidth);
-      //console.log('Wrapper width:', wrapperWidth);
-    });
-    observer.observe(link);
-  });
+//  wrappers.forEach(wrapper => {
+//    const link = wrapper.querySelector('a.slides-text8');
+//    const observer = new ResizeObserver(entries => {
+//      const linkWidth = link.getBoundingClientRect().width;
+//      const wrapperWidth = wrapper.getBoundingClientRect().width;
+//      const overflowOffset = linkWidth - wrapperWidth;
+//      wrapper.style.setProperty('--overflow-offset', `${overflowOffset}px`);
+//      //console.log('Link width:', linkWidth);
+//      //console.log('Wrapper width:', wrapperWidth);
+//    });
+//    observer.observe(link);
+//  });
 
 	function lazyLoad() {
 	  const images = document.querySelectorAll('.mySlides img');

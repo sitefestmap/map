@@ -662,6 +662,10 @@ body.dark-mode {
 	stroke: #83B537!important; 
 }
 
+.blue-line {
+	stroke: #009bca!important; 
+}
+
 .line0 {
 	top: 20vh;
 }
@@ -967,7 +971,7 @@ body.dark-mode {
 
 }
 
-.slides-text8-overspill {
+/*.slides-text8-overspill {
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -997,7 +1001,7 @@ body.dark-mode {
   100% {
     transform: translateX(0%);
   }
-}
+}*/
 
 .slides-social-text {
 	left: 7.5%;
@@ -1009,9 +1013,9 @@ body.dark-mode {
 }
 
 .slides-text9 {
-	font-family: tatethin;
+	font-family: 'vw_textregular';
 	margin: 0;
-	margin: 5% 0;
+	margin: 2.5% 0;
 	user-select: text;
 }
 
@@ -1037,7 +1041,7 @@ body.dark-mode {
 }
 
 .slides-text12 {
-	font-family: tateregular;
+	font-family: tatethin;
 	text-align: right;
 	font-weight: bold;
 	margin: 0 2.8%;
@@ -1064,7 +1068,7 @@ body.dark-mode {
 	width: 5%;
 }
 .studio-number-dot {
-	transform: translate(45%,0%);
+	transform: translate(65%,0%);
 	width: 12%;
 	height: 6%;
 	/*filter: drop-shadow(0 0 0.5vh white);*/
@@ -1079,11 +1083,12 @@ body.dark-mode {
 }
 
 .slides-text-info-block {
-	font-size: 1.25vw;
+	font-size: 1.5vw;
 	width: 28%;
 	height: 45.5%;
 	top: 47%;
 	position: absolute;
+	overflow: hidden;
 }
 
 .block-left {
@@ -1467,10 +1472,13 @@ html, body {
 
 .studio-color-purple {
 	color: rgb(127, 86, 158);
-	fill: rgb(127, 86, 158);;
+	fill: rgb(127, 86, 158);
 }
 
-
+.studio-color-blue {
+	color: #009bca;
+	fill: #009bca;
+}
 
 
 
@@ -1604,7 +1612,7 @@ html, body {
 }
 
 .slides-text-info-block {
-	font-size: 0.5vw;
+	font-size: 0.65vw;
 }
 
 .line6 {
@@ -1895,7 +1903,7 @@ html, body {
 }
 
 .slides-text-info-block {
-	font-size: 2vw;
+	font-size: 1.75vw;
 	top: 46.5%;
 	height: 47%;
 }
