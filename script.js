@@ -391,19 +391,15 @@ for (var i = 0; i < checkboxes.length; i++) {
   if (mapStatusLabel) {
     mapStatusLabel.textContent = checkboxState ? 'Added ' + checkboxName + ' to Your Map' : 'Add ' + checkboxName + ' to Your Map';
   }
-	// Update the custom-checkbox element based on the initial state
-	for (var j = 0; j < customCheckmarks.length; j++) {
-		var customCheckmark = customCheckmarks[j];
-	  if (customCheckmark) {
-	    if (checkboxState) {
-	      customCheckmark.classList.add('checked');
-	    } else {
-	      customCheckmark.classList.remove('checked');
-	    }
-	  }
-	}
 
-
+  var customCheckmark = customCheckmarks[i];
+  if (customCheckmark) {
+    if (checkboxState) {
+      customCheckmark.classList.add('checked');
+    } else {
+      customCheckmark.classList.remove('checked');
+    }
+  }
 }
 
 // Function to create the event listener for each checkbox
@@ -435,17 +431,15 @@ function createCheckboxClickListener(index) {
       mapStatusLabel.textContent = checkboxState ? 'Added ' + checkboxValue + ' to Your Map' : 'Add ' + checkboxValue + ' to Your Map';
     }
 
-		// Update the custom-checkbox element
-		for (var j = 0; j < customCheckmarks.length; j++) {
-			var customCheckmark = customCheckmarks[j];
-		  if (customCheckmark) {
-		    if (checkboxState) {
-		      customCheckmark.classList.add('checked');
-		    } else {
-		      customCheckmark.classList.remove('checked');
-		    }
-		  }
-		}
+    // Update the custom-checkbox element based on the checkbox state
+    var customCheckmark = customCheckmarks[index];
+    if (customCheckmark) {
+      if (checkboxState) {
+        customCheckmark.classList.add('checked');
+      } else {
+        customCheckmark.classList.remove('checked');
+      }
+    }
 
     // Update the text of the corresponding map status labels based on the checkbox state
     var mapStatusText = checkboxState ? 'Added' : 'Add';
@@ -458,6 +452,14 @@ function createCheckboxClickListener(index) {
           matchingMapStatusLabel.textContent = mapStatusText + ' ' + checkboxValue + ' to Your Map';
         }
       }
+		    var matchingCustomCheckmark = customCheckmarks[matchingCheckboxIndex]; // Select the corresponding custom-checkmark element
+		    if (matchingCustomCheckmark) {
+		      if (checkboxState) {
+		        matchingCustomCheckmark.classList.add('checked');
+		      } else {
+		        matchingCustomCheckmark.classList.remove('checked');
+		      }
+		    }
     }
   };
 }
