@@ -1,31 +1,26 @@
 # SVA Site Festival Map 
 
-```geojson
-{ "type": "Feature",
-   "geometry": {
-     "type": "Polygon",
-     "coordinates": [
+## Dependancies
 
-       [ [-2.275,51.725], [-2.175,51.725], [-2.175,51.775],
-         [-2.275,51.775], [-2.275,51.725] ]
-       ]
-   },
-   "properties": {
-     "prop0": "value0",
-     "prop1": {"this": "that"}
-     }
-}
-
+```sh
+# if need to pull the repo and install dependancies
+npm install
 ```
 
-```mermaid
-graph TD;
-    A[sitefestmap Organization] --> B{Repos}
-    B --> C[map]
-    B --> D[holding-page]
-    C --> E[main branch]
-    D --> F[main branch]
-    
+```json
+{
+  "scripts": {
+    "dev": "vite dev --port 3103",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-gl-directions": "^4.1.1",
+    "@mapbox/mapbox-sdk": "^0.15.1",
+    "mapbox-gl": "^2.14.1",
+    "vite": "^4.3.8"
+  }
+}
 ```
 
 ## Vite Config
@@ -47,5 +42,3 @@ export default defineConfig({
   },
 })
 ```
-
-Netlify will run `npm run build` if no other build commands are set.
