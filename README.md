@@ -1,68 +1,27 @@
 # SVA Site Festival Map 
 
-```geojson
-{ "type": "Feature",
-   "geometry": {
-     "type": "Polygon",
-     "coordinates": [
-
-       [ [-2.275,51.725], [-2.175,51.725], [-2.175,51.775],
-         [-2.275,51.775], [-2.275,51.725] ]
-       ]
-   },
-   "properties": {
-     "prop0": "value0",
-     "prop1": {"this": "that"}
-     }
-}
-
-```
-
-## Todo
-
-- [ ] Carto CSS
-- [ ] Open Map Tiles
-
 ## Dependancies
 
-- [Node Mapnik](https://github.com/mapnik/node-mapnik/)
-- [Open Layers](https://openlayers.org)
-- [Open Map Tiles](https://openmaptiles.org/styles/)
-- [Carto CSS](https://cartocss.readthedocs.io/en/latest/)
-
-### Examples of similar projects
-
-- [Node-Mapnik Sample Code](https://github.com/mapnik/node-mapnik-sample-code)
-
-### Online Sandboxes for trying Mapnik etc
-
-- [Code Sandbox (install node packages in online terminal, and can sync with Github as well)](https://codesandbox.io)
-- [Codepen - can install packages](https://codepen.io/)
-
-## Git 
-
-The default name for a repo production branch is 'main' . It used to be 'master', but has changed in recent years.
-     
-```mermaid
-graph TD;
-    A[sitefestmap Organization] --> B{Repos}
-    B --> C[map]
-    B --> D[holding-page]
-    C --> E[main branch]
-    D --> F[main branch]
-    
+```sh
+# if need to pull the repo and install dependancies
+npm install
 ```
 
-### Github Desktop
-
-#### Clone to an empty folder
-
-file > clone repository > scroll down > sitefestmap > map > clone
-file > clone repository > scroll down > sitefestmap > holding-page > clone
-
-#### Open Github repo
-
-Github repo > Code > Open in Github
+```json
+{
+  "scripts": {
+    "dev": "vite dev --port 3103",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-gl-directions": "^4.1.1",
+    "@mapbox/mapbox-sdk": "^0.15.1",
+    "mapbox-gl": "^2.14.1",
+    "vite": "^4.3.8"
+  }
+}
+```
 
 ## Vite Config
 
@@ -83,5 +42,3 @@ export default defineConfig({
   },
 })
 ```
-
-Netlify will run `npm run build` if no other build commands are set.
