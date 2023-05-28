@@ -1,0 +1,79 @@
+:where(html) {
+    --bg: hsl(10 75% 50%);
+    --text: hsl(0 0% 95%);
+    --border: rgba(0, 0, 0, 0.25);
+    --border-radius: 4px;
+    --fontstack: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    --red : hsl(10 70% 50%);
+    --text: hsl(0 0% 95%);
+}
+
+body { 
+    margin: 0;
+    padding: 0; 
+}
+
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+.mapboxgl-popup-content {
+    color: var(--text);
+    background-color: var(--red);
+    border-radius: var(--border-radius);
+}
+
+/* Demo Checkboxes */
+.filter-group {
+    font: 1rem var(--fontstack);
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    width: clamp(5rem, 15vw, 10rem); /* Delete */
+    overflow-y: scroll;
+    border-radius: 3px;
+    color: var(--text);
+    word-wrap: break-word;
+}
+
+.filter-group input[type='checkbox']:first-child + label {
+    border-radius: 3px 3px 0 0;
+}
+
+.filter-group label:last-child {
+    border-radius: 0 0 3px 3px;
+    border: none;
+}
+
+.filter-group input[type='checkbox'] {
+    display: none;
+}
+
+.filter-group input[type='checkbox'] + label {
+    background-color: var(--bg);
+    display: block;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.filter-group input[type='checkbox'] + label {
+    background-color: var(--bg);
+    text-transform: capitalize;
+}
+
+.filter-group input[type='checkbox'] + label:hover,
+.filter-group input[type='checkbox']:checked + label {
+    background-color: var(--bg);
+}
+
+.filter-group input[type='checkbox']:checked + label:before {
+    content: '✔';
+    margin-right: 5px;
+}
