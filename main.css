@@ -1139,9 +1139,9 @@ body.dark-mode {
 	text-align: right;
 	font-family: tatethin;
 	font-style: italic;
-	bottom: 1.5%;
-	width: 20%;
-	font-size: 1.5vw;
+	bottom: 2%;
+	width: 30%;
+	font-size: 1vw;
 }
 
 .map-label-left {
@@ -1149,11 +1149,11 @@ body.dark-mode {
 }
 
 .map-label-middle {
-	left: 41%;
+	left: 31.1%;
 }
 
 .map-label-right {
-	left: 75%;
+	left: 65%;
 }
 
 
@@ -1662,7 +1662,7 @@ html, body {
 }
 
 .custom-checkbox {
-  top: 0%;
+  top: -20%;
   left: 0.5vw;
   width: 0.7vw;
   height: 0.7vw;
@@ -1670,13 +1670,13 @@ html, body {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .custom-checkbox::before {
-  top: 60%;
+  top: 55%;
   left: 35%;
   font-size: 0.75vw;
 }
 
 .slides-map-label {
-	font-size: 0.75vw;
+	font-size: 0.48vw;
 }
 
 
@@ -1960,20 +1960,20 @@ html, body {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .custom-checkbox::before {
-  top: 54%;
+  top: 50%;
   left: 37%;
   font-size: 2vw;
 }
 
 .custom-checkbox {
-  top: -0%;
+  top: -40%;
   left: 1vw;
   width: 2.25vw;
   height: 2.25vw;
 }
 
 .slides-map-label {
-	font-size: 2vw;
+	font-size: 1.3vw;
 }
 
 
