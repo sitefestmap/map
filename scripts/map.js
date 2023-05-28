@@ -5,7 +5,7 @@
  */
 
 import mapboxgl from 'mapbox-gl';
-// import MapboxDirections from 'mapbox/mapbox-gl-directions';
+// 'mapbox/mapbox-gl-directions' in head to prevent new dep conflict erro
 
 import multi_polygon from '../data/multipolygon.js';
 import studios from '../data/studios.js';

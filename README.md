@@ -15,13 +15,14 @@ npm install
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mapbox/mapbox-gl-directions": "^4.1.1",
     "@mapbox/mapbox-sdk": "^0.15.1",
     "mapbox-gl": "^2.14.1",
     "vite": "^4.3.8"
   }
 }
 ```
+
+The mapbox/mapbox-directions goes in the `<head>` to prevent dep conflict error.
 
 ## Vite Config
 
