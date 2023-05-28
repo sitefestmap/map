@@ -1123,7 +1123,7 @@ body.dark-mode {
   margin: 0;
 }
 
-.checkbox-label input[type="checkbox"] {
+/*.checkbox-label input[type="checkbox"] {
   display: none;
 }
 
@@ -1134,7 +1134,40 @@ body.dark-mode {
   left: 45%;
   transform: translate(-50%, -50%);
   color: white;
-  font-family: Calibri, sans-serif; /* Specify the font-family */
+  font-family: Calibri, sans-serif;
+  font-size: 1.2vw;
+  line-height: 1;
+}
+*/
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: Calibri, sans-serif;
+  font-size: 1.2vw;
+  line-height: 1;
+}
+
+.custom-checkbox .custom-checkmark {
+  display: none;
+}
+
+.custom-checkmark.checked {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: Calibri, sans-serif;
   font-size: 1.2vw;
   line-height: 1;
 }

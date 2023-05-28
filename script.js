@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const wrappers = document.querySelectorAll('.slides-text8-overspill');
 	const numbertext = document.querySelectorAll('.numbertext');
   const mapStatusLabels = document.querySelectorAll('.mapStatusLabel');
+  const customCheckmarks = document.querySelectorAll('.custom-checkmark');
 
 	let dotsContainer = document.querySelector('.slide-dots');
 	let dots = dotsContainer.getElementsByClassName('dot');
@@ -362,6 +363,7 @@ if (window.location.pathname === '/index.html') {
 //	  }
 //	});
 }
+
 console.log("All cookies:", document.cookie);
 // Add event listeners to each checkbox
 for (var i = 0; i < checkboxes.length; i++) {
@@ -389,6 +391,19 @@ for (var i = 0; i < checkboxes.length; i++) {
   if (mapStatusLabel) {
     mapStatusLabel.textContent = checkboxState ? 'Added ' + checkboxName + ' to Your Map' : 'Add ' + checkboxName + ' to Your Map';
   }
+	// Update the custom-checkbox element based on the initial state
+	for (var j = 0; j < customCheckmarks.length; j++) {
+		var customCheckmark = customCheckmarks[j];
+	  if (customCheckmark) {
+	    if (checkboxState) {
+	      customCheckmark.classList.add('checked');
+	    } else {
+	      customCheckmark.classList.remove('checked');
+	    }
+	  }
+	}
+
+
 }
 
 // Function to create the event listener for each checkbox
@@ -411,13 +426,29 @@ function createCheckboxClickListener(index) {
     // Output all cookies and their states to the console
     console.log("All cookies:", document.cookie);
 
-    // Update the text of the corresponding map status labels based on the cookie state
-    var mapStatusLabel = mapStatusLabels[index]; // Select the corresponding map status label
+    // Get the state of the checkbox
+    var checkboxState = this.checked;
+
+    // Update the corresponding map status label
+    var mapStatusLabel = mapStatusLabels[index];
     if (mapStatusLabel) {
-      mapStatusLabel.textContent = cookieState ? 'Added ' + checkboxValue + ' to Your Map' : 'Add ' + checkboxValue + ' to Your Map';
+      mapStatusLabel.textContent = checkboxState ? 'Added ' + checkboxValue + ' to Your Map' : 'Add ' + checkboxValue + ' to Your Map';
     }
 
-    var mapStatusText = cookieState ? 'Added' : 'Add';
+		// Update the custom-checkbox element
+		for (var j = 0; j < customCheckmarks.length; j++) {
+			var customCheckmark = customCheckmarks[j];
+		  if (customCheckmark) {
+		    if (checkboxState) {
+		      customCheckmark.classList.add('checked');
+		    } else {
+		      customCheckmark.classList.remove('checked');
+		    }
+		  }
+		}
+
+    // Update the text of the corresponding map status labels based on the checkbox state
+    var mapStatusText = checkboxState ? 'Added' : 'Add';
     var matchingCheckboxes = document.querySelectorAll('input[type="checkbox"][value="' + checkboxValue + '"]');
     for (var i = 0; i < matchingCheckboxes.length; i++) {
       var matchingCheckboxIndex = Array.from(checkboxes).indexOf(matchingCheckboxes[i]);
