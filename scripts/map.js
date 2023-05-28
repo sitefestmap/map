@@ -190,7 +190,6 @@ map.on('load', () => {
             })
             
             directions.on('route', function() {
-                var routeColor = '#f84d4d';
                 var routeColor = '#ff6868';
                 var routeOutlineColor = '#111';
                 map.setPaintProperty('directions-route-line', 'line-color', routeColor, 'line-width', 8);
