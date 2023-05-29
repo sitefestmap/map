@@ -843,7 +843,18 @@ body.dark-mode {
   pointer-events: none;
   }
 
-
+.img5 {
+	vertical-align: middle;
+  display: block;
+  width: 90%;
+  height: 55%;
+  top: 42%;
+  left: 5%;
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 1;
+  position: relative;
+	}
 
 .slideshow-container {
 	top: 2vw;
@@ -860,6 +871,12 @@ body.dark-mode {
 }
 
 .slides-left.dark-mode {
+}
+
+.slides1-left {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  height: 100%;
 }
 
 .slides-middle {
@@ -1117,7 +1134,7 @@ body.dark-mode {
 }
 
 .slides-text-info-block {
-	font-size: 1.5vw;
+	font-size: 1.35vw;
 	width: 28%;
 	height: 45.5%;
 	top: 47.5%;
@@ -1535,7 +1552,10 @@ html, body {
 	fill: #f59b1c;
 }
 
-
+.studio-color-d-blue {
+	color: #005197;
+	fill: #005197;
+}
 
 
 
