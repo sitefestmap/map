@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const mySlides = document.querySelectorAll('.mySlides');
 	const slideColor = document.querySelectorAll('.slide-color');
 	const slideshow = document.querySelector('.slideshow-container');
+	const slidesText4 = document.querySelectorAll('.slides-text4');
 	const facebookIcon = document.querySelector('.facebook-icon');
 	const instagramIcon = document.querySelector('.instagram-icon');
 	const twitterIcon = document.querySelector('.twitter-icon');
@@ -142,6 +143,7 @@ function saveAndChangePage() {
 	  ...holdingpageIntro,
 	  ...holdingpageIntroP,
 	  ...numbertext,
+	  ...slidesText4,
 	];
 
   	  document.documentElement.classList.toggle('dark-mode');

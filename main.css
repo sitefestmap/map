@@ -687,6 +687,14 @@ body.dark-mode {
 	stroke: #009bca!important; 
 }
 
+.d-blue-line {
+	stroke: #005197!important; 
+}
+
+.yellow-line {
+	stroke: #f59b1c!important; 
+}
+
 .line0 {
 	top: 20vh;
 }
@@ -901,7 +909,7 @@ body.dark-mode {
 	font-family: tatebold;
 	text-align: left;
 	margin: 15% 15% 5% 15%;
-	font-size: 3vw;
+	font-size: 2.65vw;
 	user-select: text;
 }
 
@@ -909,15 +917,15 @@ body.dark-mode {
 	font-family: tatebold;
 	text-align: left;
 	margin: 0% 15% 2% 15%!important;
-	font-size: 2vw;
+	font-size: 1.9vw;
 	user-select: text;
 }
 
 .slides-text3 {
 	font-family: tatethin;
 	text-align: left;
-	margin: 10% 15% 0% 15%;
-	font-size: 2vw;
+	margin: 7% 15% 0% 15%;
+	font-size: 1.9vw;
 	user-select: text;
 }
 
@@ -932,8 +940,13 @@ body.dark-mode {
 	position: absolute;
 	user-select: text;
 	z-index: 2;
-	width: 63vw;
-	text-shadow: 0 0 2.5vh rgba(0, 0, 0, 0.5);
+	width: 53vw;
+	text-shadow: 0 0 2.5vh rgba(0, 0, 0, 1);
+	color: rgba(240, 75, 74, 1);
+}
+
+.slides-text4.dark-mode {
+	color: rgba(255, 36, 74, 1);
 }
 
 .slides-text5 {
@@ -951,17 +964,17 @@ body.dark-mode {
 }
 
 .slides-sideways-text-left {
-	left: -42%!important;
+	left: -28%!important;
 	top: -2%!important;
 }
 
 .slides-sideways-text-middle {
-	left: -8%!important;
+	left: 6%!important;
 	top: -2%!important;
 }
 
 .slides-sideways-text-right {
-	left: 25%!important;
+	left: 38%!important;
 	top: -2%!important;
 }
 
@@ -1089,7 +1102,7 @@ body.dark-mode {
 	width: 4%;
 }
 .studio-number-dot {
-	transform: translate(65%,5%);
+	transform: translate(60%,5%);
 	width: 12%;
 	height: 6%;
 	/*filter: drop-shadow(0 0 0.5vh white);*/
@@ -1137,29 +1150,12 @@ body.dark-mode {
 
 .custom-checkbox {
   position: absolute;
-  top: -5%;
+  top: -25%;
   left: 1vw;
   width: 1.5vw;
   height: 1.5vw;
   margin: 0;
 }
-
-/*.checkbox-label input[type="checkbox"] {
-  display: none;
-}
-
-.checkbox-label input[type="checkbox"]:checked + .custom-checkbox::before {
-  content: "\2713";
-  position: absolute;
-  top: 50%;
-  left: 45%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-family: Calibri, sans-serif;
-  font-size: 1.2vw;
-  line-height: 1;
-}
-*/
 
 .checkbox-label input[type="checkbox"] {
   display: none;
@@ -1200,7 +1196,7 @@ body.dark-mode {
 	font-style: italic;
 	bottom: 2%;
 	width: 30%;
-	font-size: 1.15vw;
+	font-size: 1vw;
 }
 
 .map-label-left {
@@ -1212,7 +1208,7 @@ body.dark-mode {
 }
 
 .map-label-right {
-	left: 65%;
+	left: 64%;
 }
 
 
@@ -1534,6 +1530,10 @@ html, body {
 	fill: #009bca;
 }
 
+.studio-color-yellow {
+	color: #f59b1c;
+	fill: #f59b1c;
+}
 
 
 
@@ -1622,24 +1622,24 @@ html, body {
 .slides-text1 {
 	text-align: left;
 	margin: 15% 15% 5% 15%;
-	font-size: 1.5vw;
+	font-size: 1.25vw;
 }
 
 .slides-text2 {
 	text-align: left;
 
 	margin: 0% 15% 2% 15%;
-	font-size: 1vw;
+	font-size: 0.85vw;
 }
 
 .slides-text3 {
 	text-align: left;
-	font-size: 0.9vw;
+	font-size: 0.85vw;
 }
 
 .slides-text4 {
 	font-size: 2.7vw;
-	width: 30vw;
+	width: 25vw;
 	transform: rotate(-90deg) translate(0%,-140%);
 }
 
@@ -1724,7 +1724,7 @@ html, body {
 }
 
 .custom-checkbox {
-  top: -10%;
+  top: -20%;
   left: 0.5vw;
   width: 0.7vw;
   height: 0.7vw;
@@ -1738,7 +1738,7 @@ html, body {
 }
 
 .slides-map-label {
-	font-size: 0.55vw;
+	font-size: 0.47vw;
 }
 
 .custom-checkmark.checked {
@@ -1912,25 +1912,25 @@ html, body {
 	font-family: tatebold;
 	text-align: left;
 	margin: 15% 15% 5% 15%;
-	font-size: 4vw;
+	font-size: 3.4vw;
 }
 
 .slides-text2 {
 	font-family: tatebold;
 	text-align: left;
 	margin: 0% 15% 2% 15%;
-	font-size: 2.5vw;
+	font-size: 2.25vw;
 }
 
 .slides-text3 {
 	font-family: tateregular;
 	text-align: left;
-	font-size: 2.5vw;
+	font-size: 2.25vw;
 }
 
 .slides-text4 {
 	font-size: 7vw;
-	width: 79vw;
+	width: 65vw;
 	transform: rotate(-90deg) translate(0%,-120%);
 }
 
@@ -1960,7 +1960,7 @@ html, body {
 }
 
 .slides-text-info-block {
-	font-size: 1.75vw;
+	font-size: 1.68vw;
 	top: 47%;
 	height: 47%;
 }
@@ -2031,14 +2031,14 @@ html, body {
 }
 
 .custom-checkbox {
-  top: -20%;
+  top: -40%;
   left: 1vw;
   width: 2.25vw;
   height: 2.25vw;
 }
 
 .slides-map-label {
-	font-size: 1.45vw;
+	font-size: 1.25vw;
 }
 
 .custom-checkmark.checked {
