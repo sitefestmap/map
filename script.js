@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const slideColor = document.querySelectorAll('.slide-color');
 	const slideshow = document.querySelector('.slideshow-container');
 	const slidesText4 = document.querySelectorAll('.slides-text4');
+	const slidesText15 = document.querySelectorAll('.slides-text15');
 	const facebookIcon = document.querySelector('.facebook-icon');
 	const instagramIcon = document.querySelector('.instagram-icon');
 	const twitterIcon = document.querySelector('.twitter-icon');
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const numbertext = document.querySelectorAll('.numbertext');
   const mapStatusLabels = document.querySelectorAll('.mapStatusLabel');
   const customCheckmarks = document.querySelectorAll('.custom-checkmark');
+  const neutralLine = document.querySelectorAll('.neutral-line');
 
 	let dotsContainer = document.querySelector('.slide-dots');
 	let dots = dotsContainer.getElementsByClassName('dot');
@@ -144,6 +146,8 @@ function saveAndChangePage() {
 	  ...holdingpageIntroP,
 	  ...numbertext,
 	  ...slidesText4,
+	  ...slidesText15,
+	  ...neutralLine,
 	];
 
   	  document.documentElement.classList.toggle('dark-mode');

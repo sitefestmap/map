@@ -695,6 +695,16 @@ body.dark-mode {
 	stroke: #f59b1c!important; 
 }
 
+.neutral-line {
+	stroke: rgba(240, 75, 74, 1)!important;
+	background-color: rgba(240, 75, 74, 1);
+}
+
+.neutral-line.dark-mode {
+	stroke: rgba(255, 36, 74, 1)!important;
+	background-color: rgba(255, 36, 74, 1);
+}
+
 .line0 {
 	top: 20vh;
 }
@@ -846,15 +856,26 @@ body.dark-mode {
 .img5 {
 	vertical-align: middle;
   display: block;
-  width: 90%;
+  width: 85%;
   height: 55%;
   top: 42%;
-  left: 5%;
+  left: 7.5%;
   object-fit: fill;
   pointer-events: none;
   z-index: 1;
   position: relative;
 	}
+
+.img6 {
+	vertical-align: middle;
+  display: block;
+  width: 82%;
+  height: 34.6%;
+  transform: translate(9%, 9%);
+  object-fit: fill;
+  pointer-events: none;
+  margin: 0;
+  }
 
 .slideshow-container {
 	top: 2vw;
@@ -920,6 +941,15 @@ body.dark-mode {
 	position: absolute;
 	z-index: 2;
 	opacity: 40%;
+}
+
+.slides-head {
+	position: absolute;
+	top: 7%;
+	left: 5%;
+	width: 60%;
+	height: 20%;
+
 }
 
 .slides-text1 {
@@ -1118,6 +1148,18 @@ body.dark-mode {
 	height: 5%;
 	width: 4%;
 }
+
+.slides-text15 {
+  color: rgba(240, 75, 74, 1);
+  font-family: tatebold;
+  font-size: 3vw;
+  margin: 0.5vw 0;
+}
+
+.slides-text15.dark-mode {
+	color: rgba(255, 36, 74, 1);
+}
+
 .studio-number-dot {
 	transform: translate(60%,5%);
 	width: 12%;
@@ -1153,6 +1195,24 @@ body.dark-mode {
 .block-right {
 	left: 69.4%;
 }
+
+.slides-text-info-block1 {
+	font-size: 1.35vw;
+	width: 25.75%;
+	height: 68%;
+	top: 25.5%;
+	position: absolute;
+	overflow: hidden;
+}
+
+.block-left1 {
+	left: 5%;
+}
+
+.block-middle1 {
+	left: 36%;
+}
+
 
 .checkbox-label {
   position: relative;
