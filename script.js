@@ -321,7 +321,7 @@ dotsContainer.addEventListener('click', function(event) {
   }
 });
 
-var swipeThreshold = 150; // Adjust this value as needed
+var swipeThreshold = 100; // Adjust this value as needed
 
 slideshow.addEventListener('touchstart', function(event) {
     touchstartX = event.changedTouches[0].screenX;
