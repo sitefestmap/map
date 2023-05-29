@@ -346,9 +346,9 @@ slideshow.addEventListener('mouseup', function(event) {
 }, false);
 
 function handleGesture() {
-    if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
+    if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold && event.changedTouches.length === 1) {
         plusSlides(1); // swipe left
-    } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
+    } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold && event.changedTouches.length === 1) {
         plusSlides(-1); // swipe right
     } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX < mousestartX) {
         plusSlides(1); // mouse swipe left
