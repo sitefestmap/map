@@ -43,3 +43,7 @@ export default defineConfig({
   },
 })
 ```
+
+## Static Assets
+
+[Vite Public Dir](https://vitejs.dev/guide/assets.html#the-public-directory)
