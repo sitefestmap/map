@@ -365,11 +365,15 @@ if (dotsContainer) {
 
 	slideshow.addEventListener('mousedown', function(event) {
 	        mousestartX = event.clientX;
+	        fingerDown++;
 	}, false);
 
 	slideshow.addEventListener('mouseup', function(event) {
 	        mouseendX = event.clientX;
 	        handleGesture();
+		      setTimeout(() => {
+		      	fingerDown = 0;
+		      }, 20);
 	}, false);
 }
 	function handleGesture() {

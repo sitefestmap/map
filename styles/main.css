@@ -968,7 +968,7 @@ body.dark-mode {
 	height: 100%;
 	position: absolute;
 	z-index: 2;
-	opacity: 40%;
+	opacity: 25%;
 }
 
 .slides-head {
