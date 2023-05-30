@@ -332,31 +332,28 @@ dotsContainer.addEventListener('click', function(event) {
 });
 
 var swipeThreshold = 100; // Adjust this value as needed
+var fingerDown = false;
 
 slideshow.addEventListener('touchstart', function(event) {
-    if (event.changedTouches.length === 1) {
+    if (fingerDown === false) {
         touchstartX = event.touches[0].screenX;
+        fingerDown = true;
     }
 }, false);
 
 slideshow.addEventListener('touchend', function(event) {
-    if (event.changedTouches.length === 1) {
         touchendX = event.changedTouches[0].screenX;
         handleGesture();
-    }
+        fingerDown = false;
 }, false);
 
 slideshow.addEventListener('mousedown', function(event) {
-    if (event.buttons === 1 && event.touches.length === 0) {
         mousestartX = event.clientX;
-    }
 }, false);
 
 slideshow.addEventListener('mouseup', function(event) {
-    if (event.buttons === 0 && event.touches.length === 0) {
         mouseendX = event.clientX;
         handleGesture();
-    }
 }, false);
 
 function handleGesture() {
