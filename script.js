@@ -344,7 +344,9 @@ slideshow.addEventListener('touchstart', function(event) {
 slideshow.addEventListener('touchend', function(event) {
         touchendX = event.changedTouches[0].screenX;
         handleGesture();
-        fingerDown = false;
+	      setTimeout(() => {
+	      	fingerDown = false;
+	      }, 100);
 }, false);
 
 slideshow.addEventListener('mousedown', function(event) {
