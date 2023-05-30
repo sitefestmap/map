@@ -338,15 +338,16 @@ slideshow.addEventListener('touchstart', function(event) {
     if (fingerDown === false) {
         touchstartX = event.touches[0].screenX;
         fingerDown = true;
+        console.log("fingerDown", fingerDown);
     }
 }, false);
 
 slideshow.addEventListener('touchend', function(event) {
         touchendX = event.changedTouches[0].screenX;
         handleGesture();
-	      setTimeout(() => {
-	      	fingerDown = false;
-	      }, 100);
+	      fingerDown = false;
+	      console.log("fingerDown", fingerDown);
+	      
 }, false);
 
 slideshow.addEventListener('mousedown', function(event) {
