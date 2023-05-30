@@ -334,25 +334,33 @@ dotsContainer.addEventListener('click', function(event) {
 var swipeThreshold = 100; // Adjust this value as needed
 
 slideshow.addEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
+    if (event.touches.length === 1) {
+        touchstartX = event.changedTouches[0].screenX;
+    }
 }, false);
 
 slideshow.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    handleGesture();
+    if (event.touches.length === 0) {
+        touchendX = event.changedTouches[0].screenX;
+        handleGesture();
+    }
 }, false);
 
 slideshow.addEventListener('mousedown', function(event) {
-    mousestartX = event.clientX;
+    if (event.buttons === 1) {
+        mousestartX = event.clientX;
+    }
 }, false);
 
 slideshow.addEventListener('mouseup', function(event) {
-    mouseendX = event.clientX;
-    handleGesture();
+    if (event.buttons === 0) {
+        mouseendX = event.clientX;
+        handleGesture();
+    }
 }, false);
 
 function handleGesture() {
-	if (event.changedTouches.length === 1 && event.touches.length === 1) {
+	  if (event.touches.length === 1) {
     if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
         plusSlides(1); // swipe left
     } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
