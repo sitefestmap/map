@@ -1164,7 +1164,7 @@ body.dark-mode {
 
 
 .slides-text13 {
-	font-size: 1vw;
+	font-size: 1.4vw;
 }
 
 .slides-text14 {
@@ -1856,9 +1856,9 @@ html, body {
 }
 
 .slide-social-icons {
-	width: 0.75vw;
+	width: 0.85vw;
 	left: -0.95vw;
-	top: -0.075vw;
+	top: -0.05vw;
 }
 
 .custom-checkbox {
@@ -2162,7 +2162,7 @@ html, body {
 
 .slide-social-icons {
 	width: 2.5vw;
-	left: -2.6vw;
+	left: -2.55vw;
 	top: -0.2vw;
 }
 
