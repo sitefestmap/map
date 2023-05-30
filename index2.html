@@ -4,8 +4,12 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	  <link rel="stylesheet" type="text/css" href="styles/main.css">
     <script src="scripts/script.js" type="module"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" rel="stylesheet" type="text/css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+    <link href="styles/map.css" rel="stylesheet">
 	</head>
     <body>
       <main class="main2">
@@ -36,11 +40,15 @@
                     <div class="mooncover light-mode"></div>
                 </div>
             </button>
-
           </div> 
-              <div id="map"></div>
-              <!-- Delete soon -->
-              <script type="module" src="scripts/ol.js"></script>
-      </main>
+          <div id="filter-group" class="filter-group">
+            <h2>Demo Checkboxes</h2>
+          </div> 
+          <div id="map"></div>
+        </main>
+        <script src="scripts/map.js" type="module"></script>
+      <!--
+      <script type="module" src="scripts/ol.js"></script>
+      -->
     </body>
   </html>

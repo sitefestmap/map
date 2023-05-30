@@ -1,31 +1,56 @@
-/**
- * @TODO
-    * popups : add artist info for each studio.
-    * checkboxes : event listeners to add initial artist checkboxes into studio checkboxes.
- */
-
 import mapboxgl from 'mapbox-gl';
 // 'mapbox/mapbox-gl-directions' in head to prevent new dep conflict erro
-
+ 
 import multi_polygon from '../data/multipolygon.js';
 import studios from '../data/studios.js';
 import studio_markers from '../data/studio-markers.js';
 import routes from '../data/routes.js';
 import styles from '../styles/styles.js';
-
+ 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0dGhpYXN3ZXN0b24iLCJhIjoiY2xlNHIya255MDJqaTNwbXY5NjUzdWgzYSJ9.af8OJ3gOuIiOvKkYllihGQ';
+
+const bounds = [
+    [-2.325, 51.6875], // bottom left coordinates
+    [-2.10000, 51.7900]  // top right coordinates
+];
+
+const zoom = 11.5;
+const center = [-2.181235, 51.736333]
 
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/matthiasweston/clhuty4u3020p01r0f1wb6lwo',
-    center: [-2.181235, 51.736333],
-    zoom: 11.5
+    center: center,
+    zoom: zoom,
+   // maxBounds: bounds,
+   // scrollZoom: true
 });
+
+// Set the map bounds
+map.fitBounds(bounds, {
+    padding: 0 // Specify padding in pixels to add around the bounds
+});
+ 
+// @note Directions API : request up to 25 waypoints only
+map.addControl(
+    new mapboxgl.GeolocateControl({
+        positionOptions: {
+            // max zoom
+            enableHighAccuracy: false
+        },
+        fitBoundsOptions: {
+            maxZoom: zoom // edit this
+        },
+        trackUserLocation: true,
+        showUserHeading: true
+    }),
+    'top-left',
+);
 
 const filterGroup = document.getElementById('filter-group');
 
 studio_markers.forEach(({studio, color, lngLat}) => {
-    const popup = new mapboxgl.Popup({ offset: 25,}).setHTML(studio)
+    const popup = new mapboxgl.Popup({ offset: 25, className: 'sitefest-popup'}).setHTML(studio)
 
     new mapboxgl.Marker({
         color: color,
@@ -39,22 +64,6 @@ studio_markers.forEach(({studio, color, lngLat}) => {
 
 map.on('load', () => {
     map.addControl(new mapboxgl.NavigationControl(), 'top-left');
-
-    // @note Directions API : request up to 25 waypoints only
-    map.addControl(
-        new mapboxgl.GeolocateControl({
-            positionOptions: {
-                // max zoom
-                // enableHighAccuracy: true
-            },
-            fitBoundsOptions: {
-                maxZoom: 12 // edit this
-            },
-            trackUserLocation: true,
-            showUserHeading: true,
-        }),
-        'top-left'
-    );
 
     const directions =
         new MapboxDirections({
@@ -76,26 +85,33 @@ map.on('load', () => {
         'top-left'
     );
 
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var userLongitude = position.coords.longitude;
+        var userLatitude = position.coords.latitude;
+        directions.setOrigin([userLongitude, userLatitude]);
+        directions.setDestination([userLongitude, userLatitude]);
+    })
+
     map.addSource('multi_polygon', {
         type: 'geojson',
         data: multi_polygon
-      });
+    });
 
-      multi_polygon.features.forEach((feature) => {
+    multi_polygon.features.forEach((feature) => {
         const layerID = `polygon-${feature.properties.color}`
         map.addLayer({
-          id: layerID,
-          type: 'fill',
-          source: 'multi_polygon',
-          paint: {
+        id: layerID,
+        type: 'fill',
+        source: 'multi_polygon',
+        paint: {
             'fill-color': ['get', 'color'],
             'fill-opacity': 0.1
-          },
-          layout: {}
+        },
+        layout: {}
         });
-      });
+    });
 
-      map.addLayer({
+    map.addLayer({
         'id': 'poly-outline',
         'type': 'line',
         'source': 'multi_polygon',
@@ -105,7 +121,7 @@ map.on('load', () => {
             'line-width': 2
         }
     });
-   
+
     map.addSource('routes', {
         'type': 'geojson',
         'data': routes
@@ -166,7 +182,7 @@ map.on('load', () => {
                     // 'text-color': ['get', 'color'],
                     'text-color': '#111'
                 },
-               'filter': ['==', 'icon', symbol]
+            'filter': ['==', 'icon', symbol]
             });
 
             map.setLayoutProperty(layerID, 'visibility', 'none');
@@ -181,13 +197,15 @@ map.on('load', () => {
             label.setAttribute('for', layerID);
             label.textContent = symbol;
             filterGroup.appendChild(label);
-           
-            navigator.geolocation.getCurrentPosition(function(position) {
+        
+        /*  navigator.geolocation.getCurrentPosition(function(position) {
                 var userLongitude = position.coords.longitude;
                 var userLatitude = position.coords.latitude;
                 directions.setOrigin([userLongitude, userLatitude]);
                 directions.setDestination([userLongitude, userLatitude]);
+            
             })
+            */
             
             directions.on('route', function() {
                 var routeColor = '#ff6868';
@@ -198,15 +216,13 @@ map.on('load', () => {
 
             input.addEventListener('change', (e) => {
                 if (e.target.checked) {
-                   map.setLayoutProperty(layerID, 'visibility', 'visible');
-                   directions.addWaypoint(0, waypoint);
+                map.setLayoutProperty(layerID, 'visibility', 'visible');
+                directions.addWaypoint(0, waypoint);
                 } else {
-                   map.setLayoutProperty(layerID, 'visibility', 'none')
-                   directions.removeWaypoint(0);
+                map.setLayoutProperty(layerID, 'visibility', 'none')
+                directions.removeWaypoint(0);
                 }
             })
-
-            // TODO:  Event listeners to add artist checkboxes to related studio checkbox
         }
     }
 });
