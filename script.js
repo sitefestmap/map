@@ -334,13 +334,13 @@ dotsContainer.addEventListener('click', function(event) {
 var swipeThreshold = 100; // Adjust this value as needed
 
 slideshow.addEventListener('touchstart', function(event) {
-    if (event.touches.length === 1) {
+    if (event.changedTouches.length === 1) {
         touchstartX = event.touches[0].screenX;
     }
 }, false);
 
 slideshow.addEventListener('touchend', function(event) {
-    if (event.touches.length === 0) {
+    if (event.changedTouches.length === 1) {
         touchendX = event.changedTouches[0].screenX;
         handleGesture();
     }
