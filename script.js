@@ -332,22 +332,19 @@ dotsContainer.addEventListener('click', function(event) {
 });
 
 var swipeThreshold = 100; // Adjust this value as needed
-var fingerDown = false;
+var fingerDown = 0;
 
 slideshow.addEventListener('touchstart', function(event) {
-    if (fingerDown === false) {
         touchstartX = event.touches[0].screenX;
-        fingerDown = true;
-        console.log("fingerDown", fingerDown);
-    }
+        fingerDown++;
 }, false);
 
 slideshow.addEventListener('touchend', function(event) {
         touchendX = event.changedTouches[0].screenX;
         handleGesture();
-	      fingerDown = false;
-	      console.log("fingerDown", fingerDown);
-	      
+	      setTimeout(() => {
+	      	fingerDown = 0;
+	      }, 20);
 }, false);
 
 slideshow.addEventListener('mousedown', function(event) {
@@ -360,7 +357,8 @@ slideshow.addEventListener('mouseup', function(event) {
 }, false);
 
 function handleGesture() {
-
+	if (fingerDown === 1) {
+		fingerDown === 0;
     if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
         plusSlides(1); // swipe left
     } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
@@ -370,6 +368,7 @@ function handleGesture() {
     } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX > mousestartX) {
         plusSlides(-1); // mouse swipe right
     }
+ 	}
 }
 
 if (window.location.pathname === '/index.html') {
