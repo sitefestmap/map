@@ -352,15 +352,17 @@ slideshow.addEventListener('mouseup', function(event) {
 }, false);
 
 function handleGesture() {
-    if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold && event.changedTouches.length === 1) {
+	if (event.changedTouches.length === 1 && event.touches.length === 1) {
+    if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
         plusSlides(1); // swipe left
-    } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold && event.changedTouches.length === 1) {
+    } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
         plusSlides(-1); // swipe right
     } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX < mousestartX) {
         plusSlides(1); // mouse swipe left
     } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX > mousestartX) {
         plusSlides(-1); // mouse swipe right
     }
+  }
 }
 
 if (window.location.pathname === '/index.html') {
