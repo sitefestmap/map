@@ -6,7 +6,6 @@
          url('/fonts/tate_bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -15,7 +14,6 @@
          url('/fonts/tate_bold_italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -24,7 +22,6 @@
          url('/fonts/tate_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -33,7 +30,6 @@
          url('/fonts/vwhead-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -42,7 +38,6 @@
          url('/fonts/vwhead-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -51,7 +46,6 @@
          url('/fonts/vwtext-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -60,7 +54,6 @@
          url('/fonts/vwtext-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -69,7 +62,6 @@
          url('/fonts/tate_thin_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 /* Webkit-based browsers */
@@ -133,7 +125,7 @@ body.dark-mode {
 }
 
 .background {
-    background-image: url('Content/background.png');
+    background-image: url('/background.png');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -165,6 +157,7 @@ body.dark-mode {
 	height: 100%;
 }
 
+/*
 .logo-glow {
 	top: 0;
 	position: absolute;
@@ -178,6 +171,7 @@ body.dark-mode {
 .logo-glow.dark-mode {
 	background-image: url('Content/logo_glow.svg');
 }
+*/
 
 .site-fest-div {
 	width: 30vh;
@@ -1510,9 +1504,12 @@ button, a, input {
 	width: 100%;
 	position: absolute;
 }
+
+/*
 .social-icons path {
 	
 }
+*/
 
 .social-icons-div a{
 	position: relative;
