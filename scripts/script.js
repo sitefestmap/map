@@ -44,15 +44,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const mapStatusLabels = document.querySelectorAll('.mapStatusLabel');
   const customCheckmarks = document.querySelectorAll('.custom-checkmark');
   const neutralLine = document.querySelectorAll('.neutral-line');
+	const dotsContainer = document.querySelector('.slide-dots');
 
-	let dotsContainer = document.querySelector('.slide-dots');
-	let dots = dotsContainer.getElementsByClassName('dot');
 	let slideIndex = 1;
 	let touchstartX = 0;
 	let touchendX = 0;
 	let isDarkMode;
 	let mousestartX, mouseendX;
 	let activeIndex = 0;
+
+
 
   var checkboxes = document.getElementsByClassName("checkbox");
 
@@ -206,50 +207,58 @@ function saveAndChangePage() {
 	}
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName('mySlides');
-  if (n > slides.length) { slideIndex = 1; }    
-  if (n < 1) { slideIndex = slides.length; }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';  
-  }
-  slides[slideIndex - 1].style.display = 'grid';  
-  dots[slideIndex - 1].className += ' active';
-  dots[slideIndex - 1].style.backgroundColor = '#333d3d';
+	if (dotsContainer) {
+		let dots = dotsContainer.getElementsByClassName('dot');
+		if (slideshow) {
+	  let i;
+	  let slides = document.getElementsByClassName('mySlides');
+	  if (n > slides.length) { slideIndex = 1; }    
+	  if (n < 1) { slideIndex = slides.length; }
+	  for (i = 0; i < slides.length; i++) {
+	    slides[i].style.display = 'none';  
+	  }
+	  slides[slideIndex - 1].style.display = 'grid';  
+	  dots[slideIndex - 1].className += ' active';
+	  dots[slideIndex - 1].style.backgroundColor = '#333d3d';
 
-	const activeIndex = slideIndex - 1;
-	const range = 5; // Number of dots to include in the scale effect range
-	//console.log('slideIndex:', slideIndex);
-	//console.log('activeIndex:', activeIndex);
-	updateDots(activeIndex);
+		const activeIndex = slideIndex - 1;
+		const range = 5; // Number of dots to include in the scale effect range
+		//console.log('slideIndex:', slideIndex);
+		//console.log('activeIndex:', activeIndex);
+		updateDots(activeIndex);
+		}
+	}
 }
 
 function updateDots(activeIndex) {
-  const range = 5; // Number of dots to include in the scale effect range
+	if (dotsContainer) {
+		let dots = dotsContainer.getElementsByClassName('dot');
+	  const range = 5; // Number of dots to include in the scale effect range
 
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '');
-    dots[i].style.transform = '';
-    dots[i].style.boxShadow = '';
+	  for (let i = 0; i < dots.length; i++) {
+	    dots[i].className = dots[i].className.replace(' active', '');
+	    dots[i].style.transform = '';
+	    dots[i].style.boxShadow = '';
 
-    if (Math.abs(i - activeIndex) <= range) {
-      const scale = 2 - Math.abs(i - activeIndex) * 0.17;
-      const boxShadowOpacity = 1 - Math.abs(i - activeIndex) * 0.2;
-      const boxShadowColor = isDarkMode ? 'rgba(255, 36, 74' : 'rgba(250, 92, 79';
+	    if (Math.abs(i - activeIndex) <= range) {
+	      const scale = 2 - Math.abs(i - activeIndex) * 0.17;
+	      const boxShadowOpacity = 1 - Math.abs(i - activeIndex) * 0.2;
+	      const boxShadowColor = isDarkMode ? 'rgba(255, 36, 74' : 'rgba(250, 92, 79';
 
-      dots[i].style.transform = `scale(${scale})`;
-      dots[i].style.boxShadow = `inset 0 0 0 100px ${boxShadowColor}, ${boxShadowOpacity})`;
-    }
+	      dots[i].style.transform = `scale(${scale})`;
+	      dots[i].style.boxShadow = `inset 0 0 0 100px ${boxShadowColor}, ${boxShadowOpacity})`;
+	    }
 
-    if (isDarkMode) {
-      dots[i].style.backgroundColor = '#333d3d';
-    } else {
-      dots[i].style.backgroundColor = '#fff';
-    }
-  }
+	    if (isDarkMode) {
+	      dots[i].style.backgroundColor = '#333d3d';
+	    } else {
+	      dots[i].style.backgroundColor = '#fff';
+	    }
+	  }
 
-  dots[activeIndex].classList.add('active');
-  dots[activeIndex].style.backgroundColor = isDarkMode ? '#333d3d' : '#fff';
+	  dots[activeIndex].classList.add('active');
+	  dots[activeIndex].style.backgroundColor = isDarkMode ? '#333d3d' : '#fff';
+	}
 }
 
 //  wrappers.forEach(wrapper => {
@@ -297,6 +306,7 @@ function updateDots(activeIndex) {
 
 	window.addEventListener('scroll', lazyLoad);
 
+	if (prev.length > 0 && next.length > 0) {
 	  document.querySelector(".prev").addEventListener("click", function() {
 	    plusSlides(-1);
 	  });
@@ -304,6 +314,7 @@ function updateDots(activeIndex) {
 	  document.querySelector(".next").addEventListener("click", function() {
 	    plusSlides(1);
 	  });
+	}
 
 showSlides(slideIndex);
 
@@ -315,63 +326,68 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
-dotsContainer.addEventListener('click', function(event) {
-  if (event.target.classList.contains('slide-dots')) {
-    var clickX = event.clientX;
-    var dotsArray = Array.from(dotsContainer.getElementsByClassName('dot'));
-    var closestDot = dotsArray.reduce(function(prevDot, currentDot) {
-      var prevRect = prevDot.getBoundingClientRect();
-      var currentRect = currentDot.getBoundingClientRect();
-      var prevDistance = Math.abs(prevRect.left - clickX);
-      var currentDistance = Math.abs(currentRect.left - clickX);
-      return prevDistance < currentDistance ? prevDot : currentDot;
-    });
-    var dotIndex = Array.prototype.indexOf.call(dots, closestDot);
-    showSlides(slideIndex = dotIndex + 1);
-  }
-});
+if (dotsContainer) {
 
-var swipeThreshold = 100; // Adjust this value as needed
-var fingerDown = 0;
+  let dots = dotsContainer.getElementsByClassName('dot');
 
-slideshow.addEventListener('touchstart', function(event) {
-        touchstartX = event.touches[0].screenX;
-        fingerDown++;
-}, false);
+	dotsContainer.addEventListener('click', function(event) {
+	  if (event.target.classList.contains('slide-dots')) {
+	    var clickX = event.clientX;
+	    var dotsArray = Array.from(dotsContainer.getElementsByClassName('dot'));
+	    var closestDot = dotsArray.reduce(function(prevDot, currentDot) {
+	      var prevRect = prevDot.getBoundingClientRect();
+	      var currentRect = currentDot.getBoundingClientRect();
+	      var prevDistance = Math.abs(prevRect.left - clickX);
+	      var currentDistance = Math.abs(currentRect.left - clickX);
+	      return prevDistance < currentDistance ? prevDot : currentDot;
+	    });
+	    var dotIndex = Array.prototype.indexOf.call(dots, closestDot);
+	    showSlides(slideIndex = dotIndex + 1);
+	  }
+	});
 
-slideshow.addEventListener('touchend', function(event) {
-        touchendX = event.changedTouches[0].screenX;
-        handleGesture();
-	      setTimeout(() => {
-	      	fingerDown = 0;
-	      }, 20);
-}, false);
 
-slideshow.addEventListener('mousedown', function(event) {
-        mousestartX = event.clientX;
-}, false);
+	var swipeThreshold = 100; // Adjust this value as needed
+	var fingerDown = 0;
 
-slideshow.addEventListener('mouseup', function(event) {
-        mouseendX = event.clientX;
-        handleGesture();
-}, false);
+	slideshow.addEventListener('touchstart', function(event) {
+	        touchstartX = event.touches[0].screenX;
+	        fingerDown++;
+	}, false);
 
-function handleGesture() {
-	if (fingerDown === 1) {
-		fingerDown === 0;
-    if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
-        plusSlides(1); // swipe left
-    } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
-        plusSlides(-1); // swipe right
-    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX < mousestartX) {
-        plusSlides(1); // mouse swipe left
-    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX > mousestartX) {
-        plusSlides(-1); // mouse swipe right
-    }
- 	}
+	slideshow.addEventListener('touchend', function(event) {
+	        touchendX = event.changedTouches[0].screenX;
+	        handleGesture();
+		      setTimeout(() => {
+		      	fingerDown = 0;
+		      }, 20);
+	}, false);
+
+	slideshow.addEventListener('mousedown', function(event) {
+	        mousestartX = event.clientX;
+	}, false);
+
+	slideshow.addEventListener('mouseup', function(event) {
+	        mouseendX = event.clientX;
+	        handleGesture();
+	}, false);
 }
+	function handleGesture() {
+		if (fingerDown === 1) {
+			fingerDown === 0;
+	    if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
+	        plusSlides(1); // swipe left
+	    } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
+	        plusSlides(-1); // swipe right
+	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX < mousestartX) {
+	        plusSlides(1); // mouse swipe left
+	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX > mousestartX) {
+	        plusSlides(-1); // mouse swipe right
+	    }
+	 	}
+	}
 
-if (window.location.pathname === '/index.html') {
+//if (window.location.pathname === '/index.html') {
 //	document.addEventListener('wheel', function(e) {
 	  // Check if the delta value is positive or negative to determine the scroll direction
 //	  if (e.deltaY > 0) {
@@ -382,7 +398,7 @@ if (window.location.pathname === '/index.html') {
 //	    plusSlides(-1);
 //	  }
 //	});
-}
+//}
 
 console.log("All cookies:", document.cookie);
 // Add event listeners to each checkbox
