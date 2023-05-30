@@ -696,12 +696,12 @@ body.dark-mode {
 }
 
 .neutral-line {
-	stroke: rgba(240, 75, 74, 1)!important;
+	stroke: rgba(240, 75, 74, 1);
 	background-color: rgba(240, 75, 74, 1);
 }
 
 .neutral-line.dark-mode {
-	stroke: rgba(255, 36, 74, 1)!important;
+	stroke: rgba(255, 36, 74, 1);
 	background-color: rgba(255, 36, 74, 1);
 }
 
@@ -858,7 +858,7 @@ body.dark-mode {
   display: block;
   width: 85%;
   height: 55%;
-  top: 42%;
+  top: 42.5%;
   left: 7.5%;
   object-fit: fill;
   pointer-events: none;
@@ -874,8 +874,42 @@ body.dark-mode {
   transform: translate(9%, 9%);
   object-fit: fill;
   pointer-events: none;
-  margin: 0;
+  margin: 0 0!important;
   }
+
+.img7 {
+	vertical-align: middle;
+  display: block;
+  width: 83%;
+  height: 34.6%;
+  transform: translate(0%, 20%);
+  object-fit: fill;
+  pointer-events: none;
+  margin: 0 0!important;
+  }
+
+.img8 {
+	vertical-align: middle;
+  display: block;
+  width: 160%;
+  height: 55%;
+  top: 36%;
+  left: 16.5%;
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 1;
+  position: relative;
+	}
+
+.img9 {
+	vertical-align: middle;
+  display: block;
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+  position: relative;
+	}
 
 .slideshow-container {
 	top: 2vw;
@@ -946,7 +980,7 @@ body.dark-mode {
 .slides-head {
 	position: absolute;
 	top: 7%;
-	left: 5%;
+	left: 5.5%;
 	width: 60%;
 	height: 20%;
 
@@ -999,15 +1033,14 @@ body.dark-mode {
 .slides-text5 {
   font-family: tateregular;
   text-align: left;
-  font-size: 2.8vw;
+  font-size: 1vw;
   transform-origin: top left;
-  transform: rotate(-90deg) translate(0%,10%);
+  transform: rotate(-90deg) translate(0%,-10%);
   margin: 0;
   white-space: nowrap;
   position: absolute;
-  color: white;
   user-select: text;
-  z-index: 2;
+  z-index: 3;
 }
 
 .slides-sideways-text-left {
@@ -1152,13 +1185,31 @@ body.dark-mode {
 .slides-text15 {
   color: rgba(240, 75, 74, 1);
   font-family: tatebold;
-  font-size: 3vw;
+  font-size: 2.5vw;
   margin: 0.5vw 0;
 }
 
 .slides-text15.dark-mode {
 	color: rgba(255, 36, 74, 1);
 }
+
+.slides-text16 {
+	font-family: tatebold;
+	margin: 1% 0;
+	font-size: 1.35vw;
+	user-select: text;
+}
+
+.slides-text17 {
+  color: rgba(240, 75, 74, 1);
+  fill: rgba(240, 75, 74, 1);
+}
+
+.slides-text17.dark-mode {
+	color: rgba(255, 36, 74, 1)!important;
+	fill: rgba(255, 36, 74, 1);
+}
+
 
 .studio-number-dot {
 	transform: translate(60%,5%);
@@ -1206,7 +1257,7 @@ body.dark-mode {
 }
 
 .block-left1 {
-	left: 5%;
+	left: 5.5%;
 }
 
 .block-middle1 {
@@ -1688,7 +1739,7 @@ html, body {
 }
 
 .slide-dots {
-	scale: 0.75;
+	scale: 0.6;
 }
 
 .end-links {
@@ -1724,9 +1775,7 @@ html, body {
 }
 
 .slides-text5 {
-	font-size: 1.4vw;
-	top: 67.5%;
-	left: 30%;
+	font-size: 0.5vw;
 }
 
 .slides-text6 {
@@ -1746,6 +1795,10 @@ html, body {
 }
 
 .slides-text-info-block {
+	font-size: 0.65vw;
+}
+
+.slides-text-info-block1 {
 	font-size: 0.65vw;
 }
 
@@ -1795,6 +1848,14 @@ html, body {
 	font-size: 0.475vw;
 	top: 91.25%;
 	left: 3.55%;
+}
+
+.slides-text15 {
+  font-size: 1.2vw;
+}
+
+.slides-text16 {
+	font-size: 0.65vw;
 }
 
 .slide-social-icons {
@@ -1899,9 +1960,6 @@ html, body {
 .caption-text {
   font-size: 1.5vh;
   top: 91vw;
-}
-
-.slide-dots {
 }
 
 .slideshow-container {
@@ -2015,9 +2073,7 @@ html, body {
 }
 
 .slides-text5 {
-	font-size: 4.2vw;
-	top: 67.5%;
-	left: 27%;
+	font-size: 1.25vw;
 }
 
 .slides-text6 {
@@ -2045,6 +2101,10 @@ html, body {
 	height: 47%;
 }
 
+.slides-text-info-block1 {
+	font-size: 1.8vw;
+}
+
 .slides-text12 {
 	font-size: 2.5vw;
 	top: 95%;
@@ -2053,6 +2113,15 @@ html, body {
 .slides-text13 {
 	font-size: 1.75vw;
 }
+
+.slides-text15 {
+	font-size: 3vw;
+}
+
+.slides-text16 {
+	font-size: 1.75vw;
+}
+
 
 .line6 {
 	height: 5%;
@@ -2080,7 +2149,7 @@ html, body {
   cursor: pointer;
   height: 1vw;
   width: 1vw;
-  margin: 0 2px;
+  margin: 0;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -2126,7 +2195,12 @@ html, body {
   font-size: 2vw;
 }
 
-
+.slide-dots {
+	scale: 1.2;
+	width: 100%;
+	height: 2vh;
+	top: 2%;
+}
 
 
 
@@ -2196,9 +2270,6 @@ html, body {
 .text-4 {
 	font-size: 2.5vh;
 	margin: 5vh;
-}
-
-.slide-dots {
 }
 
 
@@ -2318,10 +2389,6 @@ html, body {
 	font-size: 1.5vw;
 }
 
-.dot {
-  margin: 0 0px;
-}
-
 .slideshow-container {
   margin: 1vh auto;
 }
@@ -2330,7 +2397,12 @@ html, body {
 	top: 40%;
 }
 
-
+.slide-dots {
+	scale: 0.9;
+	width: 105%;
+	height: 2vh;
+	top: 2%;
+}
 
 
 

@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const slideshow = document.querySelector('.slideshow-container');
 	const slidesText4 = document.querySelectorAll('.slides-text4');
 	const slidesText15 = document.querySelectorAll('.slides-text15');
+	const slidesText17 = document.querySelectorAll('.slides-text17');
 	const facebookIcon = document.querySelector('.facebook-icon');
 	const instagramIcon = document.querySelector('.instagram-icon');
 	const twitterIcon = document.querySelector('.twitter-icon');
@@ -147,7 +148,7 @@ function saveAndChangePage() {
 	  ...numbertext,
 	  ...slidesText4,
 	  ...slidesText15,
-	  ...neutralLine,
+	  ...slidesText17,
 	];
 
   	  document.documentElement.classList.toggle('dark-mode');
@@ -180,9 +181,11 @@ function saveAndChangePage() {
 			  	moonCover.classList.remove('light-mode');
 			  });
 	  		moonSpots.forEach(function(spot) {
-			 spot.classList.remove('light-mode');
+			  	spot.classList.remove('light-mode');
 		    });
-
+	  		neutralLine.forEach(function(neutralLine) {
+			 		neutralLine.classList.add('dark-mode');
+		    });
 		  } else {
 			  darkModeP.forEach(function(darkModeP) {
 			  	darkModeP.textContent = 'Light Mode:';
@@ -194,7 +197,10 @@ function saveAndChangePage() {
 			  	moonCover.classList.add('light-mode');
 			  });
 	  		moonSpots.forEach(function(spot) {
-			 spot.classList.add('light-mode');
+			 		spot.classList.add('light-mode');
+		    });
+	  		neutralLine.forEach(function(neutralLine) {
+			 		neutralLine.classList.remove('dark-mode');
 		    });
 		  }
 	}
