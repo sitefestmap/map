@@ -335,7 +335,7 @@ var swipeThreshold = 100; // Adjust this value as needed
 
 slideshow.addEventListener('touchstart', function(event) {
     if (event.touches.length === 1) {
-        touchstartX = event.changedTouches[0].screenX;
+        touchstartX = event.touches[0].screenX;
     }
 }, false);
 
@@ -347,20 +347,20 @@ slideshow.addEventListener('touchend', function(event) {
 }, false);
 
 slideshow.addEventListener('mousedown', function(event) {
-    if (event.buttons === 1) {
+    if (event.buttons === 1 && event.touches.length === 0) {
         mousestartX = event.clientX;
     }
 }, false);
 
 slideshow.addEventListener('mouseup', function(event) {
-    if (event.buttons === 0) {
+    if (event.buttons === 0 && event.touches.length === 0) {
         mouseendX = event.clientX;
         handleGesture();
     }
 }, false);
 
 function handleGesture() {
-	  if (event.touches.length === 1) {
+
     if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
         plusSlides(1); // swipe left
     } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
@@ -370,7 +370,6 @@ function handleGesture() {
     } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX > mousestartX) {
         plusSlides(-1); // mouse swipe right
     }
-  }
 }
 
 if (window.location.pathname === '/index.html') {
