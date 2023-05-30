@@ -125,7 +125,7 @@ body.dark-mode {
 }
 
 .background {
-    background-image: url('/background.png');
+    background-image: url('/background.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -271,7 +271,7 @@ body.dark-mode {
 
 .dark-mode-toggle-btn p {
 	color: white;
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	white-space: nowrap;
 	transform: translate(-50%, -50%);
 	top: 12.5%;
@@ -571,7 +571,7 @@ body.dark-mode {
 
 .intro2 {
 	font-size: 2.5vh;
-	font-family: tateregular;
+	font-family: tateregular,sans-serif;
 	text-align: center;
 /*	text-shadow: 0 0 0.5vh black;*/
   text-shadow:
@@ -591,7 +591,7 @@ body.dark-mode {
 
 .text-1 {
 	font-size: calc((3vh + 3vw)/2);
-	font-family: 'vw_textregular';
+	font-family: 'vw_textregular',sans-serif;
 	text-align: left;
 /*	transform: translateY(-90%); 
 	text-shadow: 0 0 1vh #454545;*/
@@ -603,7 +603,7 @@ body.dark-mode {
 
 .text-2 {
 	font-size: calc((4vh + 4vw)/2);
-	font-family: 'vw_headbold';
+	font-family: 'vw_headbold',sans-serif;
 	text-align: left;
 /*	transform: translateY(-90%); 
 	text-shadow: 0 0 1vh #454545;*/
@@ -619,7 +619,7 @@ body.dark-mode {
 
 .text-3 {
 	font-size: 3vh;
-	font-family: tateregular;
+	font-family: tateregular,sans-serif;
 	text-align: center;
 	white-space: nowrap;
 	width: 80%;
@@ -629,7 +629,7 @@ body.dark-mode {
 
 .text-4 {
 	font-size: 5vh;
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	text-align: center;
 /*	transform: translateY(-90%); 
 	text-shadow: 0 0 1vh #454545;*/
@@ -981,7 +981,7 @@ body.dark-mode {
 }
 
 .slides-text1 {
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	text-align: left;
 	margin: 15% 15% 5% 15%;
 	font-size: 2.65vw;
@@ -989,7 +989,7 @@ body.dark-mode {
 }
 
 .slides-text2 {
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	text-align: left;
 	margin: 0% 15% 2% 15%!important;
 	font-size: 1.9vw;
@@ -997,7 +997,7 @@ body.dark-mode {
 }
 
 .slides-text3 {
-	font-family: tatethin;
+	font-family: tatethin,sans-serif;
 	text-align: left;
 	margin: 7% 15% 0% 15%;
 	font-size: 1.9vw;
@@ -1005,7 +1005,7 @@ body.dark-mode {
 }
 
 .slides-text4 {
-	font-family: tateregular;
+	font-family: tateregular,sans-serif;
 	text-align: right;
 	font-size: 5.5vw;
 	transform-origin: bottom right;
@@ -1025,7 +1025,7 @@ body.dark-mode {
 }
 
 .slides-text5 {
-  font-family: tateregular;
+  font-family: tateregular,sans-serif;
   text-align: left;
   font-size: 1vw;
   transform-origin: top left;
@@ -1053,7 +1053,7 @@ body.dark-mode {
 }
 
 .slides-text6 {
-	font-family: tatethin;
+	font-family: tatethin,sans-serif;
 	text-align: center;
 	margin: 0;
 	font-size: 1.45vw;
@@ -1066,14 +1066,14 @@ body.dark-mode {
 }
 
 .slides-text7 {
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	margin: 1% 0;
 	font-size: 1.5vw;
 	user-select: text;
 }
 
 .slides-text8 {
-  font-family: tateregular;
+  font-family: tateregular,sans-serif;
   margin: 0 0;
   user-select: text;
 
@@ -1121,21 +1121,21 @@ body.dark-mode {
 }
 
 .slides-text9 {
-	font-family: 'vw_textregular';
+	font-family: 'vw_textregular',sans-serif;
 	margin: 0;
 	margin: 2.5% 0;
 	user-select: text;
 }
 
 .slides-text10 {
-	font-family: tatethin;
+	font-family: tatethin,sans-serif;
 	margin: 0;
 	font-style: italic;
 	user-select: text;
 }
 
 .slides-text11 { /*NOTHING ON THIS*/
-	font-family: tateregular;
+	font-family: tateregular,sans-serif;
 	text-align: right;
 	font-weight: bold;
 	margin: 0 0;
@@ -1149,7 +1149,7 @@ body.dark-mode {
 }
 
 .slides-text12 {
-	font-family: tatethin;
+	font-family: tatethin,sans-serif;
 	text-align: right;
 	font-weight: bold;
 	margin: 0 2.8%;
@@ -1169,7 +1169,7 @@ body.dark-mode {
 
 .slides-text14 {
 	font-size: 1vw;
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	position: absolute;
 	top: 91.35%;
 	height: 5%;
@@ -1178,7 +1178,7 @@ body.dark-mode {
 
 .slides-text15 {
   color: rgba(240, 75, 74, 1);
-  font-family: tatebold;
+  font-family: tatebold,sans-serif;
   font-size: 2.5vw;
   margin: 0.5vw 0;
 }
@@ -1188,7 +1188,7 @@ body.dark-mode {
 }
 
 .slides-text16 {
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	margin: 1% 0;
 	font-size: 1.35vw;
 	user-select: text;
@@ -1314,7 +1314,7 @@ body.dark-mode {
 .slides-map-label {
 	position: absolute;
 	text-align: right;
-	font-family: tatethin;
+	font-family: tatethin,sans-serif;
 	font-style: italic;
 	bottom: 2%;
 	width: 30%;
@@ -1387,7 +1387,7 @@ body.dark-mode {
   padding: 8px 12px;
   position: absolute;
   top: 64vw;
-  font-family: 'tatebolditalic';
+  font-family: 'tatebolditalic',sans-serif;
   width: 100%;
   text-align: center;
   /*text-shadow: 0 0 1vh black;*/
@@ -1404,7 +1404,7 @@ body.dark-mode {
   margin: 2% 2.5%;
   position: absolute;
   top: 0;
-  font-family: 'tateregular';
+  font-family: 'tateregular',sans-serif;
   background-color: rgba(240, 75, 74, 1);
   z-index: 3;
   
@@ -2044,21 +2044,21 @@ html, body {
 }
 
 .slides-text1 {
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	text-align: left;
 	margin: 15% 15% 5% 15%;
 	font-size: 3.4vw;
 }
 
 .slides-text2 {
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	text-align: left;
 	margin: 0% 15% 2% 15%;
 	font-size: 2.25vw;
 }
 
 .slides-text3 {
-	font-family: tateregular;
+	font-family: tateregular,sans-serif;
 	text-align: left;
 	font-size: 2.25vw;
 }
@@ -2224,7 +2224,7 @@ html, body {
 	top: 5vh;
 	width: 10vw;
 	position: absolute;
-	font-family: tatebold;
+	font-family: tatebold,sans-serif;
 	font-size: 2.5vh;
 }
 
