@@ -28,7 +28,7 @@ const map = new mapboxgl.Map({
 
 // Set the map bounds
 map.fitBounds(bounds, {
-    padding: 0
+    padding: 0 // Specify padding in pixels to add around the bounds
 });
  
 // @note Directions API : request up to 25 waypoints only
@@ -39,7 +39,7 @@ map.addControl(
             enableHighAccuracy: false
         },
         fitBoundsOptions: {
-            maxZoom: zoom
+            maxZoom: zoom // edit this
         },
         trackUserLocation: true,
         showUserHeading: true
@@ -47,7 +47,7 @@ map.addControl(
     'top-left',
 );
 
-// const filterGroup = document.getElementById('filter-group');
+const filterGroup = document.getElementById('filter-group');
 
 studio_markers.forEach(({studio, color, lngLat}) => {
     const popup = new mapboxgl.Popup({ offset: 25, className: 'sitefest-popup'}).setHTML(studio)
@@ -59,6 +59,7 @@ studio_markers.forEach(({studio, color, lngLat}) => {
     .setLngLat(lngLat)
     .setPopup(popup)
     .addTo(map)
+    // add Listeners for hover?
 })
 
 map.on('load', () => {
@@ -130,6 +131,8 @@ map.on('load', () => {
         'type': 'symbol',
         'source': 'routes',
         'layout': {
+            // 'icon-image': ['get', 'icon'],
+            // 'icon-size': 1.1,
             'text-field': ['get', 'title'],
             'icon-allow-overlap': true,
             'text-allow-overlap': true,
@@ -151,86 +154,66 @@ map.on('load', () => {
         'data': studios
     });
 
-    const layerIDsToMatch = [
-        'John St Studios', 
-        'Weven', 
-        'Cacao Circle', 
-        'High St', 
-        'Morven St Chloe', 
-        'Frogmarsh Mill'
-    ];
+    const layerIDsToMatch = ['poi-john-st-studios', 'poi-weven', 'poi-marven-st-chloe'];
 
+    // Retrieve the cookie value from index page
     const cookies = document.cookie.split(';');
-    const cookieValues = {};
+    const cookieValue = cookies
+        .map(cookie => cookie.trim().split('='))
+      //  .find(([name, value]) => layerIDsToMatch.includes(name) && value === 'true' || value === 'false')
+        .find(([name, value]) => layerIDsToMatch.includes(name) && value === 'true')
+        ?.[1];
 
-    for (const layerID of layerIDsToMatch) {
-        const latestCookie = cookies
-            .map(cookie => cookie.trim().split('='))
-            .find(([name]) => name === layerID);
-        
-        if (latestCookie) {
-            cookieValues[layerID] = latestCookie[1];
-        }
-    }
-    
-    for(const feature of studios.features) {
-        const symbol = feature.properties.icon;
-        const layerID = `${symbol}`;
+    if (cookieValue) {
+        for(const feature of studios.features) {
+            const symbol = feature.properties.icon;
+            //const waypoint = feature.geometry.coordinates;
+            const layerID = `poi-${symbol}`;
+
         if (layerIDsToMatch.includes(layerID)) {
             const waypoint = feature.geometry.coordinates;
-            const cookieValue = cookieValues[layerID];
 
-            if (cookieValue === 'true') {
-                const sourceExists = map.getSource(layerID) !== undefined;
-                const layerExists = map.getLayer(layerID) !== undefined;
+            map.addLayer({
+                'id': layerID,
+                'type': 'symbol',
+                'source': 'studios',
+                'layout': {
+                    'icon-image': `${symbol}`,
+                    'icon-size': 0.9,
+                    'icon-allow-overlap': true,
+                    'text-allow-overlap': true,
+                    'text-field': ['get', 'title'],
+                    'text-font': [
+                        'Open Sans Semibold',
+                        'Arial Unicode MS Bold'
+                    ],
+                    'text-offset': [0, 0.2],
+                    'text-anchor': 'top',
+                    'text-size': 17
+                },
+                'paint': {
+                    // 'text-color': ['get', 'color'],
+                    'text-color': '#111'
+                },
+            'filter': ['==', 'icon', symbol]
+            });
 
-                if (!sourceExists) {
-                    map.addSource(layerID, {
-                        type: 'geojson',
-                        data: studios
-                    });
-                }
+            map.setLayoutProperty(layerID, 'visibility', 'visible');
+            directions.addWaypoint(0, waypoint);
 
-                if (!layerExists) {
-                    map.addLayer({
-                        'id': layerID,
-                        'type': 'symbol',
-                        'source': 'studios',
-                        'layout': {
-                            'icon-image': `${symbol}`,
-                            'icon-size': 1.1,
-                            'icon-allow-overlap': true,
-                            'text-allow-overlap': true,
-                            'text-field': ['get', 'title'],
-                            'text-font': [
-                                'Open Sans Semibold',
-                                'Arial Unicode MS Bold'
-                            ],
-                            'text-offset': [0, 0.2],
-                            'text-anchor': 'top',
-                            'text-size': 17
-                        },
-                        'paint': {
-                            'text-color': '#111'
-                        },
-                    'filter': ['==', 'icon', symbol]
-                    });
-
-                    map.setLayoutProperty(layerID, 'visibility', 'visible');
-                    directions.addWaypoint(0, waypoint);
-
-                    directions.on('route', function() {
-                        var routeColor = '#ff6868';
-                        var routeOutlineColor = '#111';
-                        map.setPaintProperty('directions-route-line', 'line-color', routeColor, 'line-width', 8);
-                        map.setPaintProperty('directions-route-line-alt', 'line-color', routeOutlineColor);                
-                    });
-                } 
-                else {
-                    map.removeLayer(layerID);
-                    map.removeSource(layerID);
-                }
-            }
+            directions.on('route', function() {
+                var routeColor = '#ff6868';
+                var routeOutlineColor = '#111';
+                map.setPaintProperty('directions-route-line', 'line-color', routeColor, 'line-width', 8);
+                map.setPaintProperty('directions-route-line-alt', 'line-color', routeOutlineColor);                
+            });
         }
+       
+      /* else {
+        map.removeLayer(layerID);
+        map.removeSource(layerID);
+        }*/
+        
     }
+}
 });

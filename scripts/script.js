@@ -547,7 +547,4 @@ function getCheckboxState(checkboxValue) {
 
 
 
-
-
-
 });

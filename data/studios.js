@@ -6,7 +6,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "john-st-studios",
+                "icon": "John St Studios",
                 "title": "John St Studios"
             },
             "geometry": {
@@ -17,7 +17,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "weven",
+                "icon": "Weven",
                 "title": "Weven"
             },
             "geometry": {
@@ -28,7 +28,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "cacao-circle",
+                "icon": "Cacao Circle",
                 "title": "Cacao Circle"
             },
             "geometry": {
@@ -73,8 +73,8 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "marven-st-chloe",
-                "title": "Marven St Chloe"
+                "icon": "Morven St Chloe",
+                "title": "Morven St Chloe"
             },
             "geometry": {
                 "type": "Point",
@@ -84,7 +84,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "frogmarsh",
+                "icon": "Frogmarsh Mill",
                 "title": "Frogmarsh Mill"
             },
             "geometry": {
