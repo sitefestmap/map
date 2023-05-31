@@ -36,16 +36,10 @@ const studio_markers = [
     },
     // Route 2 Nailsworth (Mid blue)
     {
-        studio: `<h2>135 Bath Road</h2>
+        studio: `<h2>Bath Road</h2>
         <p>...more info</p>`,
         color: mid_blue,
-        lngLat: waypoints.bath_rd_135
-    },
-    {
-        studio: `<h2>143 Bath Road</h2>
-        <p>...more info</p>`,
-        color: mid_blue,
-        lngLat: waypoints.bath_rd_143
+        lngLat: waypoints.bath_rd
     },
     {
         studio: `<h2>Marven St Chloe</h2>
@@ -85,7 +79,7 @@ const studio_markers = [
     },
     // Route 3 VALE (BLUE)
     {
-        studio: `<h2>Walled Garden</h2>
+        studio: `<h2>Walled Garden Pop Up Studio</h2>
         <p>...more info</p>`,
         color: dark_blue,
         lngLat: waypoints.walled_garden
@@ -113,7 +107,7 @@ const studio_markers = [
         studio: `<h2>Jack Duplock</h2>
         <p>...more info</p>`,
         color: orange,
-        lngLat: waypoints.jack_duplop
+        lngLat: waypoints.jack_duplock
     },
     {
         studio: `<h2>Stroud Pottery</h2>
@@ -189,6 +183,12 @@ const studio_markers = [
         lngLat: waypoints.piccadilly_mill_east
     },
     {
+        studio: `<h2>Piccadilly Mill West</h2>
+        <p>...more info</p>`,
+        color: purple,
+        lngLat: waypoints.piccadilly_mill_west
+    },
+    {
         studio: `<h2>Lower St</h2>
         <p>...more info</p>`,
         color: purple,
@@ -227,17 +227,18 @@ const studio_markers = [
     },
     // Route 6 Golden Valley (Green)
     {
-        studio: `<h2>Trixter House</h2>
+        studio: `<h2>Trixter Studios</h2>
         <p>...more info</p>`,
         color: green,
         lngLat: waypoints.trickster_house
     },
-    {
+  /*  {
         studio: `<h2>London Road</h2>
         <p>...more info</p>`,
         color: green,
         lngLat: waypoints.london_rd
     },
+    */
     {
         studio: `<h2>Griffin Mill</h2>
         <p>...more info</p>`,

@@ -52,22 +52,11 @@ const studios = {
             "type": "Feature",
             "properties": {
                 "icon": "Bath Rd",
-                "title": "135 Bath Road",
+                "title": "Bath Road",
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": waypoints.bath_rd_135
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "icon": "bath-rd-143",
-                "title": "143 Bath Road"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": waypoints.bath_rd_143
+                "coordinates": waypoints.bath_rd
             }
         },
         {
@@ -140,7 +129,7 @@ const studios = {
             "type": "Feature",
             "properties": {
                 "icon": "museum-in-the-park",
-                "title": "Walled Garden Pop-up Studio",
+                "title": "Museum In The Park",
             },
             "geometry": {
                 "type": "Point",
@@ -173,7 +162,7 @@ const studios = {
             "type": "Feature",
             "properties": {
                 "icon": "landsdown-hall",
-                "title": "LandsdownHall",
+                "title": "Landsdown Hall",
             },
             "geometry": {
                 "type": "Point",
@@ -210,7 +199,7 @@ const studios = {
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": waypoints.jack_duplop
+                "coordinates": waypoints.jack_duplock
             }
         },
         {
@@ -261,7 +250,7 @@ const studios = {
             "type": "Feature",
             "properties": {
                 "icon": "hawkwood",
-                "title": "Hawkwood CFT",
+                "title": "Hawkwood",
             },
             "geometry": {
                 "type": "Point",
@@ -294,7 +283,7 @@ const studios = {
             "type": "Feature",
             "properties": {
                 "icon": "melvyn-warren-smith",
-                "title": "Melvyn Warren Smith",
+                "title": "Melvyn Warren-Smith",
             },
             "geometry": {
                 "type": "Point",
@@ -316,11 +305,44 @@ const studios = {
             "type": "Feature",
             "properties": {
                 "icon": "lower-st",
+                "title": "Piccadilly Mill East",
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": waypoints.piccadilly_mill_east
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "icon": "lower-st",
+                "title": "Piccadilly Mill West",
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": waypoints.piccadilly_mill_west
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "icon": "lower-st",
                 "title": "Lower St",
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": waypoints.lower_st
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "icon": "11-horns-rd",
+                "title": "Caroline Jamfrey",
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": waypoints.caroline_jamfrey
             }
         },
         {
@@ -367,7 +389,7 @@ const studios = {
                 "coordinates": waypoints.trickster_house
             }
         },
-        {
+       /* {
             "type": "Feature",
             "properties": {
                 "icon": "daisy-murdoch",
@@ -377,7 +399,7 @@ const studios = {
                 "type": "Point",
                 "coordinates": waypoints.london_rd
             }
-        },
+        }, */
         {
             "type": "Feature",
             "properties": {

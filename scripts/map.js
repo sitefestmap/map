@@ -156,9 +156,41 @@ map.on('load', () => {
         'Weven', 
         'Cacao Circle', 
         'High St',
-        'Bath Rd', 
+        'Bath Road', 
         'Morven St Chloe', 
-        'Frogmarsh Mill'
+        'Frogmarsh Mill',
+        'Article Studio',
+        'The Nutshell Studios',
+        'The Hide',
+        'Three Storeys',
+        'Museum In The Park',
+        'Studio Tuft',
+        'Houseworkwork',
+        'Landsdown Hall',
+        'May Derbyshire',
+        'Mark Derbyshire',
+        'Jack Duplock',
+        'Stroud Pottery',
+        'Lucy Inder',
+        'Sam Marsh',
+        'Andy Bradley',
+        'Hawkwood',
+        'The Camp',
+        'Studio 3',
+        'Melvyn Warren-Smith',
+        'Kath Williams',
+        'Piccadilly Mill East',
+        'Piccadilly Mill West',
+        'Lower St',
+        'Caroline Jamfrey',
+        'Nigel Noyes',
+        'Clare Bonnet',
+        'Robert Garland',
+        'Trixter Studios',
+        'Griffin Mill',
+        'Polly Lyster',
+        'Victoria Works',
+        'Sarah Maingot'
     ];
 
     const cookies = document.cookie.split(';');
@@ -175,7 +207,8 @@ map.on('load', () => {
     }
     
     for(const feature of studios.features) {
-        const symbol = feature.properties.icon;
+      //  const symbol = feature.properties.icon;
+      const symbol = feature.properties.title;
         const layerID = `${symbol}`;
         if (layerIDsToMatch.includes(layerID)) {
             const waypoint = feature.geometry.coordinates;
@@ -199,6 +232,7 @@ map.on('load', () => {
                         'source': 'studios',
                         'layout': {
                             'icon-image': `${symbol}`,
+                            //'icon-image': `John St Studios`,
                             'icon-size': 1.1,
                             'icon-allow-overlap': true,
                             'text-allow-overlap': true,
