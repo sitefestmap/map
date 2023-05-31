@@ -155,7 +155,8 @@ map.on('load', () => {
         'John St Studios', 
         'Weven', 
         'Cacao Circle', 
-        'High St', 
+        'High St',
+        'Bath Rd', 
         'Morven St Chloe', 
         'Frogmarsh Mill'
     ];

@@ -39,7 +39,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "high-st",
+                "icon": "High St",
                 "title": "High St",
                 "color": "#111"
             },
@@ -51,7 +51,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "bath-rd",
+                "icon": "Bath Rd",
                 "title": "135 Bath Road",
             },
             "geometry": {
