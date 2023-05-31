@@ -1123,7 +1123,7 @@ body.dark-mode {
 .slides-text9 {
 	font-family: 'vw_textregular',sans-serif;
 	margin: 0;
-	margin: 2.5% 0;
+	margin: 1% 0;
 	user-select: text;
 }
 
@@ -1164,7 +1164,7 @@ body.dark-mode {
 
 
 .slides-text13 {
-	font-size: 1vw;
+	font-size: 1.4vw;
 }
 
 .slides-text14 {
@@ -1221,7 +1221,7 @@ body.dark-mode {
 }
 
 .slides-text-info-block {
-	font-size: 1.35vw;
+	font-size: 1.33vw;
 	width: 28%;
 	height: 45.5%;
 	top: 47.5%;
@@ -1792,7 +1792,7 @@ html, body {
 }
 
 .slides-text-info-block {
-	font-size: 0.65vw;
+	font-size: 0.625vw;
 }
 
 .slides-text-info-block1 {
@@ -1856,9 +1856,9 @@ html, body {
 }
 
 .slide-social-icons {
-	width: 0.75vw;
+	width: 0.85vw;
 	left: -0.95vw;
-	top: -0.075vw;
+	top: -0.05vw;
 }
 
 .custom-checkbox {
@@ -2162,7 +2162,7 @@ html, body {
 
 .slide-social-icons {
 	width: 2.5vw;
-	left: -2.6vw;
+	left: -2.55vw;
 	top: -0.2vw;
 }
 
