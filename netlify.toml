@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/index2.html"
+  to = "/map"
+  status = 301
