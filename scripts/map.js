@@ -166,7 +166,6 @@ map.on('load', () => {
     }
     
     for(const feature of studios.features) {
-        const light_layer = feature.properties.icon;
         const symbol = feature.properties.title;
         const layerID = `${symbol}`;
         if (layerIDsToMatch.includes(layerID)) {
@@ -190,8 +189,6 @@ map.on('load', () => {
                         'type': 'symbol',
                         'source': 'studios',
                         'layout': {
-                            //'icon-image': `${symbol}`,
-                            // id of image loaded into mapbox studio
                             'icon-image': 'light',
                             'icon-size': 1.1,
                             'icon-allow-overlap': true,

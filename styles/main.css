@@ -1617,15 +1617,6 @@ html, body {
   height: 100%;
 }
 
-#map {
-  position: absolute;
-  top: 20vh;
-  left: 10%;
-  width: 80%;
-  height: 80vh;
-  align-items: center;
-}
-
 .slide-color {
 	background-color: rgba(240, 75, 74, 1);
 }
@@ -2011,12 +2002,6 @@ html, body {
 
 .dark-mode-toggle-btn {
 	transform: translateX(8%) scale(0.75);
-}
-
-#map {
-  width: 100%;
-  left: 0;
-  height: 90vh;
 }
 
 .prev, .next {
