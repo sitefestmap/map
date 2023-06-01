@@ -125,7 +125,7 @@ body.dark-mode {
 }
 
 .background {
-    background-image: url('/background.jpg');
+    /*background-image: url('/background.jpg');*/
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -478,12 +478,12 @@ body.dark-mode {
 	height: 55vh;
 }
 
-.text-with-outline {
+/*.text-with-outline {
   text-shadow:
     -1px -1px 0 white,  
     1px -1px 0 white,
     -1px 1px 0 white,
-    1px 1px 0 white; 
+    1px 1px 0 white;
 }
 
 .text-with-outline.dark-mode {
@@ -492,7 +492,7 @@ body.dark-mode {
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black; 
-}
+}*/
 
 .holdingpage-intro {
 	background-color: rgba(240, 75, 74, 0.25);
@@ -554,11 +554,11 @@ body.dark-mode {
 	text-align: center;
 /*	transform: translateY(-90%); 
 	text-shadow: 0 0 0.5vh black;*/
-	  text-shadow:
+	  /*text-shadow:
     -1px -1px 0 black,  
     1px -1px 0 black,
     -1px 1px 0 black,
-    1px 1px 0 black;
+    1px 1px 0 black;*/
 	width: 90%;
 	margin: 5vh auto;
 	color: #FFE86E;
@@ -574,11 +574,11 @@ body.dark-mode {
 	font-family: tateregular,sans-serif;
 	text-align: center;
 /*	text-shadow: 0 0 0.5vh black;*/
-  text-shadow:
+  /*text-shadow:
     -1px -1px 0 black,  
     1px -1px 0 black,
     -1px 1px 0 black,
-    1px 1px 0 black; 
+    1px 1px 0 black; */
 	width: 90%;
 	margin: 5vh auto;
 	color: #FFE86E;
@@ -650,9 +650,9 @@ body.dark-mode {
 
 .lines-rect {
 	box-shadow: 0 0 3vh white;
-	filter: drop-shadow(0 0 0.5vh black);
+	filter: drop-shadow(0 0 0.5vh rgba(0,0,0,0.5));
 	fill: none;
-	height: 2.5%;
+	height: 0.5%;
 	stroke: #fff;
 	stroke-width: 0.25vh;
 }
@@ -662,7 +662,7 @@ body.dark-mode {
 }
 
 .lines-rect.dark-mode {
-  filter: drop-shadow(0 0 0.5vh white);
+  filter: drop-shadow(0 0 0.5vh rgba(255,255,255,0.75));
 }
 
 .purple-line {
@@ -1925,8 +1925,8 @@ html, body {
 .introhead {
 	font-size: 6vh;
 	text-align: center;
-/*	transform: translateY(-0%);*/
-	text-shadow: 0 0 1vh #454545;
+/*	transform: translateY(-0%);
+	text-shadow: 0 0 1vh #454545;*/
 	margin: 2.5vh auto;
 
 }
