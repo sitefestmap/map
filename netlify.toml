@@ -1,0 +1,16 @@
+# Redirect with a 301
+[[redirects]]
+from = "/index.html"
+to = "/"
+status = 301
+
+[[redirects]]
+from = "/index2.html"
+to = "/map"
+status = 301
+
+# Delete the /index2.html above if change source file to map.html
+[[redirects]]
+from = "/map.html"
+to = "/map"
+status = 301
