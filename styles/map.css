@@ -8,6 +8,12 @@
     --text: hsl(0 0% 95%);
 }
 
+.container {
+    position: relative;
+    margin: 1rem auto;
+    max-width: 80rem;
+}
+
 #map {
     position: absolute;
     top: 20vh;
@@ -16,7 +22,12 @@
     height: 80vh;
     align-items: center;
 }
+
 @media only screen and (max-width: 1200px) {
+    .container {
+        margin: 0;
+    }
+
     #map {
         width: 100%;
         left: 0;
