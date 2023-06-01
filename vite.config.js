@@ -4,7 +4,6 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
-    //polyfillDynamicImport: true,
     rollupOptions: {
       // root: './src/pages'
       input: {
