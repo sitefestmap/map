@@ -5,6 +5,7 @@ import multi_polygon from '../data/multipolygon.js';
 import studios from '../data/studios.js';
 import studio_markers from '../data/studio-markers.js';
 import routes from '../data/routes.js';
+import layerIDsToMatch from '../data/layers-to-match.js';
 import styles from '../styles/styles.js';
  
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0dGhpYXN3ZXN0b24iLCJhIjoiY2xlNHIya255MDJqaTNwbXY5NjUzdWgzYSJ9.af8OJ3gOuIiOvKkYllihGQ';
@@ -99,14 +100,14 @@ map.on('load', () => {
     multi_polygon.features.forEach((feature) => {
         const layerID = `polygon-${feature.properties.color}`
         map.addLayer({
-        id: layerID,
-        type: 'fill',
-        source: 'multi_polygon',
-        paint: {
-            'fill-color': ['get', 'color'],
-            'fill-opacity': 0.1
-        },
-        layout: {}
+            id: layerID,
+            type: 'fill',
+            source: 'multi_polygon',
+            paint: {
+                'fill-color': ['get', 'color'],
+                'fill-opacity': 0.1
+            },
+            layout: {}
         });
     });
 
@@ -151,48 +152,6 @@ map.on('load', () => {
         'data': studios
     });
 
-    const layerIDsToMatch = [
-        'John St Studios', 
-        'Weven', 
-        'Cacao Circle', 
-        'High St',
-        'Bath Road', 
-        'Morven St Chloe', 
-        'Frogmarsh Mill',
-        'Article Studio',
-        'The Nutshell Studios',
-        'The Hide',
-        'Three Storeys',
-        'Museum In The Park',
-        'Studio Tuft',
-        'Houseworkwork',
-        'Landsdown Hall',
-        'May Derbyshire',
-        'Mark Derbyshire',
-        'Jack Duplock',
-        'Stroud Pottery',
-        'Lucy Inder',
-        'Sam Marsh',
-        'Andy Bradley',
-        'Hawkwood',
-        'The Camp',
-        'Studio 3',
-        'Melvyn Warren-Smith',
-        'Kath Williams',
-        'Piccadilly Mill East',
-        'Piccadilly Mill West',
-        'Lower St',
-        'Caroline Jamfrey',
-        'Nigel Noyes',
-        'Clare Bonnet',
-        'Robert Garland',
-        'Trixter Studios',
-        'Griffin Mill',
-        'Polly Lyster',
-        'Victoria Works',
-        'Sarah Maingot'
-    ];
-
     const cookies = document.cookie.split(';');
     const cookieValues = {};
 
@@ -207,8 +166,8 @@ map.on('load', () => {
     }
     
     for(const feature of studios.features) {
-      //  const symbol = feature.properties.icon;
-      const symbol = feature.properties.title;
+        const light_layer = feature.properties.icon;
+        const symbol = feature.properties.title;
         const layerID = `${symbol}`;
         if (layerIDsToMatch.includes(layerID)) {
             const waypoint = feature.geometry.coordinates;
@@ -231,8 +190,9 @@ map.on('load', () => {
                         'type': 'symbol',
                         'source': 'studios',
                         'layout': {
-                            'icon-image': `${symbol}`,
-                            //'icon-image': `John St Studios`,
+                            //'icon-image': `${symbol}`,
+                            // id of image loaded into mapbox studio
+                            'icon-image': 'light',
                             'icon-size': 1.1,
                             'icon-allow-overlap': true,
                             'text-allow-overlap': true,
@@ -248,7 +208,7 @@ map.on('load', () => {
                         'paint': {
                             'text-color': '#111'
                         },
-                    'filter': ['==', 'icon', symbol]
+                    'filter': ['==', 'title', symbol]
                     });
 
                     map.setLayoutProperty(layerID, 'visibility', 'visible');

@@ -6,7 +6,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "John St Studios",
+                "icon": "light",
                 "title": "John St Studios"
             },
             "geometry": {
@@ -17,7 +17,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "Weven",
+                "icon": "light",
                 "title": "Weven"
             },
             "geometry": {
@@ -28,7 +28,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "Cacao Circle",
+                "icon": "light",
                 "title": "Cacao Circle"
             },
             "geometry": {
@@ -39,7 +39,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "High St",
+                "icon": "light",
                 "title": "High St",
                 "color": "#111"
             },
@@ -51,7 +51,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "Bath Rd",
+                "icon": "light",
                 "title": "Bath Road",
             },
             "geometry": {
@@ -62,7 +62,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "Morven St Chloe",
+                "icon": "light",
                 "title": "Morven St Chloe"
             },
             "geometry": {
@@ -73,7 +73,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "Frogmarsh Mill",
+                "icon": "light",
                 "title": "Frogmarsh Mill"
             },
             "geometry": {
@@ -84,7 +84,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "article",
+                "icon": "light",
                 "title": "Article Studio",
             },
             "geometry": {
@@ -95,7 +95,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "the-hide",
+                "icon": "light",
                 "title": "The Hide",
             },
             "geometry": {
@@ -106,7 +106,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "nutshell",
+                "icon": "light",
                 "title": "The Nutshell Studios",
             },
             "geometry": {
@@ -117,7 +117,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "three-storeys",
+                "icon": "light",
                 "title": "Three Storeys",
             },
             "geometry": {
@@ -128,7 +128,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "museum-in-the-park",
+                "icon": "light",
                 "title": "Museum In The Park",
             },
             "geometry": {
@@ -139,7 +139,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "studio-tuft",
+                "icon": "light",
                 "title": "Studio Tuft",
             },
             "geometry": {
@@ -150,7 +150,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "houseworkwork",
+                "icon": "light",
                 "title": "Houseworkwork",
             },
             "geometry": {
@@ -161,7 +161,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "landsdown-hall",
+                "icon": "light",
                 "title": "Landsdown Hall",
             },
             "geometry": {
@@ -172,7 +172,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "may-derbyshire",
+                "icon": "light",
                 "title": "May Derbyshire",
             },
             "geometry": {
@@ -183,7 +183,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "mark-derbyshire",
+                "icon": "light",
                 "title": "Mark Derbyshire",
             },
             "geometry": {
@@ -194,7 +194,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "jack-duplock",
+                "icon": "light",
                 "title": "Jack Duplock",
             },
             "geometry": {
@@ -205,7 +205,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "stroud-pottery",
+                "icon": "light",
                 "title": "Stroud Pottery",
             },
             "geometry": {
@@ -216,7 +216,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "lucy-inder",
+                "icon": "light",
                 "title": "Lucy Inder",
             },
             "geometry": {
@@ -227,7 +227,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "sam-marsh",
+                "icon": "light",
                 "title": "Sam Marsh",
             },
             "geometry": {
@@ -238,7 +238,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "andy-bradley",
+                "icon": "light",
                 "title": "Andy Bradley",
             },
             "geometry": {
@@ -249,7 +249,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "hawkwood",
+                "icon": "light",
                 "title": "Hawkwood",
             },
             "geometry": {
@@ -260,7 +260,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "the-camp",
+                "icon": "light",
                 "title": "The Camp",
             },
             "geometry": {
@@ -271,7 +271,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "studio-3",
+                "icon": "light",
                 "title": "Studio 3",
             },
             "geometry": {
@@ -282,7 +282,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "melvyn-warren-smith",
+                "icon": "light",
                 "title": "Melvyn Warren-Smith",
             },
             "geometry": {
@@ -293,7 +293,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "kath-williams",
+                "icon": "light",
                 "title": "Kath Williams",
             },
             "geometry": {
@@ -304,7 +304,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "lower-st",
+                "icon": "light",
                 "title": "Piccadilly Mill East",
             },
             "geometry": {
@@ -315,7 +315,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "lower-st",
+                "icon": "light",
                 "title": "Piccadilly Mill West",
             },
             "geometry": {
@@ -326,7 +326,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "lower-st",
+                "icon": "light",
                 "title": "Lower St",
             },
             "geometry": {
@@ -337,7 +337,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "11-horns-rd",
+                "icon": "light",
                 "title": "Caroline Jamfrey",
             },
             "geometry": {
@@ -348,7 +348,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "11-horns-rd",
+                "icon": "light",
                 "title": "Nigel Noyes",
             },
             "geometry": {
@@ -359,7 +359,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "17-horns-rd",
+                "icon": "light",
                 "title": "Clare Bonnet",
             },
             "geometry": {
@@ -370,7 +370,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "robert-garland",
+                "icon": "light",
                 "title": "Robert Garland",
             },
             "geometry": {
@@ -381,7 +381,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "trixter-studios", // also trickster house
+                "icon": "light",
                 "title": "Trixter Studios",
             },
             "geometry": {
@@ -392,7 +392,7 @@ const studios = {
        /* {
             "type": "Feature",
             "properties": {
-                "icon": "daisy-murdoch",
+                "icon": "light",
                 "title": "London Road Studios",
             },
             "geometry": {
@@ -403,7 +403,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "griffin-mill",
+                "icon": "light",
                 "title": "Griffin Mill",
             },
             "geometry": {
@@ -414,7 +414,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "polly-lyster",
+                "icon": "light",
                 "title": "Polly Lyster",
             },
             "geometry": {
@@ -425,7 +425,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "victoria-works",
+                "icon": "light",
                 "title": "Victoria Works",
             },
             "geometry": {
@@ -436,7 +436,7 @@ const studios = {
         {
             "type": "Feature",
             "properties": {
-                "icon": "sarah-maingot",
+                "icon": "light",
                 "title": "Sarah Maingot",
             },
             "geometry": {
