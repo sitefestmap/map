@@ -136,3 +136,23 @@ div.sitefest-popup {
     color: #fff;
 }
   
+.dark-mode .mapboxgl-ctrl-geocoder--icon-close {
+    background-color: #333 !important;
+    color: #fff;
+}
+
+.dark-mode .mapboxgl-ctrl-geocoder--icon-close:hover {
+    background-color: #666 !important;
+}
+
+.dark-mode .mapboxgl-ctrl-geocoder--button {
+    background-color: #333 !important;
+    color: #fff;
+}
+
+
+.dark-mode .mapboxgl-ctrl-geocoder--icon,
+.dark-mode .mapboxgl-ctrl-geocoder--icon:hover
+ {
+    fill: lightgrey !important;
+}
