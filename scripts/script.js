@@ -41,9 +41,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	const holdingpageIntroP = document.querySelectorAll('.holdingpage-introp');
 	const wrappers = document.querySelectorAll('.slides-text8-overspill');
 	const numbertext = document.querySelectorAll('.numbertext');
-  const mapStatusLabels = document.querySelectorAll('.mapStatusLabel');
-  const customCheckmarks = document.querySelectorAll('.custom-checkmark');
-  const neutralLine = document.querySelectorAll('.neutral-line');
+	const wrapper = document.querySelectorAll('.wrapper'); 
+  	const mapStatusLabels = document.querySelectorAll('.mapStatusLabel');
+  	const customCheckmarks = document.querySelectorAll('.custom-checkmark');
+  	const neutralLine = document.querySelectorAll('.neutral-line');
 	const dotsContainer = document.querySelector('.slide-dots');
 
 	let slideIndex = 1;
@@ -150,6 +151,7 @@ function saveAndChangePage() {
 	  ...slidesText4,
 	  ...slidesText15,
 	  ...slidesText17,
+	  ...wrapper
 	];
 
   	  document.documentElement.classList.toggle('dark-mode');

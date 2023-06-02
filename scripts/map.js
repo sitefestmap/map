@@ -48,18 +48,26 @@ map.addControl(
     'top-left',
 );
 
-// const filterGroup = document.getElementById('filter-group');
-
 studio_markers.forEach(({studio, color, lngLat}) => {
-    const popup = new mapboxgl.Popup({ offset: 25, className: 'sitefest-popup'}).setHTML(studio)
+        const popup = new mapboxgl.Popup({ 
+            offset: 25, 
+            className: 'sitefest-popup',
+            closeButton: false
+        }).setHTML(studio)
 
-    new mapboxgl.Marker({
-        color: color,
-        scale: 0.8
-    })
-    .setLngLat(lngLat)
-    .setPopup(popup)
-    .addTo(map)
+        new mapboxgl.Marker({
+            color: color,
+            scale: 0.8
+        })
+        .setLngLat(lngLat)
+        .setPopup(popup)
+        .addTo(map);
+       
+        popup.on('open', () => {
+            const popupContainer = document.getElementById('popupcontainer');
+            popupContainer.innerHTML = '';
+            popupContainer.appendChild(popup.getElement())
+        });
 })
 
 map.on('load', () => {
