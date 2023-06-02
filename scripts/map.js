@@ -10,17 +10,22 @@ import styles from '../styles/styles.js';
  
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0dGhpYXN3ZXN0b24iLCJhIjoiY2xlNHIya255MDJqaTNwbXY5NjUzdWgzYSJ9.af8OJ3gOuIiOvKkYllihGQ';
 
+/*
 const bounds = [
     [-2.325, 51.6875], // bottom left coordinates
     [-2.10000, 51.7900]  // top right coordinates
 ];
+*/
 
 const zoom = 11.5;
 const center = [-2.181235, 51.736333]
 
 const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/matthiasweston/clhuty4u3020p01r0f1wb6lwo',
+   // style: 'mapbox://styles/matthiasweston/clhuty4u3020p01r0f1wb6lwo',
+   // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8',
+    //style: '/data/skins/frank-satellite/style.json',
+    style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8', // frank/satellite
     center: center,
     zoom: zoom,
    // maxBounds: bounds,
