@@ -27,6 +27,7 @@ const map = new mapboxgl.Map({
    // scrollZoom: true
 });
 
+
 // Set the map bounds
 map.fitBounds(bounds, {
     padding: 0
@@ -70,35 +71,69 @@ studio_markers.forEach(({studio, color, lngLat}) => {
         });
 })
 
-map.on('load', () => {
-    map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+map.addControl(
+    new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl,
+        marker: false, // Disable the default marker,
+        placeholder: 'Find a Studio...',
+        localGeocoder: function(query) {
+            var results = studios.features.filter(function (studio) {
+                return studio.properties.title.toLowerCase().includes(query.toLowerCase());
+            });
 
-    const directions =
+            return results.map(function (result) {
+                return {
+                    text: result.properties.title,
+                    place_name: result.properties.title,
+                    center: result.geometry.coordinates
+                };
+            });
+        },
+        // So that we only get back studios and not general map queries
+        filter: function (item) {
+            return item.context
+              .map(function (contextItem) {
+                return (
+                  contextItem.id.includes('studio') ||
+                  contextItem.text.toLowerCase().includes('studio')
+                );
+              })
+              .reduce(function (acc, cur) {
+                return acc || cur;
+              });
+          },
+    })
+);
+
+map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+
+map.on('load', () => {
+
+    let directions =
         new MapboxDirections({
             accessToken: mapboxgl.accessToken,
             unit: 'metric',
-            // steps: true,
-            // banner_instructions: true,
+            steps: false,
+            banner_instructions: false,
             profile: 'mapbox/cycling',
             alternatives: false,
             controls: {
                 instructions: false,
                 inputs: false,
+               // profileSwitcher: true
             },
-            interactive: false,
+            interactive: false, // prevent user from generating random routes
             styles: styles
         });
-
-    map.addControl(directions,
-        'top-left'
-    );
-
+     
     navigator.geolocation.getCurrentPosition(function(position) {
         var userLongitude = position.coords.longitude;
         var userLatitude = position.coords.latitude;
         directions.setOrigin([userLongitude, userLatitude]);
         directions.setDestination([userLongitude, userLatitude]);
     })
+    map.addControl(directions, 'top-left');
 
     map.addSource('multi_polygon', {
         type: 'geojson',

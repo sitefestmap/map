@@ -90,3 +90,49 @@ div.sitefest-popup {
 .mapboxgl-popup-tip {
     display: none;
 }
+
+/* Search Box */
+
+.mapboxgl-ctrl-geocoder input::placeholder {
+    color: #000;
+    opacity: 0.8;
+  }
+
+.dark-mode .mapboxgl-ctrl-geocoder input::placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.mapboxgl-ctrl-geocoder input {
+    padding-left: 5ch !important;
+}
+
+/*
+.mapboxgl-ctrl-geocoder--input {
+    padding-left: 5ch !important;
+}
+*/
+
+.dark-mode .mapboxgl-ctrl-geocoder input {
+    background-color: #333;
+    color: #fff;
+   
+}
+
+.dark-mode .suggestions  {
+    background-color: #333 !important;
+    color: #fff;
+}
+
+/*
+.dark-mode .mapboxgl-ctrl-geocoder--suggestion {
+    background-color: #333 !important;
+    color: #fff;
+}
+*/
+
+.dark-mode .suggestions-wrapper * {
+    background-color: #333 !important;
+    color: #fff;
+}
+  
