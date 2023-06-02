@@ -27,12 +27,13 @@ const map = new mapboxgl.Map({
    // scrollZoom: true
 });
 
-
 // Set the map bounds
+/*
 map.fitBounds(bounds, {
     padding: 0
 });
- 
+*/
+
 // @note Directions API : request up to 25 waypoints only
 map.addControl(
     new mapboxgl.GeolocateControl({
@@ -120,8 +121,8 @@ map.on('load', () => {
             alternatives: false,
             controls: {
                 instructions: false,
-                inputs: false,
-               // profileSwitcher: true
+                inputs: true,
+               profileSwitcher: true
             },
             interactive: false, // prevent user from generating random routes
             styles: styles

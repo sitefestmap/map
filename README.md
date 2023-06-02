@@ -47,3 +47,7 @@ export default defineConfig({
 ## Static Assets
 
 [Vite Public Dir](https://vitejs.dev/guide/assets.html#the-public-directory)
+
+## Styles
+
+[Transfer Styles between accounts](https://docs.mapbox.com/help/troubleshooting/transfer-styles-between-accounts/)

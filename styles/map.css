@@ -150,9 +150,69 @@ div.sitefest-popup {
     color: #fff;
 }
 
-
 .dark-mode .mapboxgl-ctrl-geocoder--icon,
-.dark-mode .mapboxgl-ctrl-geocoder--icon:hover
- {
+.dark-mode .mapboxgl-ctrl-geocoder--icon:hover {
     fill: lightgrey !important;
+}
+
+/* remove A B coords directions */
+div.mapbox-directions-component-keyline:nth-child(1) {
+    display: none;
+}
+
+.mapboxgl-ctrl-top-left .mapboxgl-ctrl {
+    clear:none !important; 
+}
+
+.dark-mode .mapboxgl-ctrl-top-left .mapboxgl-ctrl-group,
+.dark-mode .mapbox-directions-profile,
+.dark-mode .mapbox-directions-profile label {
+    background-color: #333;
+    color: #fefefe ;
+}
+
+.dark-mode .mapboxgl-ctrl button.mapboxgl-ctrl-zoom-in .mapboxgl-ctrl-icon {
+    background-image:url('/geo-icon.svg') !important;
+}
+
+.dark-mode .mapboxgl-ctrl button.mapboxgl-ctrl-zoom-out .mapboxgl-ctrl-icon  {
+    background-image:url('/geo-icon-minus.svg');
+}
+
+.dark-mode .mapboxgl-ctrl button.mapboxgl-ctrl-geolocate .mapboxgl-ctrl-icon {
+    background-image:url('/geo-locate-icon.svg');
+}
+
+/*
+ .mapboxgl-ctrl-group  {
+    
+}
+
+.mapboxgl-ctrl-geolocate {
+    
+    
+}
+*/
+
+.mapbox-directions-profile label {
+    width: 33%;
+}
+
+.mapbox-directions-profile {
+    margin: 0 ;
+}
+
+.mapbox-directions-component {
+    position: absolute;
+}
+
+/*
+.mapbox-directions-inputs {
+    
+}
+*/
+
+.mapbox-directions-profile > label:nth-child(2),
+#mapbox-directions-profile-driving {
+    display: none;
 }
