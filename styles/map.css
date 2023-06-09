@@ -365,6 +365,7 @@ div.mapbox-directions-component-keyline:nth-child(1) {
     line-height: 1.5;
     max-width: 70ch;
     font-family: arial;
+    margin: 1rem;
   }
   
   #alert-box p {
@@ -378,3 +379,9 @@ div.mapbox-directions-component-keyline:nth-child(1) {
     font-weight: bold;
   }
   
+  #do-not-show-again {
+      width: 1.3rem;
+      height: 1.3rem;
+  }
+
+ 
