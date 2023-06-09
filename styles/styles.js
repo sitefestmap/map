@@ -7,7 +7,7 @@ const style = [{
       'line-join': 'round'
     },
     'paint': {
-      'line-color': '#111',
+      'line-color': '#fff',
       'line-width': 4
     },
     'filter': [

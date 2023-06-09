@@ -30,7 +30,11 @@ const map = new mapboxgl.Map({
     // style: 'mapbox://styles/matthiasweston/clhuty4u3020p01r0f1wb6lwo',
     // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8',
     //style: '/data/skins/frank-satellite/style.json',
-    style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8', // frank/satellite
+   
+   // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8', // frank/satellite
+   // frank style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
+   // standard
+   style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
     center: center,
     zoom: zoom,
     // maxZoom: zoom
