@@ -49,12 +49,11 @@
 
 .mapboxgl-popup-close-button {
     /* new */
-    
+    position: fixed;
     font-size: 2rem; 
     top: .2rem; 
-    right: .6rem;
-    width: 1.7rem;
-    left: 81%;
+    right: .4rem;
+    
 
 }
 
