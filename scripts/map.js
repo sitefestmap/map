@@ -5,7 +5,7 @@
 
 import mapboxgl from 'mapbox-gl';
 // 'mapbox/mapbox-gl-directions' in head to prevent new dep conflict erro
-import multi_polygon from '../data/multipolygon.js';
+// import multi_polygon from '../data/multipolygon.js';
 import studios from '../data/studios.js';
 import studio_markers from '../data/studio-markers.js';
 import routes from '../data/routes.js';
@@ -31,10 +31,10 @@ const map = new mapboxgl.Map({
     // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8',
     //style: '/data/skins/frank-satellite/style.json',
    
-   // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8', // frank/satellite
-   // frank style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
+    style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8', // frank/satellite
+    
    // standard
-   style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
+  // style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
     center: center,
     zoom: zoom,
     // maxZoom: zoom
@@ -130,10 +130,8 @@ map.addControl(
 map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
 map.on('load', () => {
-
   
-        prefsAlert()
-  
+    prefsAlert()
 
     let directions =
         new MapboxDirections({
@@ -161,7 +159,7 @@ map.on('load', () => {
     })
     map.addControl(directions, 'top-left');
 
-    map.addSource('multi_polygon', {
+  /*  map.addSource('multi_polygon', {
         type: 'geojson',
         data: multi_polygon
     });
@@ -190,6 +188,7 @@ map.on('load', () => {
             'line-width': 2
         }
     });
+    */
 
     map.addSource('routes', {
         'type': 'geojson',
@@ -282,8 +281,9 @@ map.on('load', () => {
                     directions.addWaypoint(0, waypoint);
 
                     directions.on('route', function () {
-                        var routeColor = '#ffffff';
-                        var routeOutlineColor = '#111';
+                        var routeColor = '#f84d4d';
+                        
+                       var routeOutlineColor = '#ffffff';
                         map.setPaintProperty('directions-route-line', 'line-color', routeColor, 'line-width', 8);
                         map.setPaintProperty('directions-route-line-alt', 'line-color', routeOutlineColor);
 
