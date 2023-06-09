@@ -22,8 +22,7 @@
 }
 
 #map .popupinfo {
-    
-    
+    padding: 0 .5rem 0 0;
     min-width: 11rem ;/* stop label text overflow */
 }
 
@@ -44,16 +43,18 @@
 .mapboxgl-popup-content {
     color: #454545;
     background-color: whitesmoke;
+    max-width: 15rem;
 }
 
 
 .mapboxgl-popup-close-button {
     /* new */
    
-    font-size: 1.5rem;
-    top: 3px; 
-    right: 8px !important;
-    text-align: right;
+   font-size: 2rem;
+   font-weight: bold;
+   left: 1;
+   right: .5rem;
+   top: 3px;
     
 
 }
