@@ -1,5 +1,6 @@
 // 1 TOWN CENTRE (RED)
 export const john_st = [-2.2167788, 51.7445037];
+
 export const weven = [-2.21798684, 51.74506395];
 export const cacao_circle = [-2.2170453, 51.7451129];
 export const high_st = [-2.21523121, 51.7451931];
@@ -7,7 +8,7 @@ export const high_st = [-2.21523121, 51.7451931];
 
 // 2 NAILSWORTH (MID BLUE)
 export const bath_rd = [-2.23060, 51.73928];
-export const marven_st_chloe = [-2.2185467, 51.7101307];
+export const morven_st_chloe = [-2.2185467, 51.7101307];
 export const frogmarsh_mill = [-2.2325759, 51.7154552];
 export const article_studio = [-2.2279565, 51.7085009];
 export const the_hide = [-2.2190762, 51.7071444];

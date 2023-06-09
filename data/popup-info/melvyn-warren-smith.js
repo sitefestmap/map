@@ -1,0 +1,16 @@
+const melvyn_warren_smith = `
+<div class="popupinfo">
+<h2>Melvyn Warren-Smith</h2>
+<div class="slides-map-label map-label-middle">
+    <span class="mapStatusLabel"></span>
+    <label class="checkbox-label">
+        <input type="checkbox" id="checkbox" name="tick" class="checkbox" value="Melvyn Warren-Smith">
+        <div class="custom-checkbox" style="background-color: #d04749;">
+        <div class="custom-checkmark">&#x2713;</div>
+        </div>
+    </label>
+</div>
+</div>
+`
+
+export default melvyn_warren_smith;

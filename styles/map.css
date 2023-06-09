@@ -1,3 +1,5 @@
+/* Some dodgy CSS for now */
+
 :where(html) {
     --min-map-width: 65%;
     --sidebar-width: 17rem;
@@ -5,52 +7,180 @@
     --top: 20vh;
 }
 
-.wrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.sidebar {
-    position: relative;
-    top: var(--top); 
-    color: #454545;
-    background-color: whitesmoke;
-    flex-basis: var(--sidebar-width);
-    min-height: calc(var(--sidebar-width) / 1.5);
-    flex-grow: 1;
-}
-
-/* temp for demo */
-.sidebar p {
-    font-size: 1.1rem;
-    font-family: arial;
-    padding: var(--padding);
-}
-
-.dark-mode .sidebar {
-    color: whitesmoke; 
-    background-color: #333D3D;
-}
-
-.sidebar.div {
-    max-width: 0 !important; /* override mapbox inline */
-}
-@media only screen and (max-width: 1200px) { 
-    .sidebar {
-        z-index: 1;
-    }
-}
-  
-.map-container {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-inline-size: var(--min-map-width);
-}
-
 #map {
     top: var(--top); 
     height: 80vh; 
+    
 }
+
+#map h2 {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    padding-right: 2rem;
+    margin-top: 0;
+    
+}
+
+#map .popupinfo {
+    
+    min-width: 11rem ;/* stop label text overflow */
+}
+
+
+
+/*
+#map .site-fest-popup , .mapboxgl-popup * {
+    outline: 1px solid green;
+}
+*/
+
+/* POPUPS */
+.mapboxgl-popup-content {
+    color: #454545;
+    background-color: whitesmoke;
+}
+
+
+.mapboxgl-popup-close-button {
+    /* new */
+    font-size: 2rem;
+    margin-top: .4rem;
+    margin-right: .6rem;
+}
+
+.dark-mode .mapboxgl-popup-close-button {
+    
+    color: whitesmoke;
+}
+
+#map .slides-map-label {
+    position: absolute;
+	text-align: right;
+	font-family: tatethin,sans-serif;
+	font-style: italic;
+	bottom: 2%;
+	width: 30%;
+	font-size: 1vw;
+    
+    
+}
+@media only screen and (min-width: 2160px) {
+    #map .slides-map-label { 
+        font-size: 0.47vw;
+    }
+}
+@media only screen and (max-width: 1200px) { 
+    #map .slides-map-label {
+        font-size: 1.25vw;
+    }
+}
+
+/*
+#map .mapStatusLabel {
+
+}
+*/
+
+#map .checkbox-label {
+    position: relative;
+    cursor: pointer;
+    all:unset;
+    position: absolute;
+    right: 2rem;
+    
+}
+
+#map .checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+#map .checkbox-label input[type="checkbox"]:checked {
+    content: "\2713";
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    transform: 0; /* new */
+    color: white;
+    font-family: Calibri, sans-serif;
+    font-size: 1.2vw;
+    line-height: 1;
+    
+  }
+
+
+  @media only screen and (max-width: 1200px) { 
+    #map .checkbox-label input[type="checkbox"]:checked + .custom-checkbox::before {
+    top: 50%;
+    left: 37%;
+    font-size: 2vw;
+    all:unset
+  }
+}
+
+  @media only screen and (min-width: 2160px) {
+        #map .checkbox-label input[type="checkbox"]:checked + .custom-checkbox::before {
+            top: 55%;
+            left: 35%;
+            font-size: 0.75vw;
+            
+          }
+  }
+
+#map .custom-checkbox {
+    top: -40%;
+    left: 1vw;
+    top: -.1rem; /* new */
+    left: -.4rem; /* new */
+    width: 2.25vw;
+    height: 2.25vw;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 3px
+}
+
+/*
+#map .custom-checkmark {
+    
+}
+*/
+
+
+#map .custom-checkmark.checked {
+    transform: translate(-55%, -45%);
+     font-size: 1.5rem;
+    margin-left: .2rem;
+}
+
+/* not in slides */
+/*
+#checkbox {
+  
+}
+
+
+#map .checkbox {
+}
+
+.site-fest-popup {
+    
+}
+*/
+
+/* delete from literals */
+
+#map .map-label-middle {
+    all: unset;
+    font-size: 1rem;
+    font-weight: bold;  
+}
+
+/*
+.popupinfo span {
+    
+}
+*/
+
 
 @media only screen and (max-width: 1200px) {
     #map {
@@ -58,37 +188,29 @@
     } 
 }
 
-div.sitefest-popup {
-    font-family: arial; /* delete */
-    transform: none !important;
+
+    .mapboxgl-popup-content {
+        color: #454545;
+        background-color: whitesmoke;
+       /* margin-right: 0; */
+       /* padding: 0;  */
+       /* font-size: 1rem; */
+        
+       /* border: none;
+        box-shadow: none */
+    }
     
-    padding-left: var(--padding); /* delete */
-}
+  /*  .mapboxgl-popup-tip {
+        display: none;
+    } */
+    
+    .dark-mode .mapboxgl-popup-content {
+        color: white;
+        background-color: #333D3D;
+    }
 
-.dark-mode .mapboxgl-popup-content {
-    color: white;
-    background-color: #333D3D;
-}
-
-/*
-.mapboxgl-popup {
+.mapbox-gl-popup {
   
-}
-*/
-
-.mapboxgl-popup-content {
-    color: #454545;
-    background-color: whitesmoke;
-    margin: 0;
-    padding: 0; 
-    font-size: 1rem;
-    max-width: calc(var(--sidebar-width) - var(--padding));
-    border: none;
-    box-shadow: none
-}
-
-.mapboxgl-popup-tip {
-    display: none;
 }
 
 /* Search Box */
@@ -183,17 +305,6 @@ div.mapbox-directions-component-keyline:nth-child(1) {
     background-image:url('/geo-locate-icon.svg');
 }
 
-/*
- .mapboxgl-ctrl-group  {
-    
-}
-
-.mapboxgl-ctrl-geolocate {
-    
-    
-}
-*/
-
 .mapbox-directions-profile label {
     width: 33%;
 }
@@ -205,12 +316,6 @@ div.mapbox-directions-component-keyline:nth-child(1) {
 .mapbox-directions-component {
     position: absolute;
 }
-
-/*
-.mapbox-directions-inputs {
-    
-}
-*/
 
 .mapbox-directions-profile > label:nth-child(2),
 #mapbox-directions-profile-driving {

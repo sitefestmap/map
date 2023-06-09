@@ -67,7 +67,7 @@ const studios = {
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": waypoints.marven_st_chloe
+                "coordinates": waypoints.morven_st_chloe
             }
         },
         {

@@ -42,8 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	const wrappers = document.querySelectorAll('.slides-text8-overspill');
 	const numbertext = document.querySelectorAll('.numbertext');
 	const wrapper = document.querySelectorAll('.wrapper'); 
-  	const mapStatusLabels = document.querySelectorAll('.mapStatusLabel');
-  	const customCheckmarks = document.querySelectorAll('.custom-checkmark');
   	const neutralLine = document.querySelectorAll('.neutral-line');
 	const dotsContainer = document.querySelector('.slide-dots');
 
@@ -53,11 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	let isDarkMode;
 	let mousestartX, mouseendX;
 	let activeIndex = 0;
-
-
-
-  var checkboxes = document.getElementsByClassName("checkbox");
-
 
 	toggleBtns.forEach(function(btn) {
 	    btn.addEventListener('click', function() {
@@ -406,159 +399,8 @@ if (dotsContainer) {
 //	});
 //}
 
-console.log("All cookies:", document.cookie);
-// Add event listeners to each checkbox
-for (var i = 0; i < checkboxes.length; i++) {
-  checkboxes[i].addEventListener('click', createCheckboxClickListener(i));
-}
 
-// Set the initial checkbox state and update the text of the corresponding map status labels
-for (var i = 0; i < checkboxes.length; i++) {
-  var checkbox = checkboxes[i];
-
-  // Get the checkbox value (e.g., nutshell, article, high-st)
-  var checkboxValue = checkbox.value;
-
-  // Get the checkbox name from the value attribute
-  var checkboxName = checkboxValue;
-
-  // Get the state of the checkbox from the cookie
-  var checkboxState = getCheckboxState(checkboxValue);
-
-  // Set the checkbox state based on the cookie value
-  checkbox.checked = checkboxState;
-
-  // Update the text of the corresponding map status label based on the initial state
-  var mapStatusLabel = mapStatusLabels[i];
-  if (mapStatusLabel) {
-    mapStatusLabel.textContent = checkboxState ? 'Added ' + checkboxName + ' to Your Map' : 'Add ' + checkboxName + ' to Your Map';
-  }
-
-  var customCheckmark = customCheckmarks[i];
-  if (customCheckmark) {
-    if (checkboxState) {
-      customCheckmark.classList.add('checked');
-    } else {
-      customCheckmark.classList.remove('checked');
-    }
-  }
-}
-
-// Function to create the event listener for each checkbox
-function createCheckboxClickListener(index) {
-  return function() {
-    // Get the checkbox value (e.g., nutshell, article, high-st)
-    var checkboxValue = this.value;
-
-    // Set the checkbox state as a cookie with true/false value and expiration date
-    var expirationDate = new Date();
-    expirationDate.setFullYear(expirationDate.getFullYear() + 1); // Set expiration to 1 year from now
-    document.cookie = checkboxValue + "=" + this.checked + "; expires=" + expirationDate.toUTCString();
-
-    // Get the state of the created cookie
-    var cookieState = getCheckboxState(checkboxValue);
-
-    // Output the name and state of the created cookie to the console
-    console.log("Created cookie: " + checkboxValue + " (State: " + cookieState + ")");
-
-    // Output all cookies and their states to the console
-    console.log("All cookies:", document.cookie);
-
-    // Get the state of the checkbox
-    var checkboxState = this.checked;
-
-    // Update the corresponding map status label
-    var mapStatusLabel = mapStatusLabels[index];
-    if (mapStatusLabel) {
-      mapStatusLabel.textContent = checkboxState ? 'Added ' + checkboxValue + ' to Your Map' : 'Add ' + checkboxValue + ' to Your Map';
-    }
-
-    // Update the custom-checkbox element based on the checkbox state
-    var customCheckmark = customCheckmarks[index];
-    if (customCheckmark) {
-      if (checkboxState) {
-        customCheckmark.classList.add('checked');
-      } else {
-        customCheckmark.classList.remove('checked');
-      }
-    }
-
-    // Update the text of the corresponding map status labels based on the checkbox state
-    var mapStatusText = checkboxState ? 'Added' : 'Add';
-    var matchingCheckboxes = document.querySelectorAll('input[type="checkbox"][value="' + checkboxValue + '"]');
-    for (var i = 0; i < matchingCheckboxes.length; i++) {
-      var matchingCheckboxIndex = Array.from(checkboxes).indexOf(matchingCheckboxes[i]);
-      if (matchingCheckboxIndex !== -1) {
-        var matchingMapStatusLabel = mapStatusLabels[matchingCheckboxIndex]; // Select the corresponding map status label
-        if (matchingMapStatusLabel) {
-          matchingMapStatusLabel.textContent = mapStatusText + ' ' + checkboxValue + ' to Your Map';
-        }
-      }
-		    var matchingCustomCheckmark = customCheckmarks[matchingCheckboxIndex]; // Select the corresponding custom-checkmark element
-		    if (matchingCustomCheckmark) {
-		      if (checkboxState) {
-		        matchingCustomCheckmark.classList.add('checked');
-		      } else {
-		        matchingCustomCheckmark.classList.remove('checked');
-		      }
-		    }
-    }
-  };
-}
-
-// Function to retrieve the state of a specific checkbox
-function getCheckboxState(checkboxValue) {
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var cookieArray = decodedCookie.split(";");
-
-  for (var i = 0; i < cookieArray.length; i++) {
-    var cookie = cookieArray[i];
-    while (cookie.charAt(0) === " ") {
-      cookie = cookie.substring(1);
-    }
-    if (cookie.indexOf(checkboxValue) === 0) {
-      var state = cookie.substring(checkboxValue.length + 1);
-      return state === "true";
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
   return false;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -15,7 +15,14 @@ const style = [{
       ['in', '$type', 'LineString'],
       ['in', 'route', 'alternate']
     ]
-  }, {
+  },
+  {
+    'id': 'directions-route-line-outline',
+    'source': 'directions',
+    'type': 'line'
+  },
+  
+  {
     'id': 'directions-route-line-casing',
     'type': 'line',
     'source': 'directions',
@@ -130,7 +137,7 @@ const style = [{
     'type': 'symbol',
     'source': 'directions',
     'layout': {
-      'text-field': 'A',
+      'text-field': 'SVA',
       'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
       'text-size': 12
     },
@@ -160,7 +167,7 @@ const style = [{
     'type': 'symbol',
     'source': 'directions',
     'layout': {
-      'text-field': 'Here',
+      'text-field': 'Home',
       'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
       'text-size': 11
     },
