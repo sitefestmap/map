@@ -34,7 +34,7 @@ const map = new mapboxgl.Map({
    // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8', // frank/satellite
    // frank style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
    // standard
-   style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
+    style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
     center: center,
     zoom: zoom,
     // maxZoom: zoom
