@@ -496,7 +496,7 @@ map.on('load', () => {
                     console.log('Added waypoint at index 0:', waypointName);
 
                     directions.on('route', function () {
-                        var routeColor = '#ffffff';
+                        var routeColor = '#f84d4d';
                         var routeOutlineColor = '#111';
                         map.setPaintProperty('directions-route-line', 'line-color', routeColor, 'line-width', 8);
                         map.setPaintProperty('directions-route-line-alt', 'line-color', routeOutlineColor);
