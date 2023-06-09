@@ -15,14 +15,12 @@
 
 #map h2 {
     font-size: 1.2rem;
-    line-height: 1.8;
-    padding-right: 2rem;
+    line-height: 1.5;
     margin-top: 0;
-    
 }
 
 #map .popupinfo {
-    padding: 0 .5rem 0 0;
+    padding: 0 2.5rem 0 0;
     min-width: 11rem ;/* stop label text overflow */
 }
 
@@ -50,7 +48,8 @@
 .mapboxgl-popup-close-button {
     /* new */
    
-   
+   font-size: 2rem;
+   right: .4rem;
    font-weight: bold;
    
     
