@@ -23,9 +23,15 @@
 
 #map .popupinfo {
     
+    
     min-width: 11rem ;/* stop label text overflow */
 }
 
+/*
+#map .popupinfo * {
+    outline: 1px solid red;
+}
+*/
 
 
 /*
@@ -43,9 +49,15 @@
 
 .mapboxgl-popup-close-button {
     /* new */
-    font-size: 2rem;
-    margin-top: .4rem;
-    margin-right: .6rem;
+    
+    font-size: 2rem; 
+    top: .2rem; 
+    right: .6rem;
+}
+
+.mapboxgl-popup-close-button:hover,
+.dark-mode .mapboxgl-popup-close-button:hover {
+    background-color: inherit;
 }
 
 .dark-mode .mapboxgl-popup-close-button {
