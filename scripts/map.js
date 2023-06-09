@@ -11,7 +11,7 @@ import studio_markers from '../data/studio-markers.js';
 import routes from '../data/routes.js';
 import layerIDsToMatch from '../data/layers-to-match.js';
 import styles from '../styles/styles.js';
-
+ import prefsAlert from './prefs-alert';
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0dGhpYXN3ZXN0b24iLCJhIjoiY2xlNHIya255MDJqaTNwbXY5NjUzdWgzYSJ9.af8OJ3gOuIiOvKkYllihGQ';
 
 
@@ -550,79 +550,11 @@ map.on('load', () => {
                         customCheckmark.classList.remove('checked');
                     }
                 } 
-
-                // move waypoint to index(0)
-
-
-               // directions.removeWaypoint(waypoint);
-
-               // console.log('Removed waypoint at waypoint name:', checkboxValue, ':', waypoint );
-
-              // directions.removeWaypoint(0);
-
-/*
-
-waypointsObject.john_street = new mapboxgl.layer(...).addTo(map)
-waypointsObject.john_street.remove()
-
-markersObject.foo = new mapboxgl.Marker().addTo(map)
-
-markersObject.foo.remove()
-*/
-
-              /* const waypoint = {
-                    type: 'Feature',
-                    properties: {},
-                    geometry: {
-                        type: 'Point',
-                        coordinates: layerCoordinates
-                    }
-                };  */
-               
-                /* mapbox error in this function  
-                    function coordinateMatch(a, b) {
-                        a = a.geometry.coordinates;
-                        b = b.geometry.coordinates;
-                        return a.join() === b.join() || a[0].toFixed(3) === b[0].toFixed(3) && a[1].toFixed(3) === b[1].toFixed(3);
-                    }
-
-                    Uncaught TypeError: b is undefined
-                    coordinateMatch mapbox-gl-directions.js:8637
-                    waypoints mapbox-gl-directions.js:7133
-                    removeWaypoint mapbox-gl-directions.js:7132
-                */
-
-                // Update the custom-checkbox element based on the checkbox state
-            // var customCheckmark = customCheckmark;
-           
             }
-
-            
-
-
-            /*
-            // find the name of the waypoint that corresponds to the checkbox value.
-            const waypointName = studios.features.find(feature => feature.properties.title === checkboxValue)?.properties.title || '';
-            directions.removeWaypoint(0) 
-            console.log('Removed waypoint at index 0: ', waypointName);
-
-          //  directions.removeWaypoint(waypointToRemove);
-
-           // dynamically associate the checkbox value with the corresponding waypoint
-           
-            //
-*/
-
-
-
-
-
-
         }
-
     }
 });
 
-//});
-
-// export default popupCookies;
+document.addEventListener("DOMContentLoaded", function() {
+    prefsAlert()
+})
