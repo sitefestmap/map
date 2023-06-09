@@ -13,7 +13,7 @@ const layerIDsToMatch = [
     'Museum In The Park',
     'Studio Tuft',
     'Houseworkwork',
-    'Landsdown Hall',
+    'Lansdown Hall',
     'May Derbyshire',
     'Mark Derbyshire',
     'Jack Duplock',

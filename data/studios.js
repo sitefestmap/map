@@ -162,7 +162,7 @@ const studios = {
             "type": "Feature",
             "properties": {
                 "icon": "light",
-                "title": "Landsdown Hall",
+                "title": "Lansdown Hall",
             },
             "geometry": {
                 "type": "Point",
