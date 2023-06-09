@@ -53,6 +53,9 @@
     font-size: 2rem; 
     top: .2rem; 
     right: .6rem;
+    width: 1.7rem;
+    left: 81%;
+
 }
 
 .mapboxgl-popup-close-button:hover,
