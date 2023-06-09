@@ -50,11 +50,9 @@
 .mapboxgl-popup-close-button {
     /* new */
    
-   font-size: 2rem;
+   font-size: 1.2rem;
    font-weight: bold;
-   left: 1;
-   right: .5rem;
-   top: 3px;
+   
     
 
 }
