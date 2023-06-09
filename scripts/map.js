@@ -34,7 +34,7 @@ const map = new mapboxgl.Map({
    // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8', // frank/satellite
    // frank style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
    // standard
-    style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
+   style: 'mapbox://styles/matthiasweston/cliookrjf000r01qvabm8h97i',
     center: center,
     zoom: zoom,
     // maxZoom: zoom
@@ -130,6 +130,11 @@ map.addControl(
 map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
 map.on('load', () => {
+
+  
+        prefsAlert()
+  
+
     let directions =
         new MapboxDirections({
             accessToken: mapboxgl.accessToken,
@@ -277,7 +282,7 @@ map.on('load', () => {
                     directions.addWaypoint(0, waypoint);
 
                     directions.on('route', function () {
-                        var routeColor = '#ff6868';
+                        var routeColor = '#ffffff';
                         var routeOutlineColor = '#111';
                         map.setPaintProperty('directions-route-line', 'line-color', routeColor, 'line-width', 8);
                         map.setPaintProperty('directions-route-line-alt', 'line-color', routeOutlineColor);
@@ -491,7 +496,7 @@ map.on('load', () => {
                     console.log('Added waypoint at index 0:', waypointName);
 
                     directions.on('route', function () {
-                        var routeColor = '#ff6868';
+                        var routeColor = '#ffffff';
                         var routeOutlineColor = '#111';
                         map.setPaintProperty('directions-route-line', 'line-color', routeColor, 'line-width', 8);
                         map.setPaintProperty('directions-route-line-alt', 'line-color', routeOutlineColor);
@@ -559,6 +564,3 @@ map.on('load', () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    prefsAlert()
-})
