@@ -125,7 +125,7 @@ body.dark-mode {
 }
 
 .background {
-    /*background-image: url('/background.jpg');*/
+    background-image: url('/background.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -1050,6 +1050,19 @@ body.dark-mode {
   z-index: 3;
 }
 
+.slides-text5-1 {
+  font-family: tateregular,sans-serif;
+  text-align: left;
+  font-size: 1vw;
+  transform-origin: top left;
+  transform: translate(0%,-10%);
+  margin: 0;
+  white-space: nowrap;
+  position: absolute;
+  user-select: text;
+  z-index: 3;
+}
+
 .slides-sideways-text-left {
 	left: -28%!important;
 	top: -2%!important;
@@ -1148,17 +1161,9 @@ body.dark-mode {
 }
 
 .slides-text11 { /*NOTHING ON THIS*/
-	font-family: tateregular,sans-serif;
-	text-align: right;
-	font-weight: bold;
-	margin: 0 0;
-	font-size: 2vw;
-	position: absolute;
-	top: 94%;
-	width: 95%;
-	user-select: all;
-	/*text-shadow: 0 0 1vh white;
-	filter: drop-shadow(0 0 1vh rgba(255, 255, 255, 0.5));*/
+	font-family: tatebold,sans-serif;
+  font-size: 4.5vw;
+  margin: 0.5vw 0;
 }
 
 .slides-text12 {
@@ -1217,6 +1222,13 @@ body.dark-mode {
 	fill: rgba(255, 36, 74, 1);
 }
 
+.slides-text18 {
+	font-family: 'vw_textregular',sans-serif;
+	margin: 0;
+	margin: 1% 0;
+	user-select: text;
+	font-size: 1.6vw;
+}
 
 .studio-number-dot {
 	transform: translate(60%,5%);
@@ -1791,6 +1803,10 @@ html, body {
 	font-size: 0.5vw;
 }
 
+.slides-text5-1 {
+	font-size: 0.5vw;
+}
+
 .slides-text6 {
 	font-size: 0.65vw;
 }
@@ -1802,7 +1818,7 @@ html, body {
 }
 
 .slides-text11 {
-	font-size: 1vw;
+	font-size: 2vw;
 	top: 71.5%;
 	left: 32.75%;
 }
@@ -1900,6 +1916,9 @@ html, body {
   font-size: 0.7vw;
 }
 
+.slides-text18 {
+	font-size: 0.77vw;
+}
 
 
 
@@ -2091,6 +2110,10 @@ html, body {
 	font-size: 1.25vw;
 }
 
+.slides-text5-1 {
+	font-size: 1.25vw;
+}
+
 .slides-text6 {
 	font-size: 1.95vw;
 	top: 43.3%;
@@ -2106,7 +2129,7 @@ html, body {
 }
 
 .slides-text11 {
-	font-size: 2.5vw;
+	font-size: 6vw;
 	margin: 5% 0;
 }
 
@@ -2217,7 +2240,9 @@ html, body {
 	top: 2%;
 }
 
-
+.slides-text18 {
+	font-size: 2vw;
+}
 
 
 
