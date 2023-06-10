@@ -608,7 +608,7 @@ body.dark-mode {
 /*	transform: translateY(-90%); 
 	text-shadow: 0 0 1vh #454545;*/
 	width: 85%;
-	margin: 3.5vh 7vh 0 7vh;
+	margin: 5vh;
 	transition: color .25s;
 	color: white;
 }
@@ -1736,7 +1736,6 @@ html, body {
 
 .text-2 {
 	font-size: calc((4vh + 4vw)/2);
-	margin: 4vh;
 	width: 90%;
 }
 .text-3 {
@@ -1974,7 +1973,6 @@ html, body {
 
 .text-2 {
 	font-size: calc((4vh + 4vw)/2);
-	margin: 7vh;
 }
 .intro1 {
 	font-size: calc((4vh + 4vw)/2);
@@ -2299,7 +2297,6 @@ html, body {
 
 .text-2 {
 	font-size: calc((3.5vh + 3.5vw)/2);
-	margin: 5vh;
 }
 
 .text-3 {
