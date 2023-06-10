@@ -1078,6 +1078,7 @@ body.dark-mode {
   position: absolute;
   user-select: text;
   z-index: 3;
+  left: 74.25%;
 }
 
 .slides-sideways-text-left {
@@ -1937,7 +1938,9 @@ html, body {
 	font-size: 0.77vw;
 }
 
-
+.slides-text5-1 {
+  left: 72.9%;
+}
 
 
 
