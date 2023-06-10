@@ -18,7 +18,7 @@
 }
 
 .modal {
-    font-family: tatethin, sans-serif;
+    font-family: tateregular, sans-serif;
     font-size: 1.1rem;
     display: none;
     position: fixed;
@@ -54,11 +54,6 @@
     text-decoration: none;
     cursor: pointer;
   }
-  
-  .openModalButton {
-    background-color: #f84d4d;
-    color: #ffffff;
-  }
 
   .help {
       position: absolute;
@@ -71,7 +66,8 @@
   .help button {
     background-color: #f84d4d;
     color: #ffffff;
-    font: inherit;
+    font: tateregular;
+    font-size: inherit;
     margin: .5rem 0 0 .5rem;
     padding: .4em;
     border-radius: 5px;

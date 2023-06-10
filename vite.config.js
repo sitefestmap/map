@@ -15,4 +15,10 @@ export default defineConfig({
       },
     },
   },
+ /* server: {
+    fs: {
+      // Allow serving files without the .html extension
+      allow: ["."],
+    },
+  },*/
 })
