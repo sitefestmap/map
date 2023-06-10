@@ -608,7 +608,7 @@ body.dark-mode {
 /*	transform: translateY(-90%); 
 	text-shadow: 0 0 1vh #454545;*/
 	width: 85%;
-	margin: 7vh;
+	margin: 3.5vh 7vh 0 7vh;
 	transition: color .25s;
 	color: white;
 }
@@ -628,7 +628,7 @@ body.dark-mode {
 }
 
 .text-4 {
-	font-size: 5vh;
+	font-size: 4.5vh;
 	font-family: tatebold,sans-serif;
 	text-align: center;
 /*	transform: translateY(-90%); 
@@ -639,6 +639,19 @@ body.dark-mode {
 	transition: color .25s;
 	color: white;
 	height: 5vh;
+}
+
+.text-5 {
+	font-size: 1.5vh;
+	font-family: vw_headbold,sans-serif;
+	text-align: center;
+/*	transform: translateY(-90%); 
+	text-shadow: 0 0 1vh #454545;*/
+	width: 85%;
+	margin: 0.5vh 0 0 0;
+	transition: color .25s;
+	color: white;
+	height: 2vh;
 }
 
 .lines {
@@ -1469,9 +1482,9 @@ button, a, input {
 .end-links {
 	display: grid;
 	flex-direction: row;
-	margin: 1vh auto;
+	margin: 0vh auto;
 	width: 60%;
-	height: 10vh;
+	height: 4vh;
 	align-items: center;
 	position: relative;
   grid-template-columns: repeat(3, 1fr);
