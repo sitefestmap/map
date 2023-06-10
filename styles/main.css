@@ -644,6 +644,15 @@ body.dark-mode {
   margin: 0 auto;
 }
 
+.text-3-1 {
+	font-family: tateregular,sans-serif;
+	text-align: center;
+	white-space: nowrap;
+	width: 80%;
+	color: #FFE86E;
+  margin: 0 auto;
+}
+
 .text-4 {
 	font-size: 4.5vh;
 	font-family: tatebold,sans-serif;
