@@ -466,7 +466,7 @@ body.dark-mode {
 }
 
 .scroll-section3 {
-  height: 55vh;
+  height: 60vh;
 }
 
 .scroll-section2.dark-mode {
@@ -647,7 +647,7 @@ body.dark-mode {
 	text-align: center;
 /*	transform: translateY(-90%); 
 	text-shadow: 0 0 1vh #454545;*/
-	width: 85%;
+	width: 95%;
 	margin: 0.5vh 0 0 0;
 	transition: color .25s;
 	color: white;
@@ -1769,6 +1769,7 @@ html, body {
 
 .end-links {
 	width: 50%;
+	height: 5vh;
 }
 
 .social-icons-div {
