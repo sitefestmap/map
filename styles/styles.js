@@ -125,7 +125,7 @@ const style = [{
     'source': 'directions',
     'paint': {
       'circle-radius': 18,
-      'circle-color': '#3bb2d0'
+      'circle-color': '#f84d4d'
     },
     'filter': [
       'all',

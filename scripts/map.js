@@ -11,7 +11,7 @@ import studio_markers from '../data/studio-markers.js';
 import routes from '../data/routes.js';
 import layerIDsToMatch from '../data/layers-to-match.js';
 import styles from '../styles/styles.js';
- import prefsAlert from './prefs-alert';
+// import prefsAlert from './prefs-alert';
 mapboxgl.accessToken = 'pk.eyJ1IjoibWF0dGhpYXN3ZXN0b24iLCJhIjoiY2xlNHIya255MDJqaTNwbXY5NjUzdWgzYSJ9.af8OJ3gOuIiOvKkYllihGQ';
 
 
@@ -31,8 +31,10 @@ const map = new mapboxgl.Map({
     // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8',
     //style: '/data/skins/frank-satellite/style.json',
     // mono
-    style: 'mapbox://styles/matthiasweston/clip5lzg8001m01o1hn1abzrj',
-   
+    // style: 'mapbox://styles/matthiasweston/clip5lzg8001m01o1hn1abzrj',
+   // mono 2
+    style: 'mapbox://styles/matthiasweston/clipe0vwj00pw01r17so5dun5',
+    
     // style: 'mapbox://styles/matthiasweston/clif391kp006301qv9ont5ij8', // frank/satellite
     
    // standard
@@ -92,6 +94,7 @@ studio_markers.forEach(({ studio, color, lngLat }) => {
     }); */
 })
 
+// FIX: Uncaught (in promise) Error: Unhandled "error" event. ([object Object])
 map.addControl(
     new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -133,7 +136,7 @@ map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
 map.on('load', () => {
   
-    prefsAlert()
+  //  prefsAlert()
 
     let directions =
         new MapboxDirections({
