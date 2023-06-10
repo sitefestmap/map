@@ -6,11 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <script src="scripts/prefsalert.js" type="module"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css"
     rel="stylesheet" type="text/css">
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/help.css">
   <link href="styles/map.css" rel="stylesheet">
+  
   <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
     rel="stylesheet" />
 </head>
@@ -27,7 +30,7 @@
     </div>
   </div>
   <main class="main2" id="main">
-    <div class="background"></div>
+  <div class="background"></div>
     <div class="header">
       <div class="logo">
         <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
@@ -56,6 +59,33 @@
         <div class="mooncover light-mode"></div>
       </div>
     </button>
+    <div class="help">
+      <button id="openModalBtn">Help</button>
+    
+      <div id="helpModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <ol>
+            <li>On the homepage scroll through the slides of the Open Studios directory (which is the same as the <a href="https://static1.squarespace.com/static/5aaa85dd697a985c81246146/t/64676335009e71330276c9f4/1684497228549/DIRECTORY_2023_JL_19.05.23.+12.52pm.pdf" target="_blank">online PDF</a> and the printed directory)</li>
+              <li>
+                At the bottom of most slides there is an option to “Add this location to your map” with a tick box, so you can add as many locations as you like
+              </li>
+              <li>
+                Click the button to find ‘Your Map’ and you will see that an automated route has been created for you!
+              </li>
+              <li>
+                You can add and remove studios directly within the map as well, by clicking a marker popup.
+              </li>
+              <li>
+                If something isn’t working, you may need to double check your browser settings - you will probably need to consent to the website accessing your location, and make sure your Mac/Window preferences for Location Services are turned on.
+              </li>
+              <li>
+                Please note, at the moment, there is a limitation of only having 25 studios in a route on the map at one time.
+              </li>
+            </ol>
+        </div>
+      </div>
+    </div>
     <div class="map-container">
       <div id="map"></div>
     </div>
@@ -65,6 +95,7 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
   <script src="scripts/map.js" type="module"></script>
+  <script src="scripts/help.js" type="module"></script>
   
   
 </body>

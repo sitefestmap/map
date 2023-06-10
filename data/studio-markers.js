@@ -1,12 +1,12 @@
 import * as waypoints from './waypoints';
 
 // Marker colors
-const red       = `hsl(10  70% 50%)`;
-const mid_blue  = `hsl(195 70% 50%)`;
-const dark_blue = `hsl(215 70% 50%)`;
-const orange    = `hsl(30  70% 50%)`;
-const purple    = `hsl(280 70% 50%)`;
-const green     = `hsl(150 70% 50%)`;
+const red       = '#f84d4d';
+const mid_blue  = '#4264fb';
+const dark_blue = '#40546a';
+const orange    = '#f79640';
+const purple    = '#7753eb';
+const green     = '#207a4b';
 
 // make one file with imports
 import cacao_circle from './popup-info/cacao-circle';
