@@ -351,8 +351,6 @@ if (dotsContainer) {
 	});
 
 
-	var swipeThreshold = 100; // Adjust this value as needed
-	var fingerDown = 0;
 
 	slideshow.addEventListener('touchstart', function(event) {
 	        touchstartX = event.touches[0].screenX;
@@ -380,20 +378,31 @@ if (dotsContainer) {
 		      }, 20);
 	}, false);
 }
-	function handleGesture() {
-		if (fingerDown === 1) {
-			fingerDown === 0;
-	    if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
-	        plusSlides(1); // swipe left
-	    } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
-	        plusSlides(-1); // swipe right
-	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX < mousestartX) {
-	        plusSlides(1); // mouse swipe left
-	    } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX > mousestartX) {
-	        plusSlides(-1); // mouse swipe right
-	    }
-	 	}
-	}
+
+	var fingerDown = 0;
+
+function handleGesture() {
+    if (fingerDown === 1) {
+        fingerDown = 0
+
+        // Get half the screen width of the user's device
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var swipeThreshold = screenWidth / 2;
+
+        // Cap the swipeThreshold at a maximum of 500
+        swipeThreshold = Math.min(swipeThreshold, 500);
+
+        if (touchendX && touchstartX && touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
+            plusSlides(1); // swipe left
+        } else if (touchendX && touchstartX && touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold) {
+            plusSlides(-1); // swipe right
+        } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX < mousestartX) {
+            plusSlides(1); // mouse swipe left
+        } else if (mouseendX && mousestartX && Math.abs(mouseendX - mousestartX) > swipeThreshold && mouseendX > mousestartX) {
+            plusSlides(-1); // mouse swipe right
+        }
+    }
+}
 
 //if (window.location.pathname === '/index.html') {
 //	document.addEventListener('wheel', function(e) {
