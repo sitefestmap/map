@@ -387,7 +387,7 @@ function handleGesture() {
 
         // Get half the screen width of the user's device
         var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        var swipeThreshold = screenWidth / 2;
+        var swipeThreshold = screenWidth * 0.35;
 
         // Cap the swipeThreshold at a maximum of 500
         swipeThreshold = Math.min(swipeThreshold, 500);
